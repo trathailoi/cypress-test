@@ -1,0 +1,36 @@
+{
+  "name": "bosley-wp-08-2021",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cypress:open": "cypress open",
+    "cypress:open:focus": "cypress open --env TAGS=@focus"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://git.9wdev.com/9thWonder/bosley-wp-08-2021.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cucumber-html-reporter": "^5.5.0",
+    "cypress": "^8.3.0",
+    "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "cypress-cucumber-preprocessor": "^4.2.0",
+    "faker": "^5.5.3"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": true,
+    "cucumberJson": {
+      "generate": false,
+      "outputFolder": "cypress/reports/cucumber-json",
+      "filePrefix": "",
+      "fileSuffix": ".feature"
+    }
+  }
+}
