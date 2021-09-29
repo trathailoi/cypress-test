@@ -1,7 +1,7 @@
 Feature: Filter
 
   Background:
-    Given Visit "https://bosley-develop.box.carbon8test.com/results/before-after-gallery-men" #Common
+    # Given Visit "https://bosley-develop.box.carbon8test.com/results/before-after-gallery-men" #Common
     And I must see list before after have "66" items
 
   Scenario Outline: TC_Filter_01: filter before after success
@@ -37,7 +37,7 @@ Feature: Filter
     When I click filter in right side
     And I click Reset Filters button
     Then Filter div is collapse
-    # And I do not see applied filters headline
+    And I do not see applied filters headline
     And I do not see filter option "<option>" show in headline
     And I must see list before after have "66" items
     And Url query produce = "<option>" is removed
@@ -67,7 +67,7 @@ Feature: Filter
     And I must see list before after have "<countItem>" items
     When I click x icon at filter option "<option>"
     And I must see list before after have "66" items
-    # And I do not see applied filters headline
+    And I do not see applied filters headline
     And I do not see filter option "<option>" show in headline
     And Url query produce = "<option>" is removed
     When I click filter in right side

@@ -92,7 +92,7 @@ Then('All option is not checked', () => {
 })
 
 When('I click x icon at filter option {string}', (option) => {
-  cy.get(`.list-apply .apply-item div[data-checkbox=${mapOption[option]}] .icon-close1`)
+  cy.get(`.list-apply .apply-item div[data-checkbox="${mapOption[option]}"] .icon-close1`)
     .click()
 })
 
