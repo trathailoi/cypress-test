@@ -32,14 +32,17 @@ Then(`I must see list location sort alphabet by name`, () => {
     const $els = win.$('.list-location .list-item-location .box-find-location')
     cy.wrap($els).as('listLocationElement')
     expect($els.length).to.equal(LOCATION_LENGTH)
-    const locationStates = []
+    const locationCityStates = []
     for (const el of $els) {
       const locationText = el.querySelector('.left-content h4').innerText
-      const locationState = locationText.split(', ')[1]
-      locationStates.push(locationState)
+      const splittedLocationText = locationText.split(', ')
+      const locationCityState = `${splittedLocationText[1]},${splittedLocationText[0]}`
+      locationCityStates.push(locationCityState)
     }
-    const sortedLocationStates = JSON.parse(JSON.stringify(locationStates)).sort((a, b) => a < b ? -1 : 1)
-    expect(sortedLocationStates).to.deep.equal(locationStates)
+    const sortedLocationCityStates = JSON.parse(JSON.stringify(locationCityStates)).sort((a, b) => a < b ? -1 : 1)
+    console.log('sortedLocationCityStates', )
+    console.log('locationCityStates', )
+    expect(sortedLocationCityStates).to.deep.equal(locationCityStates)
   })
 })
 
@@ -59,6 +62,9 @@ And(`I can't see the distance in miles`, () => {
 })
 
 When(`I click 1 location on the list`, () => {
+  cy.get('.list-location .list-item-location .box-find-location')
+    .first()
+    .click()
 })
 
 And(`I must see this location is zoom on a map`, () => {
@@ -71,9 +77,20 @@ And(`I must see this location is active on the list`, () => {
 })
 
 When(`I input address on search box`, () => {
+  cy.get('.search-location #location')
+    .type('Vietnam')
 })
 
 Then(`I must see the suggest list of Google`, () => {
+  const suggestTexts = [
+    "Vietnam Town Rd, San Jose, CA, USA",
+    "Vietnamská, Bratislava, Slovakia",
+    "Vietnam Supermarket, London, UK",
+    "Vietnam Tengah, Vietnam"
+  ]
+  for (const suggestText of suggestTexts) {
+    cy.contains(suggestText)
+  }
 })
 
 When(`I select 1 address on the suggest list`, () => {
