@@ -1,5 +1,7 @@
 import { fakeLocation } from '../../../common/scripts'
 
+const LOCATION_LENGTH = 73
+
 Given('Visit Location Page and fake location', () => {
   cy.visit('https://bosley-develop.box.carbon8test.com/locations', fakeLocation(48, 2)); // France
 })
@@ -13,7 +15,7 @@ Then(`I must see my location refill on searchbox`, () => {
 And(`I must see the distance in miles and sort from nearest to farthest`, () => {
   cy.window().then(win => {
     const $els = win.$('.list-location .list-item-location .box-find-location')
-    expect($els.length).to.equal(73)
+    expect($els.length).to.equal(LOCATION_LENGTH)
     const locationMiles = []
     for (const el of $els) {
       const mileText = el.querySelector('.mile').innerText
@@ -29,7 +31,7 @@ Then(`I must see list location sort alphabet by name`, () => {
   cy.window().then(win => {
     const $els = win.$('.list-location .list-item-location .box-find-location')
     cy.wrap($els).as('listLocationElement')
-    expect($els.length).to.equal(73)
+    expect($els.length).to.equal(LOCATION_LENGTH)
     const locationStates = []
     for (const el of $els) {
       const locationText = el.querySelector('.left-content h4').innerText
