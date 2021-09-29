@@ -15,7 +15,7 @@ Then('I must see slider', (  ) =>{
 } );
 
 Then('I can see slide at {string} place is active', (place) =>{
-  checkSlideActive(slideOptions, Number(place))
+  checkSlideActive(slideOptions, Number(place), true)
 })
 
 When('I click {string} at slider', (clickSelector) =>{

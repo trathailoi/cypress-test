@@ -3,11 +3,13 @@ const checkSliderExists = (slideSelector) => {
     .should('be.visible')
 }
 
-const changeSlide = (actionSelector) => {
+const changeSlide = (actionSelector, waitTime = 1000) => {
   cy.get(actionSelector)
     .click()
   // wait for animation
-  cy.wait(1000)
+  if (waitTime) {
+    cy.wait(waitTime)
+  }
 }
 
 const getDotSelector = (slideSelector, i) => `${slideSelector} .slick-dots > li:nth-child(${i})`
@@ -26,7 +28,7 @@ const checkSlideActive = (slideOptions, place, isNotCheckDot) => {
 }
 
 const checkSlickSlider = (options = {}) => {
-  const { slideSelector, slideItemSelector, nextSelector, dataKey, dotLength, isNotCheckDot } = options
+  const { slideSelector, slideItemSelector, nextSelector, dataKey, dotLength, isNotCheckDot, waitTime = 1000 } = options
   cy.get(slideSelector)
     .should('be.visible')
   
@@ -52,7 +54,7 @@ const checkSlickSlider = (options = {}) => {
     cy.get(getSlideItemSelector(i))
       .should('have.class', 'slick-current slick-active')
     // wait for animation
-    cy.wait(1000)
+    cy.wait(waitTime)
   }
 
   // đến item cuối cùng thì check hiện lại item đầu tiên
