@@ -10,7 +10,19 @@ const mapOption = {
   'BioGraft​': 'biograft%e2%80%8b'
 }
 
-Given('I must see list before after have {string} items', (countItems) => {
+const mapOptionQuery = {
+  'FUE': 'fue',
+  'FUT': 'fut',
+  'SMP': 'smp',
+  'Eyebrow Restoration': 'eyebrow-restoration',
+  'LLLT': 'lllt',
+  'PRP': 'prp',
+  'BosleyMD​': 'bosleymd%25e2%2580%258b',
+  'BosleyRx​': 'bosleyrx%25e2%2580%258b',
+  'BioGraft​': 'biograft%25e2%2580%258b'
+}
+
+Then('I must see list before after have {string} items', (countItems) => {
   cy.get('.mod-before-after .bf-category.filted')
     .should('have.length', countItems)
 })
@@ -51,10 +63,18 @@ And('I click Reset Filters button', () => {
     .click()
 })
 
+Then('I do not see applied filters headline', () => {
+  cy.get('.list-apply')
+    .should('not.be.visible')
+})
+
 And('I do not see filter option {string} show in headline', (option) => {
-  cy.get('.list-apply .apply-item')
-    .contains(option)
-    .should('not.exist')
+  cy.get('.list-apply')
+    .should('not.be.visible')
+  // TODO
+  // cy.get('.list-apply .apply-item')
+  //   .contains(option)
+  //   .should('not.exist')
 })
 
 Then('All option is not checked', () => {
@@ -79,4 +99,14 @@ When('I click x icon at filter option {string}', (option) => {
 Then('Option {string} is not checked', (option) => {
   cy.get(`#${mapOption[option]}`)
     .should('not.be.checked')
+})
+
+And('Url query produce = {string} is added', (option) => {
+  cy.url()
+    .should('include', mapOptionQuery[option])
+})
+
+And('Url query produce = {string} is removed', (option) => {
+  cy.url()
+    .should('not.include', mapOptionQuery[option])
 })

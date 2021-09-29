@@ -2,7 +2,7 @@ Feature: Filter
 
   Background:
     Given Visit "https://bosley-develop.box.carbon8test.com/results/before-after-gallery-men" #Common
-    Given I must see list before after have "66" items
+    And I must see list before after have "66" items
 
   Scenario Outline: TC_Filter_01: filter before after success
     Given I click filter in right side
@@ -11,7 +11,8 @@ Feature: Filter
     And I click Apply Filters button
     Then Filter div is collapse
     And I see filter option "<option>" show in headline
-    Given I must see list before after have "<countItem>" items
+    And Url query produce = "<option>" is added
+    And I must see list before after have "<countItem>" items
     Examples:
       | option              | countItem |
       | FUE                 | 20        |
@@ -31,12 +32,15 @@ Feature: Filter
     And I click Apply Filters button
     Then Filter div is collapse
     And I see filter option "<option>" show in headline
-    Given I must see list before after have "<countItem>" items
+    And Url query produce = "<option>" is added
+    And I must see list before after have "<countItem>" items
     When I click filter in right side
     And I click Reset Filters button
     Then Filter div is collapse
+    # And I do not see applied filters headline
     And I do not see filter option "<option>" show in headline
-    Given I must see list before after have "66" items
+    And I must see list before after have "66" items
+    And Url query produce = "<option>" is removed
     When I click filter in right side
     Then Filter div is expand
     Then All option is not checked
@@ -59,9 +63,13 @@ Feature: Filter
     And I click Apply Filters button
     Then Filter div is collapse
     And I see filter option "<option>" show in headline
-    Given I must see list before after have "<countItem>" items
+    And Url query produce = "<option>" is added
+    And I must see list before after have "<countItem>" items
     When I click x icon at filter option "<option>"
-    Given I must see list before after have "66" items
+    And I must see list before after have "66" items
+    # And I do not see applied filters headline
+    And I do not see filter option "<option>" show in headline
+    And Url query produce = "<option>" is removed
     When I click filter in right side
     Then Filter div is expand
     Then Option "<option>" is not checked
