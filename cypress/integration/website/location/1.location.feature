@@ -1,15 +1,14 @@
 Feature: Location Page - Share Api
 
-	# list location assert 73 locations tất cả nha
   Scenario: TC_Location_01: Visit Location Page: Allow alert popup and show location (fake)
     Given Visit Location Page and fake location
     Then I must see my location refill on searchbox
     And I must see the distance in miles and sort from nearest to farthest
 
-  # Scenario: TC_Location_02: Visit Location Page: Block alert popup and find location (not fake)
-  #   Given Visit "https://bosley-develop.box.carbon8test.com/locations" #Common
-	# 	Then I must see list location sort alphabet by name
-  #   And I can't see the distance in miles
+  Scenario: TC_Location_02: Visit Location Page: Block alert popup and find location (not fake)
+    Given Visit "https://bosley-develop.box.carbon8test.com/locations" #Common
+		Then I must see list location sort alphabet by name
+    And I can't see the distance in miles
 
 	# Scenario: TC_Location_03: Visit Location Page: Click 1 location ở list và zoom marker hiển thị ở map
   #   Given Visit "https://bosley-develop.box.carbon8test.com/locations" #Common

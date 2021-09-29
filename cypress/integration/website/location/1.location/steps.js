@@ -13,7 +13,7 @@ Then(`I must see my location refill on searchbox`, () => {
 And(`I must see the distance in miles and sort from nearest to farthest`, () => {
   cy.window().then(win => {
     const $els = win.$('.list-location .list-item-location .box-find-location')
-    expect($els.length).to.not.equal(0)
+    expect($els.length).to.equal(73)
     const locationMiles = []
     for (const el of $els) {
       const mileText = el.querySelector('.mile').innerText
@@ -26,9 +26,34 @@ And(`I must see the distance in miles and sort from nearest to farthest`, () => 
 })
 
 Then(`I must see list location sort alphabet by name`, () => {
+  cy.window().then(win => {
+    const $els = win.$('.list-location .list-item-location .box-find-location')
+    cy.wrap($els).as('listLocationElement')
+    expect($els.length).to.equal(73)
+    const locationStates = []
+    for (const el of $els) {
+      const locationText = el.querySelector('.left-content h4').innerText
+      const locationState = locationText.split(', ')[1]
+      locationStates.push(locationState)
+    }
+    const sortedLocationStates = JSON.parse(JSON.stringify(locationStates)).sort((a, b) => a < b ? -1 : 1)
+    expect(sortedLocationStates).to.deep.equal(locationStates)
+  })
 })
 
 And(`I can't see the distance in miles`, () => {
+  cy.get('@listLocationElement').then($els => {
+    let checkAllMileIsHdden = true
+    for (const el of $els) {
+      const checkMileIsHidden = el.querySelector('.mile').classList.contains('hidden')
+      if (!checkMileIsHidden) {
+        checkAllMileIsHdden = false
+        break
+      }
+      // expect(checkMileIsHidden).to.equal(true)
+    }
+    expect(checkAllMileIsHdden).to.equal(true)
+  })
 })
 
 When(`I click 1 location on the list`, () => {
