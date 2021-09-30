@@ -24,7 +24,7 @@ const slideExpects = [
     beforeAfterAlt: 'ron-before-(1)',
     beforeAfter: 'https://bosley-develop.box.carbon8test.com/wp-content/uploads/2021/09/ron-before-1.jpg',
     texts: [
-      'I could not look at myself in the mirror and say, “You’re handsome.” I would say “No, you’re bald.” I had family members and friends that would jokingly say, “Hey, you’re bald.” I wouldn’t say anything, but I was very emotional when they would say that. I didn’t like it. My confidence level was at an all-time low. Bosley has changed my life tremendously.',
+      `I could not look at myself in the mirror and say, 'You're handsome.' My confidence level was at an all-time low. Bosley has changed by life tremendously.`,
       `Watch Ron's Story`
     ]
   },
