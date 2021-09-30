@@ -38,8 +38,9 @@ pipeline {
                   cmdString="$cmdString -- $cliOpt"
                 }
                 echo "$cmdString"
-                sh -C \"$cmdString\" // -- --parallel --env coverage=true --config video=true
+                // sh -C \"$cmdString\" // -- --parallel --env coverage=true --config video=true
               }
+              sh "$cmdString"
             }
         }
         // stage('Firefox') {
