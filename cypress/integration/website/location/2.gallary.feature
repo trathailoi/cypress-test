@@ -2,10 +2,11 @@ Feature: location
 
   Background: 
     Given Visit "https://bosley-develop.box.carbon8test.com/locations" #Common
-    Given I scroll to gallery section​​
+    And I scroll to gallery section​​
     Then I must see slider
-    Then I can see slide at "1" place is active
-    Then I must see Big image, info, and link location of slide "1"
+    # nên là: I must see slider has "34" slides
+    And I can see slide at "1" place is active
+    And I must see Big image, info, and link location of slide "1"
 
   Scenario: TC_Gallery_01: Visit location page, ở gallery section: click slider Next: hiển thị video tương ứng với từng slider
     Then Slide from slide "2" to slide "36" should work correctly when click "next"

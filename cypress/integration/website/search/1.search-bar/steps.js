@@ -2,7 +2,7 @@ When('Click Search icon on navigation', () => {
   cy.get('.open-search .icomoon.icon-search').click()
 })
 
-Then('Search box must be display and forcus', () => {
+Then('Search box must be display and focus', () => {
   // đợi xíu chờ js xử lý
   cy.wait(500)
   cy.get('.form-search')
