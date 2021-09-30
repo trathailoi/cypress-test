@@ -2,12 +2,20 @@ Feature: location
 
   Background: 
     Given Visit "https://bosley-develop.box.carbon8test.com/locations" #Common
-    Given I scroll to gallery section​​
+    And I scroll to gallery section​​
     Then I must see slider
-    Then I can see slide at "1" place is active
-    Then I must see Big image, info, and link location of slide "1"
+    # nên là: I must see slider has "34" slides
+    And I can see slide at "1" place is active
+    And I must see Big image, info, and link location of slide "1"
 
   Scenario: TC_Gallery_01: Visit location page, ở gallery section: click slider Next: hiển thị video tương ứng với từng slider
+    # chị cần gom lại như thế này nha Thắng:
+    # When I click "next" button "33" times
+    # Then I can see "33" slides to be activated in order (from slide 2 to slide 34) 
+    # And I must see Big image, info, and link location of each slide
+    # When I click "next" button one more time
+    # Then I can see slide at "1" place is active
+    # And I must see Big image, info, and link location of slide "1"    
     When I click "next" at slider
     Then I can see slide at "2" place is active
     Then I must see Big image, info, and link location of slide "2"
@@ -118,6 +126,13 @@ Feature: location
     Then I must see Big image, info, and link location of slide "1"
 
   Scenario: TC_Gallery_02: Visit location page, ở gallery section: click slider Previous: hiển thị video tương ứng với từng slider
+    # chị cần gom lại như thế này nha Thắng
+    # When I click "prev" button "33" times
+    # Then I can see "33" slides to be activated in order (from slide 34 to slide 2)
+    # And I must see Big image, info, and link location of each slide
+    # When I click "prev" button one more time
+    # Then I can see slide at "1" place is active
+    # And I must see Big image, info, and link location of slide "1"
     When I click "prev" at slider
     Then I can see slide at "36" place is active
     Then I must see Big image, info, and link location of slide "36"
