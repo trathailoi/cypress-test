@@ -22,34 +22,26 @@ pipeline {
     //     sh 'npm run clean:reports'
     //   }
 		// }
-		stage('Run Tests') {
-      parallel {
-        stage('Chrome') {
-            steps{
-              script {
-                cmdString="CYPRESS_baseUrl=${siteURL} npm run cy:run"
-                if (${params.video}) {
-                  cmdString="$cmdString --config video=true"
-                } else {
-                  cmdString="$cmdString --config video=false"
-                }
+    stage('Chrome') {
+      steps{
+        script {
+          cmdString="CYPRESS_baseUrl=${siteURL} npm run cy:run"
+          // if (${params.video}) {
+          //   cmdString="$cmdString --config video=true"
+          // } else {
+          //   cmdString="$cmdString --config video=false"
+          // }
 
-                if (${params.cliOpt}) {
-                  cmdString="$cmdString -- ${params.cliOpt}"
-                }
-                echo "$cmdString"
-                // sh -C \"$cmdString\" // -- --parallel --env coverage=true --config video=true
-              }
-              sh "$cmdString"
-            }
+          // if (${params.cliOpt}) {
+          //   cmdString="$cmdString -- ${params.cliOpt}"
+          // }
+          echo "$cmdString"
+          // sh -C \"$cmdString\" // -- --parallel --env coverage=true --config video=true
         }
-        // stage('Firefox') {
-        //     steps{
-        //         sh "CYPRESS_baseUrl=${siteURL} npm run cy:firefoxl" // -- --paralle --env coverage=true --config video=true
-        //     }
-        // }
+        echo "$cmdString"
+        sh "$cmdString"
       }
-		}
+    }
         // stage('Generate Reports') {
         //     steps {
         //         sh 'npm run combine-reports && npm run generate-report'
