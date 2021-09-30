@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "cypress:open": "cypress open",
+    "cypress:run": "cypress run --headless",
     "cypress:open:not-watch": "cypress open --config watchForFileChanges=false",
     "cypress:open:focus": "cypress open --env TAGS=@focus"
   },
@@ -19,7 +20,8 @@
   "dependencies": {
     "cucumber-html-reporter": "^5.5.0",
     "cypress": "^8.3.0",
-    "lodash": "^4.17.21"
+    "lodash": "^4.17.21",
+    "multiple-cucumber-html-reporter": "^1.18.0"
   },
   "devDependencies": {
     "cypress-cucumber-preprocessor": "^4.2.0",
