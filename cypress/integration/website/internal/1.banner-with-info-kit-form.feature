@@ -19,7 +19,6 @@ Feature: Banner with info kit form
       | Julian    | Jones    |                        | 786-416-5794 | 1962 Rinehart Road |         | Man    |
       | Julian    | Jones    | mymail                 | 786-416-5794 | 1962 Rinehart Road | 0       | Man    |
       | Julian    | Jones    | mymail@@               | 786-416-5794 | 1962 Rinehart Road | 123456  | Man    |
-      | firstName | lastName | email                  | phone        | street             | zipcode | gender |
       | Sen       | Vo       | sen.vo                 | 786-416-5792 | Test               | 11111   | Woman  |
       | Julian    | Jones    | mymail.ourearth.com    | 786-416-5794 | 1962 Rinehart Road | 91356   | Man    |
       | Julian    | Jones    | mymail@.com.my         | 786-416-5794 | 1962 Rinehart Road | 91356   | Man    |
