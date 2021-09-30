@@ -25,12 +25,13 @@ pipeline {
     stage('Chrome') {
       steps{
         script {
-          cmdString="CYPRESS_baseUrl=${siteURL} npm run cy:run"
-          // if (${params.video}) {
-          //   cmdString="$cmdString --config video=true"
-          // } else {
-          //   cmdString="$cmdString --config video=false"
-          // }
+          cmdString="CYPRESS_baseUrl=${siteURL} npm run cypress:run"
+          echo "${params.video}"
+          if (${params.video}) {
+            cmdString="$cmdString --config video=true"
+          } else {
+            cmdString="$cmdString --config video=false"
+          }
 
           // if (${params.cliOpt}) {
           //   cmdString="$cmdString -- ${params.cliOpt}"
