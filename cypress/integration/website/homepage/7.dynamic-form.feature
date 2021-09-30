@@ -2,18 +2,18 @@ Feature: Dynamic Form
 
   Background: 
     Given Clear window session #Common
-    Given Visit home page #Common
+    And Visit home page #Common
 
   Scenario: TC_DynamicForm_01: Visit homepage, input Dynamic form: Submit form "Get a free information kit" thành công
-    Given I scroll to Dynamic Form​ section
-    When I input info to dynamic form
+    When I scroll to Dynamic Form​ section
+    And I input info to dynamic form
     Given Fake admin ajax api #Common
     When I click Get My Free Info Kit button​
     Then I see loading icon and button is disabled
     Given Wait for Admin Ajax "1" times #Common
     Then Section Dynamic form is hidden
     And I must see section Schedule​
-    Given Refresh window #Common
+    When Refresh window #Common
     Then Section Dynamic form is hidden
     And I must see section Schedule​
 

@@ -2,15 +2,15 @@ Feature: Success Stories
 
   Background:
     Given Visit home page #Common
-    Given I scroll to Success Stories section​
+    And I scroll to Success Stories section​
     Then I must see slider
-    Then I can see slide at "1" place is active
-    Then I must see Big image, before-after image, story, button watch video of slide "1"
+    And I can see slide at "1" place is active
+    And I must see Big image, before-after image, story, button watch video of slide "1"
 
   Scenario: TC_Stories_01: Visit homepage, Success Stories click Watch video and click Slider​ next/prev: display video tương ứng Slider​ Success Stories
     When I click watch story video
     Then I must see popup lightbox video​
-    Then In popup video, I must see slider    
+    And In popup video, I must see slider    
     Then In popup video, I can see slide at "1" place is active and see video of slide
     When In popup video, I click "next" at slider
     Then In popup video, I can see slide at "2" place is active and see video of slide

@@ -2,17 +2,17 @@ Feature: Filter
 
   Background:
     Given Visit "https://bosley-develop.box.carbon8test.com/results/before-after-gallery-men" #Common
-    And I must see list before after have "82" items
+    And I must see list Before After Gallery have "82" items
 
-  Scenario Outline: TC_Before_After_Filter_01: filter before after success
-    Given I click filter in right side
-    Then Filter div is expand
-    When I choose option "<option>"
+  Scenario Outline: TC_BeforeAfterFilter_01: filter Before After Gallery by PROCEDURE and PRODUCT
+    When I click filter on the right side
+    Then I must see an expanded filter section
+    When I choose option "<option>" to filter
     And I click Apply Filters button
-    Then Filter div is collapse
+    Then I must see a collapsed filter section
     And I see filter option "<option>" show in headline
     And Url query produce = "<option>" is added
-    And I must see list before after have "<countItem>" items
+    And I must see list Before After Gallery have "<countItem>" items
     Examples:
       | option              | countItem |
       | FUE                 | 24        |
@@ -25,20 +25,20 @@ Feature: Filter
       | BosleyRx​            | 20        |
       | BioGraft​            | 0         |
 
-  Scenario: TC_Before_After_Filter_02: reset filter before after
-    Given I click filter in right side
-    Then Filter div is expand
-    When I choose option "FUE" 
-    When I choose option "FUT" 
-    When I choose option "SMP" 
-    When I choose option "Eyebrow" 
-    When I choose option "LLLT" 
-    When I choose option "PRP" 
-    When I choose option "BosleyMD​" 
-    When I choose option "BosleyRx​" 
-    When I choose option "BioGraft​" 
+  Scenario: TC_BeforeAfterFilter_02: reset filter Before After Gallery 
+    Given I click filter on the right side
+    Then I must see an expanded filter section
+    When I choose option "FUE" to filter 
+    When I choose option "FUT" to filter
+    When I choose option "SMP" to filter
+    When I choose option "Eyebrow" to filter
+    When I choose option "LLLT" to filter
+    When I choose option "PRP" to filter
+    When I choose option "BosleyMD​" to filter
+    When I choose option "BosleyRx​" to filter
+    When I choose option "BioGraft​" to filter
     And I click Apply Filters button
-    Then Filter div is collapse
+    Then I must see a collapsed filter section
     And I see filter option "FUE" show in headline
     And I see filter option "FUT" show in headline
     And I see filter option "SMP" show in headline
@@ -57,9 +57,9 @@ Feature: Filter
     And Url query produce = "BosleyMD​" is added
     And Url query produce = "BosleyRx​" is added
     And Url query produce = "BioGraft​" is added
-    When I click filter in right side
+    When I click filter on the right side
     And I click Reset Filters button
-    Then Filter div is collapse
+    Then I must see a collapsed filter section
     And Url query produce = "FUE" is removed
     And Url query produce = "FUT" is removed
     And Url query produce = "SMP" is removed
@@ -70,25 +70,25 @@ Feature: Filter
     And Url query produce = "BosleyRx​" is removed
     And Url query produce = "BioGraft​" is removed
     And I do not see applied filters headline
-    And I must see list before after have "82" items
-    When I click filter in right side
-    Then Filter div is expand
+    And I must see list Before After Gallery have "82" items
+    When I click filter on the right side
+    Then I must see an expanded filter section
     Then All option is not checked
 
-  Scenario Outline: TC_Before_After_Filter_03: remove filter before after
-    Given I click filter in right side
-    Then Filter div is expand
-    When I choose option "FUE" 
-    When I choose option "FUT" 
-    When I choose option "SMP" 
-    When I choose option "Eyebrow" 
-    When I choose option "LLLT" 
-    When I choose option "PRP" 
-    When I choose option "BosleyMD​" 
-    When I choose option "BosleyRx​" 
-    When I choose option "BioGraft​" 
+  Scenario Outline: TC_BeforeAfterFilter_03: remove filter Before After Gallery 
+    Given I click filter on the right side
+    Then I must see an expanded filter section
+    When I choose option "FUE" to filter
+    When I choose option "FUT" to filter
+    When I choose option "SMP" to filter
+    When I choose option "Eyebrow" to filter
+    When I choose option "LLLT" to filter
+    When I choose option "PRP" to filter
+    When I choose option "BosleyMD​" to filter
+    When I choose option "BosleyRx​" to filter
+    When I choose option "BioGraft​" to filter
     And I click Apply Filters button
-    Then Filter div is collapse
+    Then I must see a collapsed filter section
     And I see filter option "FUE" show in headline
     And I see filter option "FUT" show in headline
     And I see filter option "SMP" show in headline
@@ -126,7 +126,7 @@ Feature: Filter
     When I click x icon at filter option "BioGraft​"
     And Url query produce = "BioGraft​" is removed
     And I do not see applied filters headline
-    And I must see list before after have "82" items
-    When I click filter in right side
-    Then Filter div is expand
+    And I must see list Before After Gallery have "82" items
+    When I click filter on the right side
+    Then I must see an expanded filter section
     Then All option is not checked
