@@ -23,15 +23,15 @@ Then('I can see slide at {string} place is active', (place) =>{
   checkSlideActive(slideOptions, Number(place), true)
 })
 
+const mapSelector = {
+  'next': slideOptions.nextSelector,
+  'prev': slideOptions.prevSelector
+}
 When('I click {string} at slider', (clickSelector) =>{
-  const mapSelector = {
-    'next': slideOptions.nextSelector,
-    'prev': slideOptions.prevSelector
-  }
   changeSlide(mapSelector[clickSelector], 500)
 });
 
-Then('I must see Big image, info, and link location of slide {string}', (place) =>{
+const checkSlideInfo = (place) => {
   const expectObj = slideExpects[Number(place - 1)]
   cy.get('.mod-location-list .slick-active .image-locat-list')
     .should('have.css', 'background-image')
@@ -44,5 +44,31 @@ Then('I must see Big image, info, and link location of slide {string}', (place) 
     .then(text => {
       expect(String(text).toUpperCase()).to.include(expectObj.text)
     })
+}
+
+const checkSlideCorrectly = (clickSelector, place) => {
+  changeSlide(mapSelector[clickSelector], 500)
+  checkSlideActive(slideOptions, place, true)
+  checkSlideInfo(place)
+} 
+
+Then('Slide from slide {string} to slide {string} should work correctly when click {string}', (from, to, clickSelector) => {
+  from = Number(from)
+  to = Number(to)
+  if (clickSelector === 'next') {
+    for (let place = from; place <= to; place++) {
+      cy.log(`Check slide ${place} info`)
+      checkSlideCorrectly(clickSelector, place)
+    }
+  } else {
+    for (let place = to; place >= from; place--) {
+      cy.log(`Check slide ${place} info`)
+      checkSlideCorrectly(clickSelector, place)
+    }
+  }
+})
+
+Then('I must see Big image, info, and link location of slide {string}', (place) =>{
+  checkSlideInfo(place)
 });
 /* end test slide ngoài page home */
