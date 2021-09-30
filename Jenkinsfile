@@ -27,11 +27,12 @@ pipeline {
         script {
           cmdString="CYPRESS_baseUrl=${siteURL} npm run cypress:run"
           echo "${params.video}"
-          if (${params.video}) {
-            cmdString="$cmdString --config video=true"
-          } else {
-            cmdString="$cmdString --config video=false"
-          }
+          cmdString="$cmdString --config video=true"
+          // if (${params.video}) {
+          //   cmdString="$cmdString --config video=true"
+          // } else {
+          //   cmdString="$cmdString --config video=false"
+          // }
 
           // if (${params.cliOpt}) {
           //   cmdString="$cmdString -- ${params.cliOpt}"
