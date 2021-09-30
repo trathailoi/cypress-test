@@ -61,7 +61,7 @@ Then('Slide from slide {string} to slide {string} should work correctly when cli
       checkSlideCorrectly(clickSelector, place)
     }
   } else {
-    for (let place = to; place >= from; place--) {
+    for (let place = from; place >= to; place--) {
       cy.log(`Check slide ${place} info`)
       checkSlideCorrectly(clickSelector, place)
     }
