@@ -22,7 +22,7 @@ const mapOptionQuery = {
   'BioGraft​': 'biograft%25e2%2580%258b'
 }
 
-Then('I must see list before after have {string} items', (countItems) => {
+Then('I must see list Before After Gallery have {string} items', (countItems) => {
   cy.get('.mod-before-after .bf-category.filted')
     .should('have.length', countItems)
 
@@ -31,17 +31,17 @@ Then('I must see list before after have {string} items', (countItems) => {
   }
 })
 
-Given('I click filter in right side', () => {
+Given('I click filter on the right side', () => {
   cy.get('p[data-id=filter-ba]')
     .click()
 })
 
-Then('Filter div is expand', () => {
+Then('I must see an expanded filter section', () => {
   cy.get('.filter-container')
     .should('be.visible')
 })
 
-When('I choose option {string}', (option) => {
+When('I choose option {string} to filter', (option) => {
   cy.get('.list-filter .col-left label')
     .contains(option)
     .click()
@@ -52,7 +52,7 @@ And('I click Apply Filters button', () => {
     .click()
 })
 
-Then('Filter div is collapse', () => {
+Then('I must see a collapsed filter section', () => {
   cy.get('.filter-container')
     .should('not.be.visible')
 })
