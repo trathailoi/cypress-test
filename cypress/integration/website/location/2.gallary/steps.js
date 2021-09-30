@@ -52,7 +52,7 @@ const checkSlideCorrectly = (clickSelector, place) => {
   checkSlideInfo(place)
 } 
 
-Then('Slide from slide {string} to slide {string} should work correctly when click {string}', (from, to, clickSelector) => {
+Then('I must see correctly display content from slide {string} to slide {string} when every time I click {string} icon', (from, to, clickSelector) => {
   from = Number(from)
   to = Number(to)
   if (from <= to) {
@@ -68,7 +68,7 @@ Then('Slide from slide {string} to slide {string} should work correctly when cli
   }
 })
 
-Then('I must see Big image, info, and link location of slide {string}', (place) =>{
+Then('I must see Image, State, and link location of slide {string}', (place) =>{
   checkSlideInfo(place)
 });
 /* end test slide ngoài page home */
