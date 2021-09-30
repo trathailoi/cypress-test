@@ -25,6 +25,10 @@ const mapOptionQuery = {
 Then('I must see list before after have {string} items', (countItems) => {
   cy.get('.mod-before-after .bf-category.filted')
     .should('have.length', countItems)
+
+  if (Number(countItems) === 0) {
+    cy.contains('No Results Found.') 
+  }
 })
 
 Given('I click filter in right side', () => {
