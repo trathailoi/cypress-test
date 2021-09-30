@@ -55,7 +55,7 @@ const checkSlideCorrectly = (clickSelector, place) => {
 Then('Slide from slide {string} to slide {string} should work correctly when click {string}', (from, to, clickSelector) => {
   from = Number(from)
   to = Number(to)
-  if (clickSelector === 'next') {
+  if (from <= to) {
     for (let place = from; place <= to; place++) {
       cy.log(`Check slide ${place} info`)
       checkSlideCorrectly(clickSelector, place)
