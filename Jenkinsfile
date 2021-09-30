@@ -15,6 +15,7 @@ pipeline {
 		stage('Install Dependencies') {
       steps{
         sh 'npm install'
+        sh 'npx cypress install'
       }
 		}
 		// stage('Clean Reports') {
@@ -28,11 +29,11 @@ pipeline {
           cmdString="CYPRESS_baseUrl=${siteURL} npm run cypress:run"
           echo "${params.video}"
           cmdString="$cmdString --config video=true"
-          // if (${params.video}) {
-          //   cmdString="$cmdString --config video=true"
-          // } else {
-          //   cmdString="$cmdString --config video=false"
-          // }
+          if (params.video == true) {
+            cmdString="$cmdString --config video=true"
+          } else {
+            cmdString="$cmdString --config video=false"
+          }
 
           // if (${params.cliOpt}) {
           //   cmdString="$cmdString -- ${params.cliOpt}"
