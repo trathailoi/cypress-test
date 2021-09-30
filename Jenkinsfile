@@ -27,24 +27,24 @@ pipeline {
         stage('Chrome') {
             steps{
               script {
-                cmdString="CYPRESS_baseUrl=${params.siteURL} npm run cy:run"
-                if (${params.video}) {
+                cmdString="CYPRESS_baseUrl=${siteURL} npm run cy:run"
+                if ($video) {
                   cmdString="$cmdString --config video=true"
                 } else {
                   cmdString="$cmdString --config video=false"
                 }
 
-                if (${params.cliOpt}) {
-                  cmdString="$cmdString -- ${params.cliOpt}"
+                if ($cliOpt) {
+                  cmdString="$cmdString -- $cliOpt"
                 }
                 echo "$cmdString"
-                sh -C "$cmdString" // -- --parallel --env coverage=true --config video=true
+                sh -C \"$cmdString\" // -- --parallel --env coverage=true --config video=true
               }
             }
         }
         // stage('Firefox') {
         //     steps{
-        //         sh "CYPRESS_baseUrl=${params.siteURL} npm run cy:firefoxl" // -- --paralle --env coverage=true --config video=true
+        //         sh "CYPRESS_baseUrl=${siteURL} npm run cy:firefoxl" // -- --paralle --env coverage=true --config video=true
         //     }
         // }
       }
@@ -56,21 +56,21 @@ pipeline {
         // }
 		// stage('Publish HTML Report') {
         //     steps{
-        //         publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'cypress/reports/html', reportFiles: 'index.html', reportName: "E2E Report - ${params.siteURL}", reportTitles: "${params.siteURL}"])
+        //         publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'cypress/reports/html', reportFiles: 'index.html', reportName: "E2E Report - ${siteURL}", reportTitles: "${siteURL}"])
         //     }
 		// }
 	}
   post{
     always {
       sh 'node cucumber-report.js'
-      publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'cypress/reports/html', reportFiles: 'index.html', reportName: "E2E Report - ${params.siteURL}", reportTitles: "${params.siteURL}"])
+      publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'cypress/reports/html', reportFiles: 'index.html', reportName: "E2E Report - ${siteURL}", reportTitles: "${siteURL}"])
     }
     // success{
-    //   office365ConnectorSend(webhookUrl: "${MSTEAMS_WEBHOOK}", color:'#008000',  message: "Site URL: ${params.siteURL}  \nAll the end-to-end test suites passed.  \nTake a look on the report here: ", status: 'SUCCESS')
+    //   office365ConnectorSend(webhookUrl: "${MSTEAMS_WEBHOOK}", color:'#008000',  message: "Site URL: ${siteURL}  \nAll the end-to-end test suites passed.  \nTake a look on the report here: ", status: 'SUCCESS')
     // }
     // failure{
-    //   // publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'cypress/reports/html', reportFiles: 'index.html', reportName: "E2E Report - ${params.siteURL}", reportTitles: "${params.siteURL}"])
-    //   office365ConnectorSend(webhookUrl: "${MSTEAMS_WEBHOOK}", color:'#FF0000',  message: "Site URL: ${params.siteURL}  \nEnd-to-end tests have been failed.  \nTake a look on the report here: ", status: 'FAILED')
+    //   // publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'cypress/reports/html', reportFiles: 'index.html', reportName: "E2E Report - ${siteURL}", reportTitles: "${siteURL}"])
+    //   office365ConnectorSend(webhookUrl: "${MSTEAMS_WEBHOOK}", color:'#FF0000',  message: "Site URL: ${siteURL}  \nEnd-to-end tests have been failed.  \nTake a look on the report here: ", status: 'FAILED')
     // }
   }
 }
