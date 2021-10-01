@@ -1,7 +1,7 @@
 Feature: Before after
 
   Scenario Outline: TC_BeforeAfter​_01: Visit Internal page, click Image: Check show hide popup
-    Given Visit "https://bosley-develop.box.carbon8test.com/internal/" #Common
+    Given Visit "/internal/" #Common
     Given I scroll to Before-After​ section
     When I click image at "<image>" place
     Then I must see opened popup
@@ -16,7 +16,7 @@ Feature: Before after
       | 2     | outside                   |
 
   Scenario: TC_BeforeAfter​_02: Visit Internal page, click Image next/prev: hiển thị Big image và content tương ứng
-    Given Visit "https://bosley-develop.box.carbon8test.com/internal/" #Common
+    Given Visit "/internal/" #Common
     Given I scroll to Before-After​ section
     When I click image at "1" place
     Then I must see opened popup

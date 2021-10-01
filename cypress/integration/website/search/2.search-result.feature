@@ -1,7 +1,7 @@
 Feature: Search Result Page
 
 	Background:
-		Given Visit "https://bosley-develop.box.carbon8test.com/search-result/" #Common
+		Given Visit "/search-result/" #Common
 
 	# Scenario Outline: TC_SearchResult_01: Visit search result page, input keyword & press enter but don't select options => show error message
 	# 	When Input "<keyword>" on search box

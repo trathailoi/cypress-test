@@ -1,7 +1,7 @@
 Feature: Steps​
 
   Background:
-    Given Visit "https://bosley-develop.box.carbon8test.com/internal/" #Common
+    Given Visit "/internal/" #Common
     Given I scroll to Step​ section
     Then I must see slider
     Then I can see slide at "1" place is active

@@ -1,7 +1,7 @@
 Feature: FAQ Feature - Tab
 
   Scenario: TC_FAQ​_01: Visit FAQ page, click switch Tab: hiển thị list QA tương ứng với từng Tab
-    Given Visit "https://bosley-develop.box.carbon8test.com/why-bosley/faq/" #Common
+    Given Visit "/why-bosley/faq/" #Common
     Given I scroll to Tab module section
     Given Fake admin ajax api get "hair-transplant" tab data
     When I click tab "hair-transplant"
@@ -33,7 +33,7 @@ Feature: FAQ Feature - Tab
     And I can see tab "low-level-laser-therapy" content
 
   Scenario Outline: TC_FAQ​_02: Visit FAQ page, click expand/colapse QA Tab: hiển thị hoặc ẩn câu trả lời
-    Given Visit "https://bosley-develop.box.carbon8test.com/why-bosley/faq/" #Common
+    Given Visit "/why-bosley/faq/" #Common
     Given I scroll to Tab module section
     Given Fake admin ajax api get "hair-transplant" tab data
     When I click tab "hair-transplant"

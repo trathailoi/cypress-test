@@ -1,7 +1,7 @@
 Feature: FAQ-module
 
   Scenario Outline: TC_FAQ_01: Visit Hair-transplant, FAQ module: check expanded & collapsed
-    Given Visit "https://bosley-develop.box.carbon8test.com/hair-transplant/" #Common
+    Given Visit "/hair-transplant/" #Common
     Given I scroll to FAQ module​    
     When I click to "<showSelector>" at "1" FAQ
     Then FAQ content at "1" place must be expanded

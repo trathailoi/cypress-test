@@ -1,7 +1,7 @@
 Feature: Location reviews
 
   Scenario: TC_Location_Reviews_01: Load more
-    Given Visit "https://bosley-develop.box.carbon8test.com/locations/beverly-hills/" #Common
+    Given Visit "/locations/beverly-hills/" #Common
     Given I scroll to Review Section
     Then I must see list review have "10" items
     Given Fake api load more with show load more is "true"

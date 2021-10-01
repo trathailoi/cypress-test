@@ -1,7 +1,7 @@
 Feature: List success stories
 
   Background:
-    Given Visit "https://bosley-develop.box.carbon8test.com/results/success-stories/" #Common
+    Given Visit "/results/success-stories/" #Common
     Given I scroll to List success stories
 
   Scenario: TC_SuccessStories​_01: Visit success stories page, click Watch Story button và popup slider Next: hiển thị video tương ứng với từng slider and load more

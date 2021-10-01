@@ -1,7 +1,7 @@
 Feature: Success Stories
 
   Background: 
-    Given Visit "https://bosley-develop.box.carbon8test.com/results/success-stories/" #Common
+    Given Visit "/results/success-stories/" #Common
     Given I scroll to featured stories section​​
     Then I must see slider
     Then I can see slide at "1" place is active

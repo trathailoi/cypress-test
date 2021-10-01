@@ -1,7 +1,7 @@
 Feature: Banner with info kit form
 
   Scenario: TC_BannerInternal_01: Visit Internal page, input Info Kit form: Submit form "Info Kit and Gift Certificate" thành công
-    Given Visit "https://bosley-develop.box.carbon8test.com/internal/" #Common
+    Given Visit "/internal/" #Common
     Given Fake admin ajax api
     When I input info to form
     Then I click Get My Free Info Kit button​
@@ -10,7 +10,7 @@ Feature: Banner with info kit form
     Then I must be redirected to scheduler with params kit form thank you
     
   Scenario Outline: TC_BannerInternal_02: Visit Internal page, không input/invalid input Info Kit form: Submit form "Info Kit and Gift Certificate" không thành công
-    Given Visit "https://bosley-develop.box.carbon8test.com/internal/" #Common
+    Given Visit "/internal/" #Common
     When I input info to form with name is "<firstName>" "<lastName>" "<email>" "<phone>" "<street>" "<zipcode>" "<gender>"
     Then I click Get My Free Info Kit button​
     Then I can see red error in form

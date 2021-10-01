@@ -1,7 +1,7 @@
 Feature: Reviews
 
   Scenario Outline: TC_Reviews​_01: Visit Customer Reviews page, select Filter option: hiển thị content list review tương ứng
-    Given Visit "https://bosley-develop.box.carbon8test.com/why-bosley/bosley-reviews/" #Common
+    Given Visit "/why-bosley/bosley-reviews/" #Common
     Given Fake admin ajax api get "<filter>"
     When I change filter to "<filter>" value
     Then I can see loading icon
@@ -15,7 +15,7 @@ Feature: Reviews
       | Washington DC |
 
   Scenario: TC_Reviews​_01: Visit Customer Reviews page, select Show more: hiển thị thêm 10 items tiếp theo 
-    Given Visit "https://bosley-develop.box.carbon8test.com/why-bosley/bosley-reviews/" #Common
+    Given Visit "/why-bosley/bosley-reviews/" #Common
     # fetch lại data all
     Given Fake admin ajax api get "All"
     When I change filter to "All" value

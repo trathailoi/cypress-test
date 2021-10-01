@@ -1,7 +1,7 @@
 Feature: Filter
 
   Background:
-    Given Visit "https://bosley-develop.box.carbon8test.com/results/before-after-gallery-men" #Common
+    Given Visit "/results/before-after-gallery-men" #Common
     And I must see list Before After Gallery have "82" items
 
   Scenario Outline: TC_BeforeAfterFilter_01: filter Before After Gallery by PROCEDURE and PRODUCT

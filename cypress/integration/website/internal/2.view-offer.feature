@@ -1,7 +1,7 @@
 Feature: View Offer
 
   Scenario Outline: TC_ViewOffer_01: Visit Internal page, click button View All Offers: open popup​ and close
-    Given Visit "https://bosley-develop.box.carbon8test.com/internal/" #Common
+    Given Visit "/internal/" #Common
     When I click View All Offer​s
     Then I must see popup expand at right-side
     Then I can scroll content​ at popup expand

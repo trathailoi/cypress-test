@@ -2,7 +2,7 @@ Feature: Page Location - Gallery section
   Test view Gallery Slider by click Next/Previous icon
 
   Background: 
-    Given Visit "https://bosley-develop.box.carbon8test.com/locations" #Common
+    Given Visit "/locations" #Common
     And I scroll to gallery section​​
     Then I must see slider
     And I can see slide at "1" place is active

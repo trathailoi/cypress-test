@@ -7,13 +7,13 @@ Feature: Location Page - Share Api
     And I must see the distance in miles and sort from nearest to farthest
 
   Scenario: TC_Location_02: Visit Location Page: Block alert popup and find location (not fake)
-    Given Visit "https://bosley-develop.box.carbon8test.com/locations" #Common
+    Given Visit "/locations" #Common
     Given I scroll to map section
 		Then I must see list location sort alphabet by name
     And I can't see the distance in miles
 
 	Scenario: TC_Location_03: Visit Location Page: Click 1 location ở list và zoom marker hiển thị ở map
-    Given Visit "https://bosley-develop.box.carbon8test.com/locations" #Common
+    Given Visit "/locations" #Common
     Given I scroll to map section
     Given Wait for map loaded
 		When I click location at "1" place in the list
@@ -38,7 +38,7 @@ Feature: Location Page - Share Api
     And I must see location "1" is zoom on a map
 
 	Scenario: TC_Location_04: Visit Location Page: Click zoom marker hiển thị ở map và active location tương ứng
-    Given Visit "https://bosley-develop.box.carbon8test.com/locations" #Common
+    Given Visit "/locations" #Common
     Given I scroll to map section
     Given Wait for map loaded
 		When I click marker at place "1" on map
@@ -63,7 +63,7 @@ Feature: Location Page - Share Api
     And I must see this location is active on the list
 
 	# Scenario: TC_Location_05: Visit Location Page: input address để search location
-  #   Given Visit "https://bosley-develop.box.carbon8test.com/locations" #Common
+  #   Given Visit "/locations" #Common
 	# 	When I input address on search box
   #   Then I must see the suggest list of Google
 	# 	When I select 1 address on the suggest list
