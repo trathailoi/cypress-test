@@ -40,8 +40,6 @@ Then(`I must see list location sort alphabet by name`, () => {
       locationCityStates.push(locationCityState)
     }
     const sortedLocationCityStates = JSON.parse(JSON.stringify(locationCityStates)).sort((a, b) => a < b ? -1 : 1)
-    console.log('sortedLocationCityStates', )
-    console.log('locationCityStates', )
     expect(sortedLocationCityStates).to.deep.equal(locationCityStates)
   })
 })
@@ -61,14 +59,65 @@ And(`I can't see the distance in miles`, () => {
   })
 })
 
-When(`I click 1 location on the list`, () => {
-  cy.get('.list-location .list-item-location .box-find-location')
-    .first()
-    .click()
+const clickLocationItem = (id, window) => {
+  if (window) {
+    window.$(`.list-location .list-item-location .box-find-location[data-id=${id}]`).click()
+  } else {
+    cy.get(`.list-location .list-item-location .box-find-location[data-id=${id}]`)
+      .click()
+  }
+}
+
+
+Given('Wait for map loaded', () => {
+  cy.wait(3000)
+  cy.window().then(window => {
+    cy.wrap(window).as('window')
+  })
 })
 
-And(`I must see this location is zoom on a map`, () => {
+When(`I click location at {string} place in the list`, (place) => {
+  cy.get(`.list-location .list-item-location .box-find-location:nth-child(${place})`)
+    .first()
+    .invoke('attr', 'data-id')
+    .then(dataId => {
+      clickLocationItem(dataId)
+      cy.wait(1000)
+    })
 })
+
+const getCenterCoordinate = (win) => {
+  const mapCenter = win._cyCurrentGoogleMap.getCenter()
+  return {
+    lat: Number(mapCenter.lat()).toFixed(5),
+    lng: Number(mapCenter.lng()).toFixed(5)
+  }
+}
+
+And(`I must see location {string} is zoom on a map`, (place) => {
+  cy.get(`.list-location .list-item-location .box-find-location:nth-child(${place})`)
+    .first()
+    .invoke('attr', 'data-id')
+    .then(dataId => {
+      cy.window().then(win => {
+        const centerCoordinate = getCenterCoordinate(win)
+        const loc = (win._cyCurrentLocations || []).find(l => String(l.data?.id) === String(dataId))
+        expect(Number(loc.coordinate.lat).toFixed(5)).to.equal(centerCoordinate.lat)
+        expect(Number(loc.coordinate.lng).toFixed(5)).to.equal(centerCoordinate.lng)
+      })
+    })
+})
+
+// Given('I click each location and I see each location in center of map', () => {
+//   cy.get('@window').then(win => {
+//     for (const loc of (win._cyCurrentLocations || [])) {
+//       clickLocationItem(loc.data.id, win)
+//       const centerCoordinate = getCenterCoordinate(win)
+//       expect(Number(loc.coordinate.lat).toFixed(5)).to.equal(centerCoordinate.lat)
+//       expect(Number(loc.coordinate.lng).toFixed(5)).to.equal(centerCoordinate.lng)
+//     }
+//   })
+// })
 
 When(`I click 1 location on a map`, () => {
 })
