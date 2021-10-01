@@ -40,7 +40,7 @@ pipeline {
           // sh -C \"$cmdString\" // -- --parallel --env coverage=true --config video=true
         }
         echo "$cmdString"
-        sh "$cmdString"
+        // sh "$cmdString"
       }
     }
         // stage('Generate Reports') {
