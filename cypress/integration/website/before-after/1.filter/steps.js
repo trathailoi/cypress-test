@@ -82,7 +82,7 @@ And('I do not see filter option {string} show in headline', (option) => {
 })
 
 Then('All option is not checked', () => {
-  cy.window(win => {
+  cy.window().then(win => {
     const $els = win.$('.list-filter .col-left input')
     let isAllUnchecked = true
     for (const el of $els) {
