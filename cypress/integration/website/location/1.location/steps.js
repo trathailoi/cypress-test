@@ -1,3 +1,4 @@
+import { expect } from 'chai';
 import { fakeLocation } from '../../../common/scripts'
 
 const LOCATION_LENGTH = 73
@@ -132,25 +133,45 @@ And(`I must see this location is active on the list`, () => {
   })
 })
 
-When(`I input address on search box`, () => {
+When(`I input {string} on search box`, (keyword) => {
   cy.get('.search-location #location')
-    .type('Vietnam')
+    .type(keyword)
 })
 
-Then(`I must see the suggest list of Google`, () => {
-  const suggestTexts = [
-    "Vietnam Town Rd, San Jose, CA, USA",
-    "Vietnamská, Bratislava, Slovakia",
-    "Vietnam Supermarket, London, UK",
-    "Vietnam Tengah, Vietnam"
+const mapSearchResults = {
+  'Vietnam': [
+    'Vietnam',
+    'Vietnam Town RdSan Jose, CA, USA',
+    'VietnamskáBratislava, Slovakia',
+    'Vietnam SupermarketLondon, UK',
+    'Vietnam TengahVietnam'
   ]
+}
+
+Then(`I must see the suggest list of search {string} by Google`, (keyword) => {
+  cy.wait(3000)
+  const suggestTexts = mapSearchResults[keyword] || []
   for (const suggestText of suggestTexts) {
-    cy.contains(suggestText)
+    cy.get('.pac-item')
+      .contains(suggestText)
   }
 })
 
 When(`I select 1 address on the suggest list`, () => {
+  cy.get('@window').then(win => {
+    cy.wrap(getCenterCoordinate(win)).as('centerCoordinate')
+    cy.get('.pac-item:nth-child(2)')
+      .click()
+    cy.wait(1000)
+  })
 })
 
 And(`I must see this address is zoom on a map`, () => {
+  cy.get('@centerCoordinate').then(oldCenterCoordinate => {
+    cy.get('@window').then(win => {
+      const currentCenterCoordinate = getCenterCoordinate(win)
+      expect(currentCenterCoordinate.lat).to.not.equal(oldCenterCoordinate.lat)
+      expect(currentCenterCoordinate.lng).to.not.equal(oldCenterCoordinate.lng)
+    })
+  })
 })

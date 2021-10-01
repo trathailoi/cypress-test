@@ -62,11 +62,12 @@ Feature: Location Page - Share Api
     When I click marker at place "1" on map
     And I must see this location is active on the list
 
-	# Scenario: TC_Location_05: Visit Location Page: input address để search location
-  #   Given Visit "/locations" #Common
-  #   Given I scroll to map section
-	# 	When I input address on search box
-  #   # Then I must see the suggest list of Google
-	# 	# When I select 1 address on the suggest list
-	# 	# Then I must see the distance in miles and sort from nearest to farthest
-	# 	# And I must see this address is zoom on a map
+	Scenario: TC_Location_05: Visit Location Page: input address để search location
+    Given Visit "/locations" #Common
+    Given I scroll to map section
+    Given Wait for map loaded
+		When I input "Vietnam" on search box
+    Then I must see the suggest list of search "Vietnam" by Google
+		When I select 1 address on the suggest list
+		Then I must see the distance in miles and sort from nearest to farthest
+		And I must see this address is zoom on a map
