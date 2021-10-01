@@ -7,7 +7,7 @@ Given('Visit Location Page and fake location', () => {
 })
 
 Given('I scroll to map section', () => {
-  cy.scrollTo(400)
+  cy.scrollTo(0, 400)
 })
 
 Then(`I must see my location refill on searchbox`, () => {
