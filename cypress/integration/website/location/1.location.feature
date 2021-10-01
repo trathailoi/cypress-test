@@ -64,8 +64,9 @@ Feature: Location Page - Share Api
 
 	# Scenario: TC_Location_05: Visit Location Page: input address để search location
   #   Given Visit "/locations" #Common
+  #   Given I scroll to map section
 	# 	When I input address on search box
-  #   Then I must see the suggest list of Google
-	# 	When I select 1 address on the suggest list
-	# 	Then I must see the distance in miles and sort from nearest to farthest
-	# 	And I must see this address is zoom on a map
+  #   # Then I must see the suggest list of Google
+	# 	# When I select 1 address on the suggest list
+	# 	# Then I must see the distance in miles and sort from nearest to farthest
+	# 	# And I must see this address is zoom on a map

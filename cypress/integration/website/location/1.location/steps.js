@@ -90,11 +90,19 @@ When(`I click location at {string} place in the list`, (place) => {
     })
 })
 
+// https://stackoverflow.com/questions/54690118/why-is-google-maps-getcenter-returning-invalid-coordinates/54711077
+const fixCoordinates = (coordinate) => {
+  let fixedCoordinate = coordinate
+  while (fixedCoordinate > 180) fixedCoordinate -= 360
+  while (fixedCoordinate < -180) fixedCoordinate += 360
+  return fixedCoordinate
+};
+
 const getCenterCoordinate = (win) => {
   const mapCenter = win._cyCurrentGoogleMap.getCenter()
   return {
-    lat: Number(mapCenter.lat()).toFixed(5),
-    lng: Number(mapCenter.lng()).toFixed(5)
+    lat: fixCoordinates(Number(mapCenter.lat())).toFixed(5),
+    lng: fixCoordinates(Number(mapCenter.lng())).toFixed(5)
   }
 }
 
