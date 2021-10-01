@@ -90,7 +90,7 @@ Then('I must see section Schedule​', () =>{
     cy.get('.mod-half-text-illustration a')
       .contains('Schedule a Free Consultation')
       .invoke('attr', 'href')
-      .should('equal', 'https://bosley-develop.box.carbon8test.com/scheduler/')
+      .should('equal', `${Cypress.env('BASE_URL')}/scheduler/`)
 });
 
 
@@ -108,7 +108,7 @@ Then('I can see red error in dynamic form', () =>{
 });
 
 Given('Fake admin ajax api false', () => {
-  const url = `https://bosley-develop.box.carbon8test.com/wp-admin/admin-ajax.php*`
+  const url = `${Cypress.env('BASE_URL')}/wp-admin/admin-ajax.php*`
   cy.intercept('POST', url, (req) => {
     req.reply({
       success: false,

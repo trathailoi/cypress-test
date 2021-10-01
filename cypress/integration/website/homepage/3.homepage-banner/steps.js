@@ -33,20 +33,20 @@ When('I click dot at {string} place of slider', (place) =>{
 
 const slideExpects = [
   {
-    backgroundImage: 'https://bosley-develop.box.carbon8test.com/wp-content/uploads/2021/09/header-nick-home.jpeg',
-    iconImage: 'https://bosley-develop.box.carbon8test.com/wp-content/uploads/2021/08/stamp-300k-restoration.svg',
+    backgroundImage: `${Cypress.env('BASE_URL')}/wp-content/uploads/2021/09/header-nick-home.jpeg`,
+    iconImage: `${Cypress.env('BASE_URL')}/wp-content/uploads/2021/08/stamp-300k-restoration.svg`,
     beforeAfterAlt: 'before-after image',
-    beforeAfter: 'https://bosley-develop.box.carbon8test.com/wp-content/uploads/2021/08/before-after-image.jpeg',
+    beforeAfter: `${Cypress.env('BASE_URL')}/wp-content/uploads/2021/08/before-after-image.jpeg`,
     texts: [
       'Nick H.',
       'Actual Bosley Patient. Individual results may vary.'
     ]
   },
   {
-    backgroundImage: 'https://bosley-develop.box.carbon8test.com/wp-content/uploads/2021/09/Blair-Header-Image.jpg',
-    iconImage: 'https://bosley-develop.box.carbon8test.com/wp-content/uploads/2021/08/stamp-bosley-guarantee_update.svg',
+    backgroundImage: `${Cypress.env('BASE_URL')}/wp-content/uploads/2021/09/Blair-Header-Image.jpg`,
+    iconImage: `${Cypress.env('BASE_URL')}/wp-content/uploads/2021/08/stamp-bosley-guarantee_update.svg`,
     beforeAfterAlt: 'blair-before-after',
-    beforeAfter: 'https://bosley-develop.box.carbon8test.com/wp-content/uploads/2021/09/blair-before-after.jpg',
+    beforeAfter: `${Cypress.env('BASE_URL')}/wp-content/uploads/2021/09/blair-before-after.jpg`,
     texts: [
       'Blair',
       'Actual Bosley Patient. Individual results may vary.'

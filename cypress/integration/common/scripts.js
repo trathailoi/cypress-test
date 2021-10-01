@@ -1,4 +1,4 @@
-const adminAjaxUrl = 'https://bosley-develop.box.carbon8test.com/wp-admin/admin-ajax.php'
+const adminAjaxUrl = `${Cypress.env('BASE_URL')}/wp-admin/admin-ajax.php`
 
 const stubAdminAjaxApi = (dataApi = {}, options = {}) => {
   const { method = 'POST', url = adminAjaxUrl } = options

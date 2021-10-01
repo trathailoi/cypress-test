@@ -3,5 +3,8 @@
   "testFiles": "*/**/*.feature",
   "viewportWidth": 1366,
   "viewportHeight": 768,
-  "chromeWebSecurity": false
+  "chromeWebSecurity": false,
+  "env": {
+    "BASE_URL": "https://bosley-develop.box.carbon8test.com"
+  }
 }

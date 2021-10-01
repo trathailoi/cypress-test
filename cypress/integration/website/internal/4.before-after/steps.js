@@ -45,14 +45,14 @@ const popupSlideOptions = {
 
 const popupSlideExpects = [
   {
-    imageLink: 'https://bosley-develop.box.carbon8test.com/wp-content/uploads/2021/09/hair-transplant-before-and-after-4.jpg',
+    imageLink: `${Cypress.env('BASE_URL')}/wp-content/uploads/2021/09/hair-transplant-before-and-after-4.jpg`,
     texts: [
       'Type',
       'FUE'
     ]
   },
   {
-    imageLink: 'https://bosley-develop.box.carbon8test.com/wp-content/uploads/2021/09/hair-transplant-before-and-after-4-1.jpg',
+    imageLink: `${Cypress.env('BASE_URL')}/wp-content/uploads/2021/09/hair-transplant-before-and-after-4-1.jpg`,
     texts: [
       'Type',
       'FUE'

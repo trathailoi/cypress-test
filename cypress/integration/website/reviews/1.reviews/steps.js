@@ -3,7 +3,7 @@ import { expect } from 'chai'
 import { fakeData, mapFilter, expectData } from './spec-data.json'
 
 Given('Fake admin ajax api get {string}', (filter) => {
-  const url = `https://bosley-develop.box.carbon8test.com/wp-admin/admin-ajax.php*`
+  const url = `${Cypress.env('BASE_URL')}/wp-admin/admin-ajax.php*`
   cy.intercept('GET', url, (req) => {
     req.reply(fakeData[mapFilter[filter]])
     req.alias = `AdminAjaxApi`

@@ -15,7 +15,7 @@ const resShowMore = {
 Given('Fake admin ajax api', () => {
   stubAdminAjaxApi([resShowMore], {
     method: 'GET',
-    url: "https://bosley-develop.box.carbon8test.com/wp-admin/admin-ajax.php?action=get_more_stories&curPage=1&reqPage=&indexItem=7"
+    url: `${Cypress.env('BASE_URL')}/wp-admin/admin-ajax.php?action=get_more_stories&curPage=1&reqPage=&indexItem=7`
   })
 })
 
@@ -25,87 +25,87 @@ Given('I scroll to List success stories', () => {
 
 const successStories = [
   {
-    backgroundImage: `"https://bosley-develop.box.carbon8test.com/wp-content/uploads/2021/09/Luke-SuccessStory-Image.jpg"`,
+    backgroundImage: `"${Cypress.env('BASE_URL')}/wp-content/uploads/2021/09/Luke-SuccessStory-Image.jpg"`,
     content: `I’m a bartender and my hair really matters to me. Having my confidence means having my hair, and without that, I wouldn’t be able to do my job.`,
     buttonText: `Watch Luke's Story`
   },
   {
-    backgroundImage: `"https://bosley-develop.box.carbon8test.com/wp-content/uploads/2021/09/Jayne-SuccessStory-Image.jpg"`,
+    backgroundImage: `"${Cypress.env('BASE_URL')}/wp-content/uploads/2021/09/Jayne-SuccessStory-Image.jpg"`,
     content: `It was really difficult for me to get up in the morning, take a shower and take a look at myself in the mirror. It made me feel less confident....`,
     buttonText: `Watch Jayne's Story`
   },
   {
-    backgroundImage: `"https://bosley-develop.box.carbon8test.com/wp-content/uploads/2021/09/Torrance-ss.jpg"`,
+    backgroundImage: `"${Cypress.env('BASE_URL')}/wp-content/uploads/2021/09/Torrance-ss.jpg"`,
     content: `Bosley was the best choice I ever made for myself.`,
     buttonText: `Watch Torrance's Story`
   },
   {
-    backgroundImage: `"https://bosley-develop.box.carbon8test.com/wp-content/uploads/2021/09/DeanB-SuccessStory-Image.jpg"`,
+    backgroundImage: `"${Cypress.env('BASE_URL')}/wp-content/uploads/2021/09/DeanB-SuccessStory-Image.jpg"`,
     content: `In my career, everything is based on appearances. After my hair restoration I felt better, more at ease than any time before.`,
     buttonText: `Watch Dean's Story`
   },
   {
-    backgroundImage: `"https://bosley-develop.box.carbon8test.com/wp-content/uploads/2021/09/StevenA-SuccessStory-Image.jpg"`,
+    backgroundImage: `"${Cypress.env('BASE_URL')}/wp-content/uploads/2021/09/StevenA-SuccessStory-Image.jpg"`,
     content: `Bosley is great. I look the way I'm supposed to look. I feel the way I'm supposed to feel about myself.`,
     buttonText: `Watch Steven's Story`
   },
   {
-    backgroundImage: `"https://bosley-develop.box.carbon8test.com/wp-content/uploads/2021/09/JasonW-SuccessStory-Image.jpg"`,
+    backgroundImage: `"${Cypress.env('BASE_URL')}/wp-content/uploads/2021/09/JasonW-SuccessStory-Image.jpg"`,
     content: `I don't mind taking photos anymore. In fact, I kind of like to take pictures now to be honest.`,
     buttonText: `Watch Jason's Story`
   },
   {
-    backgroundImage: `"https://bosley-develop.box.carbon8test.com/wp-content/uploads/2021/09/Luke-SuccessStory-Image.jpg"`,
+    backgroundImage: `"${Cypress.env('BASE_URL')}/wp-content/uploads/2021/09/Luke-SuccessStory-Image.jpg"`,
     content: `I would say that Bosley has the most advanced technology on the market right now.`,
     buttonText: `Watch Luke's Story`
   },
   {
-    backgroundImage: `"https://bosley-develop.box.carbon8test.com/wp-content/uploads/2021/09/MarcB-SuccessStory-Image.jpg"`,
+    backgroundImage: `"${Cypress.env('BASE_URL')}/wp-content/uploads/2021/09/MarcB-SuccessStory-Image.jpg"`,
     content: `When I first saw that hair growing in, I was like wow, this really works.`,
     buttonText: `Watch Marc's Story`
   },
   {
-    backgroundImage: `"https://bosley-develop.box.carbon8test.com/wp-content/uploads/2021/09/brenda.jpg"`,
+    backgroundImage: `"${Cypress.env('BASE_URL')}/wp-content/uploads/2021/09/brenda.jpg"`,
     content: `It was painless, it was professional. I would definitely recommend this procedure to other people who have the same situation that I do.`,
     buttonText: `Watch Brenda's Story`
   },
   {
-    backgroundImage: `"https://bosley-develop.box.carbon8test.com/wp-content/uploads/2021/09/Default_image.png"`,
+    backgroundImage: `"${Cypress.env('BASE_URL')}/wp-content/uploads/2021/09/Default_image.png"`,
     content: `I chose Bosley because of the reviews I found online and the reputation that they have.`,
     buttonText: `Watch Joe's Story`
   },
   {
-    backgroundImage: `"https://bosley-develop.box.carbon8test.com/wp-content/uploads/2021/09/Ebony.jpg"`,
+    backgroundImage: `"${Cypress.env('BASE_URL')}/wp-content/uploads/2021/09/Ebony.jpg"`,
     content: `I’d recommend Bosley SMP to any man or woman who’s ready to make a change to their life and find their confidence again. I would suggest Bosley; this is the...`,
     buttonText: `Watch Ebony's Story`
   },
   {
-    backgroundImage: `"https://bosley-develop.box.carbon8test.com/wp-content/uploads/2021/09/Jeff-SuccessStory-Image.jpg"`,
+    backgroundImage: `"${Cypress.env('BASE_URL')}/wp-content/uploads/2021/09/Jeff-SuccessStory-Image.jpg"`,
     content: `I have never experienced such wonderful customer service. They were all focused on my comfort throughout the procedure.`,
     buttonText: `Watch Jeff's Story`
   },
   {
-    backgroundImage: `"https://bosley-develop.box.carbon8test.com/wp-content/uploads/2021/09/joshuaA-SuccessStory-Image.jpg"`,
+    backgroundImage: `"${Cypress.env('BASE_URL')}/wp-content/uploads/2021/09/joshuaA-SuccessStory-Image.jpg"`,
     content: `Bosley was the best investment that I ever made. It gave me my confidence back. When I go out, I don’t wear a baseball hat. I don’t do any of...`,
     buttonText: `Watch Joshua's Story`
   },
   {
-    backgroundImage: `"https://bosley-develop.box.carbon8test.com/wp-content/uploads/2021/09/Blair-SuccessStory-Image.jpg"`,
+    backgroundImage: `"${Cypress.env('BASE_URL')}/wp-content/uploads/2021/09/Blair-SuccessStory-Image.jpg"`,
     content: `When I first thought about hair restoration, I thought, ‘is it going to fall out if I do something active—if I go on roller coasters, or if I am in...`,
     buttonText: `Watch Blair's Story`
   },
   {
-    backgroundImage: `"https://bosley-develop.box.carbon8test.com/wp-content/uploads/2021/09/Wayne-SuccessStory-Image.jpg"`,
+    backgroundImage: `"${Cypress.env('BASE_URL')}/wp-content/uploads/2021/09/Wayne-SuccessStory-Image.jpg"`,
     content: `Going to Bosley was the best decision I ever made. It was so simple, I was at work the next day!`,
     buttonText: `Watch Wayne's Story`
   },
   {
-    backgroundImage: `"https://bosley-develop.box.carbon8test.com/wp-content/uploads/2021/09/Edgar-SuccessStory-Image.jpg"`,
+    backgroundImage: `"${Cypress.env('BASE_URL')}/wp-content/uploads/2021/09/Edgar-SuccessStory-Image.jpg"`,
     content: `I’m so thankful that I had the FUE procedure at Bosley. I wanted to go with a company that had the latest and most advanced technology, and that decision ultimately...`,
     buttonText: `Watch Edgar's Story`
   },
   {
-    backgroundImage: `"https://bosley-develop.box.carbon8test.com/wp-content/uploads/2021/09/johnb-SuccessStory-Image.jpg"`,
+    backgroundImage: `"${Cypress.env('BASE_URL')}/wp-content/uploads/2021/09/johnb-SuccessStory-Image.jpg"`,
     content: `I’m extremely happy with the Bosley FUE procedure. It allowed me to go in that morning, have the procedure, and go home that evening. I went out that evening with...`,
     buttonText: `Watch John's Story`
   },
@@ -157,7 +157,7 @@ When('I click show more button', () => {
 
 Then('paged-start query params has been added to url', () => {
   cy.url()
-    .should('equal', `https://bosley-develop.box.carbon8test.com/results/success-stories/?paged-start=2`)
+    .should('equal', `${Cypress.env('BASE_URL')}/results/success-stories/?paged-start=2`)
 })
 
 Then('I do not see button show more', () => {

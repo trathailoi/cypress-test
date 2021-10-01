@@ -11,9 +11,9 @@ const slideOptions = {
 
 const slideExpects = [
   {
-    backgroundImage: 'https://bosley-develop.box.carbon8test.com/wp-content/uploads/2021/09/Troy-SuccessStory-Image.jpg',
+    backgroundImage: `${Cypress.env('BASE_URL')}/wp-content/uploads/2021/09/Troy-SuccessStory-Image.jpg`,
     beforeAfterAlt: 'troy-before(1)',
-    beforeAfter: 'https://bosley-develop.box.carbon8test.com/wp-content/uploads/2021/09/troy-before1.jpg',
+    beforeAfter: `${Cypress.env('BASE_URL')}/wp-content/uploads/2021/09/troy-before1.jpg`,
     texts: [
       'Troy P.',
       'TBD',
@@ -22,9 +22,9 @@ const slideExpects = [
     ]
   },
   {
-    backgroundImage: 'https://bosley-develop.box.carbon8test.com/wp-content/uploads/2021/09/Ron-SuccessStory-Image.jpg',
+    backgroundImage: `${Cypress.env('BASE_URL')}/wp-content/uploads/2021/09/Ron-SuccessStory-Image.jpg`,
     beforeAfterAlt: 'ron-before-(1)',
-    beforeAfter: 'https://bosley-develop.box.carbon8test.com/wp-content/uploads/2021/09/ron-before-1.jpg',
+    beforeAfter: `${Cypress.env('BASE_URL')}/wp-content/uploads/2021/09/ron-before-1.jpg`,
     texts: [
       'Ron C.',
       'TBD',
@@ -33,9 +33,9 @@ const slideExpects = [
     ]
   },
   {
-    backgroundImage: 'https://bosley-develop.box.carbon8test.com/wp-content/uploads/2021/09/NIckH-SuccessStory-Image.jpg',
+    backgroundImage: `${Cypress.env('BASE_URL')}/wp-content/uploads/2021/09/NIckH-SuccessStory-Image.jpg`,
     beforeAfterAlt: 'nick-before-text',
-    beforeAfter: 'https://bosley-develop.box.carbon8test.com/wp-content/uploads/2021/09/nick-before-text.jpg',
+    beforeAfter: `${Cypress.env('BASE_URL')}/wp-content/uploads/2021/09/nick-before-text.jpg`,
     texts: [
       'Nick H.',
       'TBD',
@@ -44,9 +44,9 @@ const slideExpects = [
     ]
   },
   {
-    backgroundImage: 'https://bosley-develop.box.carbon8test.com/wp-content/uploads/2021/09/Cayle-SuccessStory-Image.jpg',
+    backgroundImage: `${Cypress.env('BASE_URL')}/wp-content/uploads/2021/09/Cayle-SuccessStory-Image.jpg`,
     beforeAfterAlt: 'cayle-before',
-    beforeAfter: 'https://bosley-develop.box.carbon8test.com/wp-content/uploads/2021/09/cayle-before.jpg',
+    beforeAfter: `${Cypress.env('BASE_URL')}/wp-content/uploads/2021/09/cayle-before.jpg`,
     texts: [
       'Cayle D.',
       'TBD',

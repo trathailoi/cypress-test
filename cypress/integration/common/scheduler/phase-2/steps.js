@@ -56,7 +56,7 @@ When('I click schedule a free consultation #CommonPhase2', () => {
 
 Then('I have been redirect to scheduler page #CommonPhase2', () => {
   cy.url()
-    .should('equal', `https://bosley-develop.box.carbon8test.com/scheduler/`)
+    .should('equal', `${Cypress.env('BASE_URL')}/scheduler/`)
 })
 
 When('I click Previous button #CommonPhase2', () => {

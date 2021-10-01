@@ -6,7 +6,7 @@ Given('Fake admin ajax api', () => {
     {
       success: true,
       data: {
-        urlRedirect: 'https://bosley-develop.box.carbon8test.com/scheduler/?kitform_thank_you=1'
+        urlRedirect: `${Cypress.env('BASE_URL')}/scheduler/?kitform_thank_you=1`
       }
     }
   ]
@@ -74,7 +74,7 @@ Then('I see loading icon and button is disabled', () => {
 
 Then(`I must be redirected to scheduler with params kit form thank you`, () =>{
   cy.url()
-  .should('equal', `https://bosley-develop.box.carbon8test.com/scheduler/?kitform_thank_you=1`)
+  .should('equal', `${Cypress.env('BASE_URL')}/scheduler/?kitform_thank_you=1`)
 });
 
 Then('I can see red error in form', () =>{
@@ -92,7 +92,7 @@ Then('I can see red error in form', () =>{
 
 
 Given('Fake admin ajax api false', () => {
-  const url = `https://bosley-develop.box.carbon8test.com/wp-admin/admin-ajax.php*`
+  const url = `${Cypress.env('BASE_URL')}/wp-admin/admin-ajax.php*`
   cy.intercept('POST', url, (req) => {
     req.reply({
       success: false,

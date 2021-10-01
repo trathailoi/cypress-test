@@ -376,7 +376,7 @@ Then('I must see Banner and Disclaimer match with banner value in params', () =>
       'All information is subject to change without notice. Offers have no cash value and may not be redeemed for cash. Offers are not valid with any other offer, coupon or certificate. Offer not transferable. Void where prohibited. Offers are void if sold, exchanged, transferred or reproduced.',
       'Professional services provided by the affiliated physicians of the Bosley Medical Group (“Bosley physicians”). Bosley physicians are available only at Bosley Surgical Offices. Candidacy for hair restoration can only be determined by a Bosley physician upon examination, diagnosis and prescription of a treatment plan. Your Bosley physician will determine if you are a candidate for hair restoration and recommend the optimal number of grafts to achieve your individual hair restoration goals. A patient may require more than one procedure to achieve their desired results. Ask your Bosley physician during your free consultation about your individual case. Individual results may vary.'
     ],
-    bannerImageUrl: 'https://bosley-develop.box.carbon8test.com/wp-content/uploads/2021/08/nick-gray-banner-scheduler.jpg'
+    bannerImageUrl: `${Cypress.env('BASE_URL')}/wp-content/uploads/2021/08/nick-gray-banner-scheduler.jpg`
   })
 })
 

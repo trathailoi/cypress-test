@@ -15,7 +15,7 @@ const mapSelector = {
 
 const slideExpects = [
   {
-    backgroundImage: 'https://bosley-develop.box.carbon8test.com/wp-content/uploads/2021/09/hair_image.png',
+    backgroundImage: `${Cypress.env('BASE_URL')}/wp-content/uploads/2021/09/hair_image.png`,
     texts: [
       'Step 1:',
       'Preparing the Donor Area',
@@ -23,7 +23,7 @@ const slideExpects = [
     ]
   },
   {
-    backgroundImage: 'https://bosley-develop.box.carbon8test.com/wp-content/uploads/2021/09/hair_image.png',
+    backgroundImage: `${Cypress.env('BASE_URL')}/wp-content/uploads/2021/09/hair_image.png`,
     texts: [
       'Step 2:',
       'Preparing the Donor Area Preparing the Donor Area Preparing the Donor Area',
@@ -31,7 +31,7 @@ const slideExpects = [
     ]
   },
   {
-    backgroundImage: 'https://bosley-develop.box.carbon8test.com/wp-content/uploads/2021/09/hair_image.png',
+    backgroundImage: `${Cypress.env('BASE_URL')}/wp-content/uploads/2021/09/hair_image.png`,
     texts: [
       'Step 3:',
       'Preparing the Donor Area',
@@ -39,7 +39,7 @@ const slideExpects = [
     ]
   },
   {
-    backgroundImage: 'https://bosley-develop.box.carbon8test.com/wp-content/uploads/2021/09/hair_image.png',
+    backgroundImage: `${Cypress.env('BASE_URL')}/wp-content/uploads/2021/09/hair_image.png`,
     texts: [
       'Step 4:',
       'Preparing the Donor Area',

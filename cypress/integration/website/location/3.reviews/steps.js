@@ -10,7 +10,7 @@ Then('I must see list review have {string} items', (countItem) => {
 })
 
 Given('Fake api load more with show load more is {string}', (showMoreString) => {
-  const url = 'https://bosley-develop.box.carbon8test.com/wp-admin/admin-ajax.php*'
+  const url = `${Cypress.env('BASE_URL')}/wp-admin/admin-ajax.php*`
   cy.intercept('GET', url, (req) => {
     req.reply(showMoreString === 'true' ? fakeApiData.withLoadMore : fakeApiData.withOutLoadMore)
     req.alias = `loadMoreApi`

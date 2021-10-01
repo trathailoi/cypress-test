@@ -3,7 +3,7 @@ import { fakeLocation } from '../../../common/scripts'
 const LOCATION_LENGTH = 73
 
 Given('Visit Location Page and fake location', () => {
-  cy.visit('https://bosley-develop.box.carbon8test.com/locations', fakeLocation(48, 2)); // France
+  cy.visit(`${Cypress.env('BASE_URL')}/locations`, fakeLocation(48, 2)); // France
 })
 
 Given('I scroll to map section', () => {

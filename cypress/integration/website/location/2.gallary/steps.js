@@ -38,7 +38,7 @@ const checkSlideInfo = (place) => {
     .and('include', expectObj.backgroundImage)
   cy.get(`.mod-location-list .slick-active .image-locat-list a`)
     .invoke('attr', 'href')
-    .should('equal', expectObj.linkHref)
+    .should('include', expectObj.linkHref)
   cy.get('.mod-location-list .slick-active .text-white')
     .invoke('text')
     .then(text => {

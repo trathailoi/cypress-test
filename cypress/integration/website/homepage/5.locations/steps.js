@@ -53,5 +53,5 @@ Then('I click button Find Location​', () => {
 
 Then('I must redirect to location', () => {
   cy.url()
-    .should('equal', `https://bosley-develop.box.carbon8test.com/locations?location=92421`)
+    .should('equal', `${Cypress.env('BASE_URL')}/locations?location=92421`)
 });

@@ -82,7 +82,7 @@ const mapTab = {
 
 Given('Fake admin ajax api get {string} tab data', (tab) => {
   const tabObj = mapTab[tab]
-  const url = `https://bosley-develop.box.carbon8test.com/wp-admin/admin-ajax.php?action=get_faqs&cate=${tab}`
+  const url = `${Cypress.env('BASE_URL')}/wp-admin/admin-ajax.php?action=get_faqs&cate=${tab}`
   cy.intercept('GET', url, (req) => {
     req.reply(tabObj.fakeData)
     req.alias = `AdminAjaxApi`

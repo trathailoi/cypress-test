@@ -11,45 +11,45 @@ const slideOptions = {
 
 const slideExpects = [
   {
-    backgroundImage: 'https://bosley-develop.box.carbon8test.com/wp-content/uploads/2021/09/NIckH-SuccessStory-Image.jpg',
+    backgroundImage: `${Cypress.env('BASE_URL')}/wp-content/uploads/2021/09/NIckH-SuccessStory-Image.jpg`,
     beforeAfterAlt: 'nick-before-text',
-    beforeAfter: 'https://bosley-develop.box.carbon8test.com/wp-content/uploads/2021/09/nick-before-text.jpg',
+    beforeAfter: `${Cypress.env('BASE_URL')}/wp-content/uploads/2021/09/nick-before-text.jpg`,
     texts: [
       'Bosley fixes your hair loss, they have done it for years. Bosley gives you your hair back! My only regret, is that I wish I had done it sooner!',
       `Watch Nick's Story`
     ]
   },
   {
-    backgroundImage: 'https://bosley-develop.box.carbon8test.com/wp-content/uploads/2021/09/Ron-SuccessStory-Image.jpg',
+    backgroundImage: `${Cypress.env('BASE_URL')}/wp-content/uploads/2021/09/Ron-SuccessStory-Image.jpg`,
     beforeAfterAlt: 'ron-before-(1)',
-    beforeAfter: 'https://bosley-develop.box.carbon8test.com/wp-content/uploads/2021/09/ron-before-1.jpg',
+    beforeAfter: `${Cypress.env('BASE_URL')}/wp-content/uploads/2021/09/ron-before-1.jpg`,
     texts: [
       `I could not look at myself in the mirror and say, 'You're handsome.' My confidence level was at an all-time low. Bosley has changed by life tremendously.`,
       `Watch Ron's Story`
     ]
   },
   {
-    backgroundImage: 'https://bosley-develop.box.carbon8test.com/wp-content/uploads/2021/09/Jayne-SuccessStory-Image.jpg',
+    backgroundImage: `${Cypress.env('BASE_URL')}/wp-content/uploads/2021/09/Jayne-SuccessStory-Image.jpg`,
     beforeAfterAlt: 'jayne-beforejpg',
-    beforeAfter: 'https://bosley-develop.box.carbon8test.com/wp-content/uploads/2021/09/jayne-beforejpg.jpg',
+    beforeAfter: `${Cypress.env('BASE_URL')}/wp-content/uploads/2021/09/jayne-beforejpg.jpg`,
     texts: [
       'It was really difficult for me to get up in the morning, take a shower and take a look at myself in the mirror. It made me feel less confident. Thanks to Power Matrix PRP, I went from this to this, here today. Bosley has definitely given me my life back',
       `Watch Jayne's Story`
     ]
   },
   {
-    backgroundImage: 'https://bosley-develop.box.carbon8test.com/wp-content/uploads/2021/09/Troy-SuccessStory-Image.jpg',
+    backgroundImage: `${Cypress.env('BASE_URL')}/wp-content/uploads/2021/09/Troy-SuccessStory-Image.jpg`,
     beforeAfterAlt: 'troy-before(1)',
-    beforeAfter: 'https://bosley-develop.box.carbon8test.com/wp-content/uploads/2021/09/troy-before1.jpg',
+    beforeAfter: `${Cypress.env('BASE_URL')}/wp-content/uploads/2021/09/troy-before1.jpg`,
     texts: [
       `If someone was telling me that they were thinking about going to Bosley, I would tell them to stop thinking. Just do it. I was in your shoes and you don't need to think anymore. Just go`,
       `Watch Troy's Story`
     ]
   },
   {
-    backgroundImage: 'https://bosley-develop.box.carbon8test.com/wp-content/uploads/2021/09/Luke-SuccessStory-Image.jpg',
+    backgroundImage: `${Cypress.env('BASE_URL')}/wp-content/uploads/2021/09/Luke-SuccessStory-Image.jpg`,
     beforeAfterAlt: 'luke-before-(2)',
-    beforeAfter: 'https://bosley-develop.box.carbon8test.com/wp-content/uploads/2021/09/luke-before-2.jpg',
+    beforeAfter: `${Cypress.env('BASE_URL')}/wp-content/uploads/2021/09/luke-before-2.jpg`,
     texts: [
       'I would say that Bosley has the most advanced technology on the market right now.',
       `Watch Luke's Story`
