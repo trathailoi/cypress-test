@@ -255,7 +255,7 @@ Then('After call Api {string} times, I must see book appointment of {string} tha
     cy.contains('Your Consultation is Scheduled')
     cy.contains('Thank you for scheduling your free consultation with Bosley. We look forward to meeting with you to discuss your hair restoration goals.')
 
-    cy.contains('In the meantime, be on the lookout for a confirmation email and text, and feel free to call us if you have any questions:')
+    cy.contains('A CONFIRMATION EMAIL AND TEXT ARE ON THE WAY. CALL WITH QUESTIONS:')
     cy.contains('Your Consultation Details')
 
 
