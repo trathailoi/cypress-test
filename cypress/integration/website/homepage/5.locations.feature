@@ -1,4 +1,5 @@
-Feature: Location - Share Api
+Feature: Homepage Location - Share Api
+  Test allow/block know your location
 
   Scenario: TC_Location_01: Visit homepage, Location section: Allow alert popup and show location (fake)
     Given Visit home page and fake location

@@ -1,4 +1,5 @@
-Feature: Full width video
+Feature: Homepage Full-width video
+  Test open lightbox play video and close lightbox
 
   Scenario: TC_FullVideo_01: Visit homepage, Play video: open lightbox​ and click X icon
     Given Visit home page #Common

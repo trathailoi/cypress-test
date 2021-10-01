@@ -1,4 +1,5 @@
 Feature: Footer
+  Test submit form "Thanks for subscribing"
 
   Background:
     Given Visit home page #Common

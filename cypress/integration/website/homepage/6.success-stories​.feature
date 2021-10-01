@@ -1,9 +1,10 @@
-Feature: Success Stories
+Feature: Hompage Success Stories
+  Test view success stories on slider and popup up lightbox
 
   Background:
     Given Visit home page #Common
     And I scroll to Success Stories section​
-    Then I must see slider
+    Then I must see slider on Success Stories section​
     And I can see slide at "1" place is active
     And I must see Big image, before-after image, story, button watch video of slide "1"
 
