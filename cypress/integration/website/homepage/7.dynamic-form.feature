@@ -1,4 +1,5 @@
 Feature: Dynamic Form
+  Test Submit form "Get a free information kit" 
 
   Background: 
     Given Clear window session #Common

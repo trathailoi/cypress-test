@@ -1,4 +1,5 @@
 Feature: Alert Bar
+  Check session cookie
 
   Scenario: TC_Alert_01: Visit homepage, close alert: Refresh homepage
     Given Clear window session #Common

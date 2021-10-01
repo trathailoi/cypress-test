@@ -62,7 +62,7 @@ Given('I scroll to Success Stories section​', () => {
   cy.scrollTo(0, 4800)
 });
 
-Then('I must see slider', () =>{
+Then('I must see slider on Success Stories section​', () =>{
   checkSliderExists(slideOptions.slideSelector)
 });
 

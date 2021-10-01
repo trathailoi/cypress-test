@@ -10,7 +10,7 @@ const slideOptions = {
   dotLength: 2
 }
 
-Then('I must see slider', (  ) =>{
+Then('I must see slider on Homepage banner', (  ) =>{
   checkSliderExists(slideOptions.slideSelector)
 } );
 

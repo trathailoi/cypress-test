@@ -1,8 +1,9 @@
 Feature: Homepage banner
+  Test slider on Homepage banner
 
   Background:
     Given Visit home page #Common
-    Then I must see slider
+    Then I must see slider on Homepage banner
     And I can see slide at "1" place is active
     And I must see Big image, before-after image, disclaimer box, badge icon​ of slide "1"
 
