@@ -6,6 +6,10 @@ Given('Visit Location Page and fake location', () => {
   cy.visit('https://bosley-develop.box.carbon8test.com/locations', fakeLocation(48, 2)); // France
 })
 
+Given('I scroll to map section', () => {
+  cy.scrollTo(400)
+})
+
 Then(`I must see my location refill on searchbox`, () => {
   cy.get('.search-location #location')
     .invoke('val')
@@ -108,21 +112,16 @@ And(`I must see location {string} is zoom on a map`, (place) => {
     })
 })
 
-// Given('I click each location and I see each location in center of map', () => {
-//   cy.get('@window').then(win => {
-//     for (const loc of (win._cyCurrentLocations || [])) {
-//       clickLocationItem(loc.data.id, win)
-//       const centerCoordinate = getCenterCoordinate(win)
-//       expect(Number(loc.coordinate.lat).toFixed(5)).to.equal(centerCoordinate.lat)
-//       expect(Number(loc.coordinate.lng).toFixed(5)).to.equal(centerCoordinate.lng)
-//     }
-//   })
-// })
-
-When(`I click 1 location on a map`, () => {
+When(`I click marker at place {string} on map`, (place) => {
+  cy.get(`#map [role=button]:nth-child(${place})`)
+    .click({ force: true })
+  cy.wait(1000)
 })
 
 And(`I must see this location is active on the list`, () => {
+  cy.window().then(win => {
+    win.$(`.list-location .list-item-location .box-find-location[data-id=${win._cyCurrentMarkerClickedLoc.data.id}]`)[0].classList.contains('active')
+  })
 })
 
 When(`I input address on search box`, () => {
