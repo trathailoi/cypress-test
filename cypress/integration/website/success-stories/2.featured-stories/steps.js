@@ -56,7 +56,7 @@ const slideExpects = [
   }
 ]
 
-Given('I scroll to featured stories section​​​​', () => {
+Given('I scroll to featured stories section', () => {
   cy.scrollTo(0, 300)
   cy.wait(1000)
 });
