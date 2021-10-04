@@ -2,7 +2,7 @@ Feature: Success Stories
 
   Background: 
     Given Visit "/results/success-stories/" #Common
-    Given I scroll to featured stories section​​
+    Given I scroll to featured stories section
     Then I must see slider
     Then I can see slide at "1" place is active
     Then I must see Big image, before-after image, info, button watch video of slide "1"
