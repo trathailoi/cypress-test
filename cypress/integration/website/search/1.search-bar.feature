@@ -9,8 +9,8 @@ Feature: Search Bar
     And Press enter on keyboard
     Then I must redirect to "<urlRedirect>"
     Examples:
-      | keyword | urlRedirect                                     |
-      | hair    | /search-result/?key=hair&website=true&blog=true |
+      | keyword | urlRedirect              |
+      | hair    | /search-result/?key=hair |
 
   Scenario Outline: TC_SearchBar_02: Visit homepage, click Icon search: focus, input keyword and click Icon Search to redirect search page
     Given Visit home page #Common
@@ -21,8 +21,8 @@ Feature: Search Bar
     And Click Search icon on search box
     Then I must redirect to "<urlRedirect>"
     Examples:
-      | keyword | urlRedirect                                     |
-      | hair    | /search-result/?key=hair&website=true&blog=true |
+      | keyword | urlRedirect              |
+      | hair    | /search-result/?key=hair |
 
   Scenario: TC_SearchBar_03: Visit homepage, click Icon search: no input keyword and press enter -> search box is focus
     Given Visit home page #Common
