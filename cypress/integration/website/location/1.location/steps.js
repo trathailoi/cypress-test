@@ -1,4 +1,3 @@
-import { expect } from 'chai';
 import { fakeLocation } from '../../../common/scripts'
 
 const LOCATION_LENGTH = 73
