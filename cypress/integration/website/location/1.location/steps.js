@@ -27,7 +27,9 @@ And(`I must see the distance in miles and sort from nearest to farthest`, () => 
       locationMiles.push(mileNumber)
     }
     const sortedLocationMiles = JSON.parse(JSON.stringify(locationMiles)).sort((a, b) => a < b ? -1 : 1)
-    expect(sortedLocationMiles).to.deep.equal(locationMiles)
+    for (const i in locationMiles) {
+      expect(locationMiles[i]).to.deep.equal(sortedLocationMiles[i])
+    }
   })
 })
 
