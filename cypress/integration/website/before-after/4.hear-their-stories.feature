@@ -13,12 +13,22 @@ Feature: Before After - Hear Their Stories
       | clickSelector | video |
       | image         | 1     |
       | link watch    | 1     |
-      | image         | 2     |
-      | link watch    | 2     |
-      | image         | 3     |
-      | link watch    | 3     |
 
-  Scenario: TC_BeforeAfter_HearTheirStories_02 Click Image or Watch story => Open lightbox: popup slider -> button Next: hiển thị video tương ứng với từng slider 
+  Scenario Outline: TC_BeforeAfter_HearTheirStories_02 Click Watch story ở story nào => Open lightbox hiển thị video của story đó
+    Given Visit "/results/before-after-gallery-men" #Common
+    Given I scroll to Hear Their Stories section
+    When I click to "link watch" at "<video>" story
+    Then I must see popup lightbox video​
+    Then In popup video, I must see slider
+    Then In popup video, I can see slide at "<video>" place is active
+    When I click close popup lightbox video
+    Then I do not see popup lightbox video​
+    Examples:
+      | video |
+      | 2     |
+      | 3     |
+
+  Scenario: TC_BeforeAfter_HearTheirStories_03 Click Image or Watch story => Open lightbox: popup slider -> button Next: hiển thị video tương ứng với từng slider 
     Given Visit "/results/before-after-gallery-men" #Common
     Given I scroll to Hear Their Stories section
     When I click to "link watch" at "1" story
@@ -38,7 +48,7 @@ Feature: Before After - Hear Their Stories
     When I click close popup lightbox video
     Then I do not see popup lightbox video​
 
-  Scenario: TC_BeforeAfter_HearTheirStories_02 Click Image or Watch story => Open lightbox: popup slider -> button PREVIOUS: hiển thị video tương ứng với từng slider 
+  Scenario: TC_BeforeAfter_HearTheirStories_04 Click Image or Watch story => Open lightbox: popup slider -> button PREVIOUS: hiển thị video tương ứng với từng slider 
     Given Visit "/results/before-after-gallery-men" #Common
     Given I scroll to Hear Their Stories section
     When I click to "link watch" at "1" story
