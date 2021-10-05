@@ -5,9 +5,12 @@ const mapOption = {
   'Eyebrow Restoration': 'eyebrow-restoration',
   'LLLT': 'lllt',
   'PRP': 'prp',
-  'BosleyMD​': 'bosleymd%e2%80%8b',
-  'BosleyRx​': 'bosleyrx%e2%80%8b',
-  'BioGraft​': 'biograft%e2%80%8b'
+  'BosleyMD​': 'bosleymd',
+  'BosleyRx​': 'bosleyrx',
+  'BioGraft​': 'biograft',
+  'Minimal' : 'minimal',
+  'Moderate' : 'moderate',
+  'Advanced' : 'advanced'
 }
 
 const mapOptionQuery = {
@@ -17,12 +20,15 @@ const mapOptionQuery = {
   'Eyebrow Restoration': 'eyebrow-restoration',
   'LLLT': 'lllt',
   'PRP': 'prp',
-  'BosleyMD​': 'bosleymd%25e2%2580%258b',
-  'BosleyRx​': 'bosleyrx%25e2%2580%258b',
-  'BioGraft​': 'biograft%25e2%2580%258b'
+  'BosleyMD​': 'bosleymd',
+  'BosleyRx​': 'bosleyrx',
+  'BioGraft​': 'biograft',
+  'Minimal' : 'minimal',
+  'Moderate' : 'moderate',
+  'Advanced' : 'advanced'
 }
 
-Then('I must see list Before After Gallery have {string} items', (countItems) => {
+Then('I must see list Before After Gallery Men have {string} items', (countItems) => {
   cy.get('.mod-before-after .bf-category.filted')
     .should('have.length', countItems)
 
@@ -43,6 +49,12 @@ Then('I must see an expanded filter section', () => {
 
 When('I choose option {string} to filter', (option) => {
   cy.get('.list-filter .col-left label')
+    .contains(option)
+    .click()
+})
+
+When('I choose option {string} of Hair Loss to filter', (option) => {
+  cy.get('.list-filter .col-right label')
     .contains(option)
     .click()
 })
