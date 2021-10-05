@@ -8,7 +8,7 @@ Feature: Search Blogs
     Then I must see line input have length equal with "<keyword>"
     When I press enter on keyboard
     Then I must redirect to "<urlRedirect>"
-    And I must see the list results has "<numPage>" pages with "3" colums and "9" items
+    And I must see the list results has "<numPage>" pages with "9" items
     Examples:
       | keyword | urlRedirect                   | numPage | numCol  | numItems  |
       | hair    | /why-bosley/blog/?search=hair | 21      | 3       | 9         |
