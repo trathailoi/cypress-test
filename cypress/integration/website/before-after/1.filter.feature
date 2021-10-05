@@ -2,7 +2,7 @@ Feature: Filter
 
   Background:
     Given Visit "/results/before-after-gallery-men" #Common
-    And I must see list Before After Gallery have "82" items
+    And I must see list Before After Gallery Men have "66" items
 
   Scenario Outline: TC_BeforeAfterFilter_01: filter Before After Gallery by PROCEDURE and PRODUCT
     When I click filter on the right side
@@ -12,16 +12,16 @@ Feature: Filter
     Then I must see a collapsed filter section
     And I see filter option "<option>" show in headline
     And Url query produce = "<option>" is added
-    And I must see list Before After Gallery have "<countItem>" items
+    And I must see list Before After Gallery Men have "<countItem>" items
     Examples:
       | option              | countItem |
-      | FUE                 | 24        |
-      | FUT                 | 25        |
-      | SMP                 | 18        |
-      | Eyebrow Restoration | 25        |
-      | LLLT                | 24        |
-      | PRP                 | 3         |
-      | BosleyMD​            | 39        |
+      | FUE                 | 25        |
+      | FUT                 | 31        |
+      | SMP                 | 12        |
+      | Eyebrow Restoration | 0         |
+      | LLLT                | 20        |
+      | PRP                 | 0         |
+      | BosleyMD​            | 26        |
       | BosleyRx​            | 20        |
       | BioGraft​            | 0         |
 
@@ -70,7 +70,7 @@ Feature: Filter
     And Url query produce = "BosleyRx​" is removed
     And Url query produce = "BioGraft​" is removed
     And I do not see applied filters headline
-    And I must see list Before After Gallery have "82" items
+    And I must see list Before After Gallery Men have "66" items
     When I click filter on the right side
     Then I must see an expanded filter section
     Then All option is not checked
@@ -126,7 +126,7 @@ Feature: Filter
     When I click x icon at filter option "BioGraft​"
     And Url query produce = "BioGraft​" is removed
     And I do not see applied filters headline
-    And I must see list Before After Gallery have "82" items
+    And I must see list Before After Gallery Men have "66" items
     When I click filter on the right side
     Then I must see an expanded filter section
     Then All option is not checked

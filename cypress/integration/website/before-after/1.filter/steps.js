@@ -22,7 +22,7 @@ const mapOptionQuery = {
   'BioGraft​': 'biograft%25e2%2580%258b'
 }
 
-Then('I must see list Before After Gallery have {string} items', (countItems) => {
+Then('I must see list Before After Gallery Men have {string} items', (countItems) => {
   cy.get('.mod-before-after .bf-category.filted')
     .should('have.length', countItems)
 
