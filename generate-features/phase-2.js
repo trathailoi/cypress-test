@@ -232,9 +232,9 @@ const generateScenariosFunction = () => {
     ],
     examples: `
       | timezone |
-      | MST      |
-      | CST      |
-      | EST      |`
+      | MT      |
+      | CT      |
+      | ET      |`
   })
 
   generateScenario('TC2_14', allScenarioObject, {
@@ -401,10 +401,10 @@ const generateScenariosFunction = () => {
     ],
     examples: `
     | zip     | timezone | consultLanguage | observationConcent |
-    | 91356   | MST      | English         | yes                |
-    | 91356   | MST      | Spanish         | yes                |
-    | 91356   | MST      | English         | no                 |
-    | 91356   | MST      | Spanish         | no                 |`
+    | 91356   | MT      | English         | yes                |
+    | 91356   | MT      | Spanish         | yes                |
+    | 91356   | MT      | English         | no                 |
+    | 91356   | MT      | Spanish         | no                 |`
   })
 
   generateScenario('TC2_22_01', allScenarioObject, {
@@ -432,7 +432,7 @@ const generateScenariosFunction = () => {
     ],
     examples: `
       | zip     | timezone |
-      | 91356   | MST      |`
+      | 91356   | MT      |`
   })
 
   generateScenario('TC2_23_01', allScenarioObject, {
@@ -460,7 +460,7 @@ const generateScenariosFunction = () => {
     ],
     examples: `
       | zip | timezone |
-      | 91356   | MST      |`
+      | 91356   | MT      |`
   })
 
   generateScenario('TC2_24_01', allScenarioObject, {

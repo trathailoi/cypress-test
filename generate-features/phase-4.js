@@ -176,9 +176,9 @@ const generateScenariosFunction = () => {
     ],
     examples: `
       | timezone |
-      | MST      |
-      | CST      |
-      | EST      |`
+      | MT      |
+      | CT      |
+      | ET      |`
   })
 
   generateScenario('TC4_12', allScenarioObject, {
@@ -324,7 +324,7 @@ const generateScenariosFunction = () => {
     ],
     examples: `
       | timezone |
-      | MST      |`
+      | MT      |`
   })
 
   generateScenario('TC4_19', allScenarioObject, {
@@ -340,10 +340,10 @@ const generateScenariosFunction = () => {
     ],
     examples: `
       | timezone | consultLanguage | observationConcent |
-      | MST      | English         | yes                |
-      | MST      | Spanish         | yes                |
-      | MST      | English         | no                 |
-      | MST      | Spanish         | no                 |`
+      | MT      | English         | yes                |
+      | MT      | Spanish         | yes                |
+      | MT      | English         | no                 |
+      | MT      | Spanish         | no                 |`
   })
 
   generateScenario('TC4_20_01', allScenarioObject, {
