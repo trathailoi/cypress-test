@@ -1,12 +1,15 @@
 const reporter = require("cucumber-html-reporter")
+const fs = require('fs');
+const path = require('path');
 
 const cucumberJsonFolder = './cypress/reports/cucumber-json';
-const fs = require('fs');
 
 let jsonData = []
 fs.readdirSync(cucumberJsonFolder).forEach(file => {
-  const featureData = require(`${cucumberJsonFolder}/${file}`)
-  jsonData = [...jsonData, ...featureData]
+  if (path.extname(file) === '.json') {
+    const featureData = require(`${cucumberJsonFolder}/${file}`)
+    jsonData = [...jsonData, ...featureData]
+  }
 });
 
 const reportDataPath = `${cucumberJsonFolder}/report-data.json`
