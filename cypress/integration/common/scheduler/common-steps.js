@@ -312,13 +312,17 @@ Then('I must see Popup Confirm Timezone', () => {
 })
 
 When('I click Confirm in Popup Confirm Timezone', () => {
+  cy.window().then((win) => {
+    cy.stub(win, 'open').as('windowOpen'); 
+  });  
   cy.contains('Confirm')
     .click()
 })
 
 Then('Now I have been redirected to bosley doxy page have query {string} and {string}', (firstName, lastName) => {
-  cy.url()
-    .should('equal', `https://bosley.doxy.me/videoconsult?username=${firstName}%20${lastName}`)
+  const fullName = [firstName, lastName].filter(Boolean).join(' ')
+  cy.get('@windowOpen')
+    .should('be.calledWith', `https://bosley.doxy.me/videoconsult?username=${fullName}`, '_blank')
 })
 
 Then('Now I have been redirected to bosley doxy page', () => {
