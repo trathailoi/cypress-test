@@ -1,12 +1,15 @@
 const reporter = require("cucumber-html-reporter")
+const fs = require('fs');
+const path = require('path');
 
 const cucumberJsonFolder = './cypress/reports/cucumber-json';
-const fs = require('fs');
 
 let jsonData = []
 fs.readdirSync(cucumberJsonFolder).forEach(file => {
-  const featureData = require(`${cucumberJsonFolder}/${file}`)
-  jsonData = [...jsonData, ...featureData]
+  if (path.extname(file) === '.json') {
+    const featureData = require(`${cucumberJsonFolder}/${file}`)
+    jsonData = [...jsonData, ...featureData]
+  }
 });
 
 const reportDataPath = `${cucumberJsonFolder}/report-data.json`
@@ -16,10 +19,15 @@ fs.writeFile(reportDataPath, JSON.stringify(jsonData, 0, 2), function (err) {
   console.log(`File report data json exported! Path: ${reportDataPath}`)
   
   console.log(`Report is generating....`)
+  const today = (new Date()).toISOString().split('T')[0]
+  const todayHtmlFolder = `cypress/reports/html/${today}`
+  if (!fs.existsSync(todayHtmlFolder)) {
+    fs.mkdirSync(todayHtmlFolder, { recursive: true })
+  }
   const options = {
     theme: "bootstrap",
     jsonFile: reportDataPath,
-    output: `cypress/reports/html/cucumber_report_${new Date().getTime()}.html`,
+    output: `${todayHtmlFolder}/cucumber_report_${new Date().getTime()}.html`,
     reportSuiteAsScenarios: true,
     scenarioTimestamp: true,
     launchReport: true
