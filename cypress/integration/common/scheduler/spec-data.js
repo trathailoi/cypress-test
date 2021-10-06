@@ -85,7 +85,7 @@ const resGetLocationAndVideos = {
         "officeType": "RSO",
         "state": "LA",
         "zip": "70001",
-        "timezone": 'PST'
+        "timezone": 'PT'
       }
       // {
       //   "address1": "2450 Severn Ave., Suite 510",
@@ -103,8 +103,8 @@ const resGetLocationAndVideos = {
     "videoConsultation": {
       "timezone": {
         "tzfromscheduler": "Videoconsultpst",
-        "tzfromschedulerprint": "PST",
-        "abbreviation": "PST"
+        "tzfromschedulerprint": "PT",
+        "abbreviation": "PT"
       },
       "slots": {
         "sfId": "00Q56000006raEqEAI",
@@ -131,7 +131,7 @@ const resGetJustLocation = {
         "officeType": "RSO",
         "state": "LA",
         "zip": "70001",
-        "timezone": 'PST'
+        "timezone": 'PT'
       }
     ]
   }

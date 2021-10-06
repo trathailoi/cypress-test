@@ -343,7 +343,7 @@ Then('I can see book appoinment info and {string} info', (type) => {
 })
 
 And('I can see consult language and observation consent', () => {
-  cy.contains('Consult Language:')
+  cy.contains('Consult Language')
   cy.get('label[for=consultLanguage1]')
     .invoke('text')
     .should('equal', 'English')
@@ -352,7 +352,7 @@ And('I can see consult language and observation consent', () => {
     .invoke('text')
     .should('equal', 'Spanish')
 
-  cy.contains('Observation Consent*:')
+  cy.contains('Observation Consent*')
   cy.get('label[for=consentForObservation1]')
     .invoke('text')
     .should('equal', 'Yes')
