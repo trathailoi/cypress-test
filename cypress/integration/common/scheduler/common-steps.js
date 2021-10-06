@@ -149,10 +149,14 @@ And('Time user < mins before start next slot', () => {
 })
 
 Then('I must see selected location info', () => {
-  const expectText = 'New Orleans, 2450 Severn Ave., Suite 510, Metairie, LA 70001'
-  cy.get('.loc-mes .text-black')
+  const expectText1 = 'New Orleans, 2450 Severn Ave., Suite 510'  
+  const expectText2 = ' Metairie, LA 70001'
+  cy.get('.leading-1-56 > .mb-0')
     .invoke('text')
-    .should('equal', expectText)
+    .should('equal', expectText1)
+  cy.get('.leading-1-56 > :nth-child(3)')
+    .invoke('text')
+    .should('equal', expectText2)
 })
 
 Then('On Date-Time Tab, I must see list date available', () => {
