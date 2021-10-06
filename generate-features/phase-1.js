@@ -214,7 +214,7 @@ const generateScenariosFunction = () => {
       'Given Wait for Admin Ajax "3" times #Common',
       'Then On Date-Time Tab, I must see list date available',
       'When I select date',
-      'Then I must see dropdown timezone with default value "PST"',
+      'Then I must see dropdown timezone with default value "PT"',
       'And I must see list times',
     ],
     reuseExamples: true
@@ -235,9 +235,9 @@ const generateScenariosFunction = () => {
     ],
     examples: `
       | firstName | lastName | email                | phone        | street | zipcode | gender | timezone |
-      | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  | MST      |
-      | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  | CST      |
-      | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  | EST      |`
+      | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  | MT       |
+      | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  | CT       |
+      | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  | ET       |`
   })
 
   generateScenario('TC_15', allScenarioObject, {
@@ -404,10 +404,10 @@ const generateScenariosFunction = () => {
     ],
     examples: `
       | firstName | lastName | email                | phone        | street | zipcode | gender | timezone | consultLanguage | observationConcent |
-      | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  | MST      | English         | yes                |
-      | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  | MST      | Spanish         | yes                |
-      | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  | MST      | English         | no                 |
-      | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  | MST      | Spanish         | no                 |`
+      | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  | MT       | English         | yes                |
+      | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  | MT       | Spanish         | yes                |
+      | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  | MT       | English         | no                 |
+      | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  | MT       | Spanish         | no                 |`
   })
 
   generateScenario('TC_23_01', allScenarioObject, {
@@ -435,7 +435,7 @@ const generateScenariosFunction = () => {
     ],
     examples: `
     | firstName | lastName | email                | phone        | street | zipcode | gender | timezone |
-    | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  | MST      |`
+    | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  | MT       |`
   })
 
   generateScenario('TC_24_01', allScenarioObject, {
@@ -463,7 +463,7 @@ const generateScenariosFunction = () => {
     ],
     examples: `
       | firstName | lastName | email                | phone        | street | zipcode | gender | timezone |
-      | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  | MST      |`
+      | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  | MT       |`
   })
 
   generateScenario('TC_25_01', allScenarioObject, {
