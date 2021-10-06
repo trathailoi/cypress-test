@@ -5,14 +5,15 @@ const path = require('path');
 const cucumberJsonFolder = './cypress/reports/cucumber-json';
 
 let jsonData = []
+const reportJsonFileName = 'report-data.json'
 fs.readdirSync(cucumberJsonFolder).forEach(file => {
-  if (path.extname(file) === '.json') {
+  if (path.extname(file) === '.json' && file !== reportJsonFileName) {
     const featureData = require(`${cucumberJsonFolder}/${file}`)
     jsonData = [...jsonData, ...featureData]
   }
 });
 
-const reportDataPath = `${cucumberJsonFolder}/report-data.json`
+const reportDataPath = `${cucumberJsonFolder}/${reportJsonFileName}`
 
 fs.writeFile(reportDataPath, JSON.stringify(jsonData, 0, 2), function (err) {
   if (err) return console.log('error generate report data json', err)
