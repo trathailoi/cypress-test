@@ -1,5 +1,6 @@
 import { checkBanner } from './common-scripts'
 import specData from './spec-data'
+import { adminAjaxUrl } from '../scripts'
 
 Given('I open Scheduler page non-param', () => {
   cy.visit('/scheduler')
@@ -293,8 +294,63 @@ Then('After call Api {string} times, I must see book appointment of {string} tha
   })
 })
 
+Then('I must see book appointment of {string} thank you page', (type) => {
+  cy.wait('@AdminAjaxApi').then(req => {
+    const { response } = req
+    const { body } = response
+
+    cy.contains('Your Consultation is Scheduled')
+    cy.contains('Thank you for scheduling your free consultation with Bosley. We look forward to meeting with you to discuss your hair restoration goals.')
+
+    cy.contains('A CONFIRMATION EMAIL AND TEXT ARE ON THE WAY. CALL WITH QUESTIONS:')
+    cy.contains('Your Consultation Details')
+
+
+    cy.get('.mod-thank-you .items-center:nth-child(2) p').then($els => {
+      expect($els[0].innerText).to.equal('Aug 27, 2021')
+      expect($els[1].innerText).to.includes('8:00 AM') // vì có thể sẽ có timezone MST, PST,....
+      if (type === 'location') {
+        expect($els[2].innerText).to.includes('New Orleans')
+        expect($els[2].innerText).to.includes('2450 Severn Ave., Suite 510')
+        expect($els[2].innerText).to.includes('Metairie, LA 70001')
+      } else {
+        expect($els[2].innerText).to.includes('Video')
+        expect($els[2].innerText).to.includes('Use the platform you like best: Zoom, WhatsApp, Skype, etc.')
+      }
+    })
+
+    cy.contains('Outlook')
+      .invoke('attr', 'href')
+      .then(href => {
+        expect(href).to.equal(body.data.calendar_outlook)
+      })
+    cy.contains('Google')
+      .invoke('attr', 'href')
+      .then(href => {
+        expect(href).to.equal(body.data.calendar_google)
+      })
+      
+    cy.contains('Yahoo')
+
+    cy.contains('Apple iCal')
+  })
+})
+
 Then('After call Api {string} times, I book appointment failed', (string) => {
   cy.wait(`@${string}-Times-AdminAjaxApi`)
+  cy.get('.popup-show .popup-inner')
+    .invoke('text')
+    .then(text => {
+      expect(text).to.includes('OOPS! SOMETHING WENT WRONG…')
+      expect(text).to.includes('It looks like Aug 27, 2021')
+      expect(text).to.includes('8:00 AM') // vì có thể chứa timezone MST, PST...
+      expect(text).to.includes('is no longer available.')
+      expect(text).to.includes('Please select another time slot for your appointment')
+      expect(text).to.includes('Select another time')
+    })
+})
+
+Then('I book appointment failed', () => {
   cy.get('.popup-show .popup-inner')
     .invoke('text')
     .then(text => {
@@ -418,8 +474,7 @@ Then('I do not see Previous Button', () => {
 
 
 Given('Stub api {string} #CommonScheduler', (responseString) => {
-  const { method = 'POST', url = adminAjaxUrl } = options
-  cy.intercept(method, url, (req) => {
+  cy.intercept('POST', adminAjaxUrl, (req) => {
     req.reply(specData.stubResponse[responseString] || specData.stubResponse.default)
     req.alias = `AdminAjaxApi`
   })
