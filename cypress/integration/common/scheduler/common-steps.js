@@ -326,8 +326,8 @@ Then('Now I have been redirected to bosley doxy page have query {string} and {st
 })
 
 Then('Now I have been redirected to bosley doxy page', () => {
-  cy.url()
-    .should('equal', `https://bosley.doxy.me/videoconsult`)
+  cy.get('@windowOpen')
+    .should('be.calledWith', 'https://bosley.doxy.me/videoconsult?username=', '_blank')
 })
 
 Then('I can see book appoinment info and {string} info', (type) => {
