@@ -42,21 +42,9 @@ Then('I submit Free Kit form #CommonPhase2', () => {
     .click()
 })
 
-Then('I can see submit free fit result #CommonPhase2', () => {
-  cy.contains('Schedule a Consult Today')
-  cy.contains('A free, no obligation consultation with a Bosley specialist will get you a customized plan for your unique needs.')
-  cy.contains('Schedule a Free Consultation')
-})
-
-When('I click schedule a free consultation #CommonPhase2', () => {
-  cy.get('a')
-    .contains('Schedule a Free Consultation')
-    .click()
-})
-
 Then('I have been redirect to scheduler page #CommonPhase2', () => {
   cy.url()
-    .should('equal', `${Cypress.env('BASE_URL')}/scheduler/`)
+    .should('equal', `${Cypress.env('BASE_URL')}/scheduler/?kitform_thank_you=1`)
 })
 
 When('I click Previous button #CommonPhase2', () => {

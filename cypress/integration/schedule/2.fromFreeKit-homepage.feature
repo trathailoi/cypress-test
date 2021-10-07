@@ -10,8 +10,6 @@ Feature: Scheduler
 		When I enter new user to form Free Kit with name is "<firstName>" "<lastName>" "<email>" "<phone>" "<street>" "<zipcode>" "<gender>" #CommonPhase2
 		And I submit Free Kit form #CommonPhase2
 		Given Wait for Admin Ajax "1" times #Common
-		Then I can see submit free fit result #CommonPhase2
-		When I click schedule a free consultation #CommonPhase2
 		Then I have been redirect to scheduler page #CommonPhase2
 		And I must see Thank You content on Banner
 		Examples:
