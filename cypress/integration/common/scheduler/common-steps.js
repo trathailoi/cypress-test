@@ -415,3 +415,16 @@ Then('I do not see Previous Button', () => {
   cy.get('.text-center a.text-btn-dark span.icon-chevron-left')
     .should('not.exist')
 })
+
+
+Given('Stub api {string} #CommonScheduler', (responseString) => {
+  const { method = 'POST', url = adminAjaxUrl } = options
+  cy.intercept(method, url, (req) => {
+    req.reply(specData.stubResponse[responseString] || specData.stubResponse.default)
+    req.alias = `AdminAjaxApi`
+  })
+})
+
+Given('Wait for fetch data #CommonScheduler', () => {
+  cy.wait('@AdminAjaxApi')
+})

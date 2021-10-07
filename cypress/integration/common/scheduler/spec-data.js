@@ -372,6 +372,20 @@ withCookies.checkSubmitFreeKit = [
 ]
 
 export default {
+  stubResponse: {
+    default: resDefault,
+    bookFailed: resBookFailed,
+    newForm: resNewFormObj,
+    confirmVideoConsult: resConfirmVideoConsult,
+    getLocationAndVideos: resGetLocationAndVideos,
+    getJustLocation: resGetJustLocation,
+    getLocationNoItems: resGetLocationNoItems,
+    getDateAvailables: resGetDateAvailables,
+    loadMoreDateAvailables: resLoadMoreDateAvailables,
+    getTimeAvailableNoItem: resGetTimeAvailableNoItem,
+    bookSuccessfully: resBookSuccessfully,
+    getDateTimeNoItems: resGetDateTimeNoItems
+  },
   stubbedData: {
     defaultData,
     withCookies,
