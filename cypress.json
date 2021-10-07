@@ -5,7 +5,6 @@
   "viewportHeight": 768,
   "chromeWebSecurity": false,
   "env": {
-    "BASE_URL": "https://bosley-develop.box.carbon8test.com",
-    "TAGS": "@focus"
+    "BASE_URL": "https://bosley-develop.box.carbon8test.com"
   }
 }
