@@ -276,9 +276,9 @@ Feature: Scheduler
 		Then I must see list times
 		Examples:
       | zip   | timezone |
-      | 91356 | MST      |
-      | 91356 | CST      |
-      | 91356 | EST      |
+      | 91356 | MT      |
+      | 91356 | CT      |
+      | 91356 | ET      |
 
 	Scenario Outline: TC7_14: Pass TC7_03 -> chọn location không có slot trong vòng 15 ngày: show error
 		Given Fake Admin Ajax Api with "fullDropdownUnAvailableDateTime" data
@@ -564,9 +564,9 @@ Feature: Scheduler
 		And I can see consult language and observation consent
 		Examples:
       | zip   | timezone |
-      | 91356 | MST      |
-      | 91356 | CST      |
-      | 91356 | EST      |
+      | 91356 | MT      |
+      | 91356 | CT      |
+      | 91356 | ET      |
 
 	Scenario Outline: TC7_21: Pass TC7_20 -> chọn option trong Consult language & Observation​ consent > click button "Book Appointment" > book thành công
 		Given Fake Admin Ajax Api with "fullDropdownHaveSelectTimezone" data
@@ -604,10 +604,10 @@ Feature: Scheduler
 		Then After call Api "4" times, I must see book appointment of "video" thank you page
 		Examples:
       | zip     | timezone | consultLanguage | observationConcent |
-      | 91356   | MST      | English         | yes                |
-      | 91356   | MST      | Spanish         | yes                |
-      | 91356   | MST      | English         | no                 |
-      | 91356   | MST      | Spanish         | no                 |
+      | 91356   | MT      | English         | yes                |
+      | 91356   | MT      | Spanish         | yes                |
+      | 91356   | MT      | English         | no                 |
+      | 91356   | MT      | Spanish         | no                 |
 
 	Scenario Outline: TC7_22_01: Pass TC7_18 -> Chọn 1 location -> click button "Book Appointment" > book không thành công vì slot đã được book (403 resources unavailable)
 		Given Fake Admin Ajax Api with "fullDropdownBookFailed" data
@@ -675,7 +675,7 @@ Feature: Scheduler
 		Then After call Api "4" times, I book appointment failed
 		Examples:
       | zip     | timezone |
-      | 91356   | MST      |
+      | 91356   | MT      |
 
 	Scenario Outline: TC7_23_01: Pass TC7_18 -> Chọn 1 location ->  click button "Book Appointment" > book không thành công vì lý do gì đó khác status 403 resources unavailable
 		Given Fake Admin Ajax Api with "fullDropdown" data
@@ -743,7 +743,7 @@ Feature: Scheduler
 		Then After call Api "4" times, I must see book appointment of "video" thank you page
 		Examples:
       | zip | timezone |
-      | 91356   | MST      |
+      | 91356   | MT      |
 
 	Scenario Outline: TC7_24_01: Pass TC7_05 -> Chọn Instant Video button > book thành công
 		Given Fake Admin Ajax Api with "fullDropdownHaveConfirm" data

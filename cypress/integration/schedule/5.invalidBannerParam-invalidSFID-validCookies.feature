@@ -285,9 +285,9 @@ Feature: Scheduler with params
 		Then I must see list times
 		Examples:
       | firstName | lastName | email                | phone        | street | zipcode | gender | timezone |
-      | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  | MST      |
-      | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  | CST      |
-      | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  | EST      |
+      | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  | MT      |
+      | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  | CT      |
+      | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  | ET      |
 
 	Scenario Outline: TC5_15: Pass TC5_04 -> chọn location không có slot trong vòng 15 ngày: show error
 		Given Fake Admin Ajax Api with "fullDropdownUnAvailableDateTime" data
@@ -573,9 +573,9 @@ Feature: Scheduler with params
 		And I can see consult language and observation consent
 		Examples:
       | firstName | lastName | email                | phone        | street | zipcode | gender | timezone |
-      | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  | MST      |
-      | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  | CST      |
-      | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  | EST      |
+      | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  | MT      |
+      | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  | CT      |
+      | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  | ET      |
 
 	Scenario Outline: TC5_22: Pass TC5_21 -> chọn option trong Consult language & Observation​ consent > click button "Book Appointment" > book thành công
 		Given Fake Admin Ajax Api with "fullDropdownHaveSelectTimezone" data
@@ -613,10 +613,10 @@ Feature: Scheduler with params
 		Then After call Api "5" times, I must see book appointment of "video" thank you page
 		Examples:
       | firstName | lastName | email                | phone        | street | zipcode | gender | timezone | consultLanguage | observationConcent |
-      | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  | MST      | English         | yes                |
-      | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  | MST      | Spanish         | yes                |
-      | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  | MST      | English         | no                 |
-      | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  | MST      | Spanish         | no                 |
+      | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  | MT      | English         | yes                |
+      | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  | MT      | Spanish         | yes                |
+      | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  | MT      | English         | no                 |
+      | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  | MT      | Spanish         | no                 |
 
 	Scenario Outline: TC5_23_01: Pass TC5_19 -> Chọn 1 location -> click button "Book Appointment" > book không thành công vì slot đã được book (404 resources unavailable)
 		Given Fake Admin Ajax Api with "fullDropdownBookFailed" data
@@ -684,7 +684,7 @@ Feature: Scheduler with params
 		Then After call Api "5" times, I book appointment failed
 		Examples:
     | firstName | lastName | email                | phone        | street | zipcode | gender | timezone |
-    | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  | MST      |
+    | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  | MT      |
 
 	Scenario Outline: TC5_24_01: Pass TC5_19 -> Chọn 1 location ->  click button "Book Appointment" > book không thành công vì lý do gì đó khác status 404 resources unavailable
 		Given Fake Admin Ajax Api with "fullDropdown" data
@@ -752,7 +752,7 @@ Feature: Scheduler with params
 		Then After call Api "5" times, I must see book appointment of "video" thank you page
 		Examples:
       | firstName | lastName | email                | phone        | street | zipcode | gender | timezone |
-      | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  | MST      |
+      | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  | MT      |
 
 	Scenario Outline: TC5_25_01: Pass TC5_06 -> Chọn Instant Video button > book thành công
 		Given Fake Admin Ajax Api with "fullDropdownHaveConfirm" data

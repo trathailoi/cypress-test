@@ -298,9 +298,9 @@ Feature: Scheduler with valid banner param, invalid crmid param, valid crmid coo
 		Then I must see list times
 		Examples:
       | firstName | lastName | email                | phone        | street | zipcode | gender | timezone |
-      | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  | MST      |
-      | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  | CST      |
-      | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  | EST      |
+      | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  | MT      |
+      | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  | CT      |
+      | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  | ET      |
 
 	Scenario Outline: TC6_15: Pass TC6_04 -> chọn location không có slot trong vòng 15 ngày: show error
 		Given I set cookie SFID valid
@@ -595,9 +595,9 @@ Feature: Scheduler with valid banner param, invalid crmid param, valid crmid coo
 		And I can see consult language and observation consent
 		Examples:
       | firstName | lastName | email                | phone        | street | zipcode | gender | timezone |
-      | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  | MST      |
-      | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  | CST      |
-      | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  | EST      |
+      | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  | MT      |
+      | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  | CT      |
+      | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  | ET      |
 
 	Scenario Outline: TC6_22: Pass TC6_21 -> chọn option trong Consult language & Observation​ consent > click button "Book Appointment" > book thành công
 		Given I set cookie SFID valid
@@ -636,10 +636,10 @@ Feature: Scheduler with valid banner param, invalid crmid param, valid crmid coo
 		Then After call Api "5" times, I must see book appointment of "video" thank you page
 		Examples:
       | firstName | lastName | email                | phone        | street | zipcode | gender | timezone | consultLanguage | observationConcent |
-      | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  | MST      | English         | yes                |
-      | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  | MST      | Spanish         | yes                |
-      | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  | MST      | English         | no                 |
-      | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  | MST      | Spanish         | no                 |
+      | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  | MT      | English         | yes                |
+      | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  | MT      | Spanish         | yes                |
+      | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  | MT      | English         | no                 |
+      | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  | MT      | Spanish         | no                 |
 
 	Scenario Outline: TC6_23_01: Pass TC6_19 -> Chọn 1 location -> click button "Book Appointment" > book không thành công vì slot đã được book (404 resources unavailable)
 		Given I set cookie SFID valid
@@ -709,7 +709,7 @@ Feature: Scheduler with valid banner param, invalid crmid param, valid crmid coo
 		Then After call Api "5" times, I book appointment failed
 		Examples:
     | firstName | lastName | email                | phone        | street | zipcode | gender | timezone |
-    | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  | MST      |
+    | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  | MT      |
 
 	Scenario Outline: TC6_24_01: Pass TC6_19 -> Chọn 1 location ->  click button "Book Appointment" > book không thành công vì lý do gì đó khác status 404 resources unavailable
 		Given I set cookie SFID valid
@@ -779,7 +779,7 @@ Feature: Scheduler with valid banner param, invalid crmid param, valid crmid coo
 		Then After call Api "5" times, I must see book appointment of "video" thank you page
 		Examples:
       | firstName | lastName | email                | phone        | street | zipcode | gender | timezone |
-      | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  | MST      |
+      | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  | MT      |
 
 	Scenario Outline: TC6_25_01: Pass TC6_06 -> Chọn Instant Video button > book thành công
 		Given I set cookie SFID valid

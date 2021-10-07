@@ -153,9 +153,9 @@ Feature: Scheduler
 		Then I must see list times
 		Examples:
       | timezone |
-      | MST      |
-      | CST      |
-      | EST      |
+      | MT      |
+      | CT      |
+      | ET      |
 
 	Scenario: TC4_12: Pass TC4_01 -> chọn location không có slot trong vòng 15 ngày: show error
 		Given Fake Admin Ajax Api with "fullDropdownUnAvailableDateTime" data
@@ -398,7 +398,7 @@ Feature: Scheduler
 		And I can see consult language and observation consent
 		Examples:
       | timezone |
-      | MST      |
+      | MT      |
 
 	Scenario Outline: TC4_19: Pass TC4_18 -> chọn option trong Consult language & Observation​ consent > click button "Book Appointment" > book thành công
 		Given Fake Admin Ajax Api with "fullDropdownHaveSelectTimezone" data
@@ -433,10 +433,10 @@ Feature: Scheduler
 		Then After call Api "4" times, I must see book appointment of "video" thank you page
 		Examples:
       | timezone | consultLanguage | observationConcent |
-      | MST      | English         | yes                |
-      | MST      | Spanish         | yes                |
-      | MST      | English         | no                 |
-      | MST      | Spanish         | no                 |
+      | MT      | English         | yes                |
+      | MT      | Spanish         | yes                |
+      | MT      | English         | no                 |
+      | MT      | Spanish         | no                 |
 
 	Scenario: TC4_20_01: Pass TC4_16 -> Chọn 1 location -> click button "Book Appointment" > book không thành công vì slot đã được book (404 resources unavailable)
 		Given Fake Admin Ajax Api with "fullDropdownBookFailed" data
@@ -496,7 +496,7 @@ Feature: Scheduler
 		Then After call Api "4" times, I book appointment failed
 		Examples:
       | timezone |
-      | MST      |
+      | MT      |
 
 	Scenario: TC4_21_01: Pass TC4_16 -> Chọn 1 location ->  click button "Book Appointment" > book không thành công vì lý do gì đó khác status 404 resources unavailable
 		Given Fake Admin Ajax Api with "fullDropdown" data
@@ -556,7 +556,7 @@ Feature: Scheduler
 		Then After call Api "4" times, I must see book appointment of "video" thank you page
 		Examples:
       | timezone |
-      | MST      |
+      | MT      |
 
 	Scenario: TC4_22_01: Pass TC4_03 -> Chọn Instant Video button > book thành công
 		Given Fake Admin Ajax Api with "fullDropdownHaveConfirm" data

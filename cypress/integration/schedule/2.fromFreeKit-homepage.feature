@@ -31,7 +31,6 @@ Feature: Scheduler
         | firstName | lastName | email                | phone        | street | zipcode | gender |
         | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  |
 
-	@focus
 	Scenario Outline: TC2_02: Pass TC2_01 -> Ở tab Location, click btn Previous > fill info của user theo cookies đã lưu
 		Given Fake Admin Ajax Api with "fullDropdown" data
 		Given I set cookie with full SF info valid
@@ -260,9 +259,9 @@ Feature: Scheduler
 		Then I must see list times
 		Examples:
       | timezone |
-      | MST      |
-      | CST      |
-      | EST      |
+      | MT      |
+      | CT      |
+      | ET      |
 
 	Scenario Outline: TC2_14: Pass TC2_03 -> chọn location không có slot trong vòng 15 ngày: show error
 		Given Fake Admin Ajax Api with "fullDropdownUnAvailableDateTime" data
@@ -530,9 +529,9 @@ Feature: Scheduler
 		And I can see consult language and observation consent
 		Examples:
       | timezone |
-      | MST      |
-      | CST      |
-      | EST      |
+      | MT      |
+      | CT      |
+      | ET      |
 
 	Scenario Outline: TC2_21: Pass TC2_20 -> chọn option trong Consult language & Observation​ consent > click button "Book Appointment" > book thành công
 		Given Fake Admin Ajax Api with "fullDropdownHaveSelectTimezone" data
@@ -568,10 +567,10 @@ Feature: Scheduler
 		Then After call Api "4" times, I must see book appointment of "video" thank you page
 		Examples:
     | zip     | timezone | consultLanguage | observationConcent |
-    | 91356   | MST      | English         | yes                |
-    | 91356   | MST      | Spanish         | yes                |
-    | 91356   | MST      | English         | no                 |
-    | 91356   | MST      | Spanish         | no                 |
+    | 91356   | MT      | English         | yes                |
+    | 91356   | MT      | Spanish         | yes                |
+    | 91356   | MT      | English         | no                 |
+    | 91356   | MT      | Spanish         | no                 |
 
 	Scenario Outline: TC2_22_01: Pass TC2_18 -> Chọn 1 location -> click button "Book Appointment" > book không thành công vì slot đã được book (403 resources unavailable)
 		Given Fake Admin Ajax Api with "fullDropdownBookFailed" data
@@ -635,7 +634,7 @@ Feature: Scheduler
 		Then After call Api "4" times, I book appointment failed
 		Examples:
       | zip     | timezone |
-      | 91356   | MST      |
+      | 91356   | MT      |
 
 	Scenario Outline: TC2_23_01: Pass TC2_18 -> Chọn 1 location ->  click button "Book Appointment" > book không thành công vì lý do gì đó khác status 403 resources unavailable
 		Given Fake Admin Ajax Api with "fullDropdown" data
@@ -699,7 +698,7 @@ Feature: Scheduler
 		Then After call Api "4" times, I must see book appointment of "video" thank you page
 		Examples:
       | zip | timezone |
-      | 91356   | MST      |
+      | 91356   | MT      |
 
 	Scenario Outline: TC2_24_01: Pass TC2_05 -> Chọn Instant Video button > book thành công
 		Given Fake Admin Ajax Api with "fullDropdownHaveConfirm" data
