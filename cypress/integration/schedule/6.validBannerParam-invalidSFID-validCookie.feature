@@ -261,7 +261,7 @@ Feature: Scheduler with valid banner param, invalid crmid param, valid crmid coo
 		Given Wait for Admin Ajax "3" times #Common
 		Then On Date-Time Tab, I must see list date available
 		When I select date
-		Then I must see dropdown timezone with default value "PST"
+		Then I must see dropdown timezone with default value "PT"
 		And I must see list times
 		Examples:
       | firstName | lastName | email                | phone        | street | zipcode | gender |
@@ -289,7 +289,7 @@ Feature: Scheduler with valid banner param, invalid crmid param, valid crmid coo
 		Given Wait for Admin Ajax "3" times #Common
 		Then On Date-Time Tab, I must see list date available
 		When I select date
-		Then I must see dropdown timezone with default value "PST"
+		Then I must see dropdown timezone with default value "PT"
 		And I must see list times
 		When I select timezone with "<timezone>" value
 		Given Wait for Admin Ajax "4" times #Common
@@ -409,7 +409,7 @@ Feature: Scheduler with valid banner param, invalid crmid param, valid crmid coo
 		Given Wait for Admin Ajax "3" times #Common
 		Then On Date-Time Tab, I must see list date available
 		When I select date
-		Then I must see dropdown timezone with default value "PST"
+		Then I must see dropdown timezone with default value "PT"
 		And I must see list times
 		When I click button next slide in list date
 		Then I see button load more dates
@@ -482,7 +482,7 @@ Feature: Scheduler with valid banner param, invalid crmid param, valid crmid coo
 		Given Wait for Admin Ajax "3" times #Common
 		Then On Date-Time Tab, I must see list date available
 		When I select date
-		Then I must see dropdown timezone with default value "PST"
+		Then I must see dropdown timezone with default value "PT"
 		And I must see list times
 		When I click button next slide in list date
 		Then I see button load more dates
@@ -583,7 +583,7 @@ Feature: Scheduler with valid banner param, invalid crmid param, valid crmid coo
 		Given Wait for Admin Ajax "3" times #Common
 		Then On Date-Time Tab, I must see list date available
 		When I select date
-		Then I must see dropdown timezone with default value "PST"
+		Then I must see dropdown timezone with default value "PT"
 		And I must see list times
 		When I select timezone with "<timezone>" value
 		Given Wait for Admin Ajax "4" times #Common
@@ -621,7 +621,7 @@ Feature: Scheduler with valid banner param, invalid crmid param, valid crmid coo
 		Given Wait for Admin Ajax "3" times #Common
 		Then On Date-Time Tab, I must see list date available
 		When I select date
-		Then I must see dropdown timezone with default value "PST"
+		Then I must see dropdown timezone with default value "PT"
 		And I must see list times
 		When I select timezone with "<timezone>" value
 		Given Wait for Admin Ajax "4" times #Common
@@ -695,7 +695,7 @@ Feature: Scheduler with valid banner param, invalid crmid param, valid crmid coo
 		Given Wait for Admin Ajax "3" times #Common
 		Then On Date-Time Tab, I must see list date available
 		When I select date
-		Then I must see dropdown timezone with default value "PST"
+		Then I must see dropdown timezone with default value "PT"
 		And I must see list times
 		When I select timezone with "<timezone>" value
 		Given Wait for Admin Ajax "4" times #Common
@@ -765,7 +765,7 @@ Feature: Scheduler with valid banner param, invalid crmid param, valid crmid coo
 		Given Wait for Admin Ajax "3" times #Common
 		Then On Date-Time Tab, I must see list date available
 		When I select date
-		Then I must see dropdown timezone with default value "PST"
+		Then I must see dropdown timezone with default value "PT"
 		And I must see list times
 		When I select timezone with "<timezone>" value
 		Given Wait for Admin Ajax "4" times #Common
