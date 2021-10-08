@@ -1,5 +1,5 @@
-Feature: Scheduler
-	Check TH URL có params chứa key/value KHÔNG MATCH với key/value trong CMS, zipcode và SFID hợp lệ
+Feature: Scheduler: Check URL có params chứa key/value KHÔNG MATCH với key/value trong CMS, zipcode và SFID hợp lệ
+	
 	Scenario: TC4_01: Check TH URL có params chứa key/value KHÔNG MATCH với key/value trong CMS, zipcode và SFID hợp lệ
 		Given Fake Admin Ajax Api with "fullDropdown" data
 		Given I open Scheduler page with param has invalid banner param but valid SFID and valid Zipcode

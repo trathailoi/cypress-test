@@ -1,6 +1,5 @@
-Feature: Scheduler
-	Check TH URL không có param, cookies có SFID
-
+Feature: Scheduler: Check URL không có param, cookies có SFID
+	
 	Background: Scheduler with cookies
 		Given I want to remove Cookie #Common
 
