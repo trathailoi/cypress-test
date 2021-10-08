@@ -229,8 +229,15 @@ Then(`I don't see list times`, () => {
     .should('not.exist')
 })
 
-And('I must see dropdown timezone with default value {string}', (value) => {
-  cy.contains(`Showing times for ${value}`)
+const mapTimezoneText = {
+  PT: 'Pacific Time',
+  MT: 'Mountain Time',
+  CT: 'Central Time',
+  ET: 'Eastern Time',
+}
+
+And('I must see dropdown timezone with default value {string}', (timezone) => {
+  cy.contains(`Showing times for ${mapTimezoneText[timezone]}`)
 })
 
 When('I select timezone with {string} value', (timezone) => {
@@ -393,7 +400,8 @@ Then('I can see book appoinment info and {string} info', (type) => {
     expect($els[1].innerText).to.includes('8:00 AM')
     if (type === 'location') {
       expect($els[2].innerText).to.includes('New Orleans')
-      expect($els[2].innerText).to.includes('2450 Severn Ave., Suite 510, Metairie')
+      expect($els[2].innerText).to.includes('2450 Severn Ave., Suite 510')
+      expect($els[2].innerText).to.includes('Metairie')
       expect($els[2].innerText).to.includes('LA, 70001')
     } else {
       expect($els[2].innerText).to.includes('Video')

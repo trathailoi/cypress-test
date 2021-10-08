@@ -2,7 +2,7 @@ const checkBanner = (bannerOptions = {}) => {
   const {
     bannerHeaders = ['Schedule Your Free Hair Loss Consultation'],
     bannerSubHeaders = ['Schedule your free in-person or video consultation to learn more about our hair loss solutions, ask any questions you might have, and work with a Bosley specialist to customize a plan to reach your hair restoration goals.'],
-    bannerDisclaimers = ['Conditions apply. Please see Terms & Conditions for full details | Legal Disclosures | Current Offers'],
+    bannerDisclaimers = ['Conditions apply. Please see Terms & Conditions for full details | Legal Disclosures'],
     bannerImageUrl
   } = bannerOptions
 
