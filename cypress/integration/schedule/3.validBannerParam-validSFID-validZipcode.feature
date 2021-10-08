@@ -18,7 +18,7 @@ Feature: Scheduler
 		Given I open Scheduler page with param has valid SFID, match key and valid Zipcode
 		Given Wait for Admin Ajax "1" times #Common
 		Then On Location tab, I don't see Location list
-		And On Location tab, I must see Video Consult box have "2" item
+		And On Location tab, I must see Video Consult box have "1" item
 		And I do not see Previous Button
 		And I must see Next Button
 
