@@ -85,7 +85,7 @@ Feature: Scheduler with valid banner param, invalid crmid param, valid crmid coo
 		Then I must see Location form
 		And I must see Banner and Disclaimer match with banner value in params
 		Then On Location tab, I don't see Location list
-		And On Location tab, I must see Video Consult box have "2" item
+		And On Location tab, I must see Video Consult box have "1" item
 		And I must see Previous Button
 		And I must see Next Button
 		Examples:
