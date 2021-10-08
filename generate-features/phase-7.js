@@ -79,7 +79,7 @@ const generateScenariosFunction = () => {
     },
     steps: [
       `Then On Location tab, I don't see Location list`,
-      'And On Location tab, I must see Video Consult box have "2" item',
+      'And On Location tab, I must see Video Consult box have "1" item',
       `And I do not see Previous Button`,
       `And I must see Next Button`
     ],
@@ -116,6 +116,7 @@ const generateScenariosFunction = () => {
   })
 
   generateScenario('TC7_07', allScenarioObject, {
+    focus: true,
     required: 'TC7_02',
     description: 'Ở tab Location Không hiện box Instant Video:(có data)(Time>30mins)',
     dynamic: {
@@ -131,6 +132,7 @@ const generateScenariosFunction = () => {
   })
 
   generateScenario('TC7_08', allScenarioObject, {
+    focus: true,
     required: 'TC7_02',
     description: 'Ở tab Location Không hiện box Instant Video:(có data)(slot<=1)(5mins<=Time<=30mins)',
     dynamic: {
@@ -146,6 +148,7 @@ const generateScenariosFunction = () => {
   })
 
   generateScenario('TC7_09', allScenarioObject, {
+    focus: true,
     required: 'TC7_02',
     description: 'Ở tab Location Không hiện box Instant Video:(có data)(slot<=1)(5mins<=Time)',
     dynamic: {

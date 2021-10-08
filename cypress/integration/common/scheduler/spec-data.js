@@ -352,6 +352,73 @@ const withValidSFID = Object.keys(clonedDefaultData).reduce((resultObj, key) => 
   return resultObj
 }, {})
 
+const withValidSFIDAndConfirmLocation = cloneDeep(withValidSFID)
+
+const resGetEmptyDropdowns = {
+  "success": true,
+  "data": {
+    "appointmentEligibility": null,
+    "locations": [],
+    "videoConsultation": {
+      "timezone": {
+        "tzfromscheduler": "Videoconsultpst",
+        "tzfromschedulerprint": "PT",
+        "abbreviation": "PT"
+      },
+      "slots": {
+        "sfId": "00Q56000006raEqEAI",
+        "scheduledDate": today,
+        "location": "videoconsult",
+        "availableSlots": [],
+        "appointmentEligibility": "ICON"
+      }
+    }
+  }
+}
+
+const resGetLocationsAndNoVideoConsult = {
+  "success": true,
+  "data": {
+    "locations": [
+      {
+        "address1": "2450 Severn Ave., Suite 510",
+        "city": "Metairie",
+        "company": "BOSLEY",
+        "country": "USA",
+        "distanceInMiles": "13.93",
+        "officeName": "New Orleans",
+        "officeType": "RSO",
+        "state": "LA",
+        "zip": "70001",
+        "timezone": 'PT'
+      }
+    ],
+    "videoConsultation": {
+      "timezone": {
+        "tzfromscheduler": "Videoconsultpst",
+        "tzfromschedulerprint": "PT",
+        "abbreviation": "PT"
+      },
+      "slots": {
+        "sfId": "00Q56000006raEqEAI",
+        "scheduledDate": today,
+        "location": "videoconsult",
+        "availableSlots": [],
+        "appointmentEligibility": "ICON"
+      }
+    }
+  }
+}
+withValidSFIDAndConfirmLocation.emptyDropdown = [
+  resGetEmptyDropdowns
+]
+
+withValidSFIDAndConfirmLocation.withoutInstantVideo = [
+  resGetLocationsAndNoVideoConsult,
+  resDefault,
+  resGetDateAvailables,
+  resBookSuccessfully
+]
 
 const resSubmitFreeKit = {
   "success": true,
@@ -390,7 +457,8 @@ export default {
     defaultData,
     withCookies,
     withInvalidSFID,
-    withValidSFID
+    withValidSFID,
+    withValidSFIDAndConfirmLocation
   },
   cookies: {
     bosley_campaign_name:	'BOSLEY.COM',

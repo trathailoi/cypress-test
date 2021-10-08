@@ -72,7 +72,7 @@ Feature: Scheduler
 		And I must see the first tab label is "Schedule a Free Consultation Now​"
 		And I must see Banner and Disclaimer match with banner value in params
 		Then On Location tab, I don't see Location list
-		And On Location tab, I must see Video Consult box have "2" item
+		And On Location tab, I must see Video Consult box have "1" item
 		And I do not see Previous Button
 		And I must see Next Button
 		Examples:
@@ -116,6 +116,7 @@ Feature: Scheduler
       | zip   |
       | 91356 |
 
+	@focus
 	Scenario Outline: TC7_07: Pass TC7_02 -> Ở tab Location Không hiện box Instant Video:(có data)(Time>30mins)
 		Given Fake Admin Ajax Api with "withoutInstantVideo" data
 		Given I open Scheduler page with param has valid SFID, match key but invalid Zipcode
@@ -135,6 +136,7 @@ Feature: Scheduler
       | zip   |
       | 91356 |
 
+	@focus
 	Scenario Outline: TC7_08: Pass TC7_02 -> Ở tab Location Không hiện box Instant Video:(có data)(slot<=1)(5mins<=Time<=30mins)
 		Given Fake Admin Ajax Api with "withoutInstantVideo" data
 		Given I open Scheduler page with param has valid SFID, match key but invalid Zipcode
@@ -154,6 +156,7 @@ Feature: Scheduler
       | zip   |
       | 91356 |
 
+	@focus
 	Scenario Outline: TC7_09: Pass TC7_02 -> Ở tab Location Không hiện box Instant Video:(có data)(slot<=1)(5mins<=Time)
 		Given Fake Admin Ajax Api with "withoutInstantVideo" data
 		Given I open Scheduler page with param has valid SFID, match key but invalid Zipcode

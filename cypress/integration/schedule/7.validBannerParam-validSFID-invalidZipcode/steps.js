@@ -2,7 +2,7 @@ import { stubAdminAjaxApi } from '../../common/scripts'
 import { stubbedData } from '../../common/scheduler/spec-data'
 
 Given('Fake Admin Ajax Api with {string} data', (dataString) => {
-  stubAdminAjaxApi(stubbedData.withValidSFID[dataString] || {})
+  stubAdminAjaxApi(stubbedData.withValidSFIDAndConfirmLocation[dataString] || {})
 })
 
 Given(`I open Scheduler page with param has valid SFID, match key but invalid Zipcode`, () => {
