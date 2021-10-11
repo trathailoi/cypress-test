@@ -44,7 +44,7 @@ Then('I submit Free Kit form #CommonPhase2', () => {
 
 Then('I have been redirect to scheduler page #CommonPhase2', () => {
   cy.url()
-    .should('equal', `${Cypress.env('BASE_URL')}/scheduler/?kitform_thank_you=1`)
+    .should('equal', `${Cypress.env('BASE_URL')}/scheduler/?thank_you=1`)
 })
 
 When('I click Previous button #CommonPhase2', () => {

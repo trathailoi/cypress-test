@@ -1,6 +1,5 @@
-Feature: Scheduler with params
-	Check TH URL có params chứa key/value KHÔNG MATCH với key/value trong CMS, SFID không hợp lệ, Cookies đã có SFID.
-
+Feature: Scheduler: Check URL có params chứa key/value KHÔNG MATCH với key/value trong CMS, SFID không hợp lệ, Cookies đã có SFID
+	
 	Background: Scheduler Page with params
 		Given I want to remove Cookie #Common
 

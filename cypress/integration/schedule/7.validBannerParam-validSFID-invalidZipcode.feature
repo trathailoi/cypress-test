@@ -1,5 +1,4 @@
-Feature: Scheduler
-	Check TH URL có params chứa key/value match với key/value trong CMS, SFID hợp lệ, zipcode KHÔNG HỢP LỆ
+Feature: Scheduler: Check URL có params chứa key/value match với key/value trong CMS, SFID hợp lệ, zipcode KHÔNG HỢP LỆ
 
 	Background: Scheduler with cookies
 		Given I want to remove Cookie #Common

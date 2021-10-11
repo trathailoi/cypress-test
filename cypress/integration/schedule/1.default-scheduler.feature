@@ -1,6 +1,5 @@
-Feature: Scheduler
-	Test Scheduler URL không có param, cookies không có SFID
-
+Feature: Scheduler: Check URL không có param, cookies không có SFID
+	
 	Background: Scheduler Page
 		Given I want to remove Cookie #Common
 

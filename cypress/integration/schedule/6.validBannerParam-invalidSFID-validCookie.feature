@@ -1,6 +1,5 @@
-Feature: Scheduler with valid banner param, invalid crmid param, valid crmid cookie
-	Check TH URL có params chứa key/value MATCH với key/value trong CMS, SFID không hợp lệ, Cookies đã có SFID
-
+Feature: Scheduler: Check URL có params chứa key/value MATCH với key/value trong CMS, SFID không hợp lệ, Cookies đã có SFID
+	
 	Background: Scheduler Page
 		Given I want to remove Cookie #Common
 
