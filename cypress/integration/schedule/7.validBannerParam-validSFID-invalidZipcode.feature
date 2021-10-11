@@ -115,7 +115,6 @@ Feature: Scheduler: Check URL có params chứa key/value match với key/value 
       | zip   |
       | 91356 |
 
-	@focus
 	Scenario Outline: TC7_07: Pass TC7_02 -> Ở tab Location Không hiện box Instant Video:(có data)(Time>30mins)
 		Given Fake Admin Ajax Api with "withoutInstantVideo" data
 		Given I open Scheduler page with param has valid SFID, match key but invalid Zipcode
@@ -135,7 +134,6 @@ Feature: Scheduler: Check URL có params chứa key/value match với key/value 
       | zip   |
       | 91356 |
 
-	@focus
 	Scenario Outline: TC7_08: Pass TC7_02 -> Ở tab Location Không hiện box Instant Video:(có data)(slot<=1)(5mins<=Time<=30mins)
 		Given Fake Admin Ajax Api with "withoutInstantVideo" data
 		Given I open Scheduler page with param has valid SFID, match key but invalid Zipcode
@@ -155,7 +153,6 @@ Feature: Scheduler: Check URL có params chứa key/value match với key/value 
       | zip   |
       | 91356 |
 
-	@focus
 	Scenario Outline: TC7_09: Pass TC7_02 -> Ở tab Location Không hiện box Instant Video:(có data)(slot<=1)(5mins<=Time)
 		Given Fake Admin Ajax Api with "withoutInstantVideo" data
 		Given I open Scheduler page with param has valid SFID, match key but invalid Zipcode
