@@ -65,8 +65,8 @@ And('On Location tab, I must see Video Consult box have {string} item', (itemLen
     .should('have.length', Number(itemLength))
 })
 
-const instantHeaderText = 'Instant Appointments Available Now'
-const instantSubText = 'Select to start an instant appointment.'
+const instantHeaderText = 'Instant Video Consult'
+const instantSubText = 'Select to meet now with a Bosley Hair Restoration specialist.'
 
 And('I must see Instant Video', () => {
   cy.contains(instantHeaderText)
