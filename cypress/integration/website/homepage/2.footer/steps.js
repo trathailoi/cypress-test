@@ -107,8 +107,13 @@ Then(/^I can see red error in subcribe form$/, () =>{
 });
 
 Then(/^I can see red error in popup form$/, () =>{
-  for (let i = 1; i <= 3; i++) {
-    cy.get(`.popup-form-footer .form-group:nth-child(${i})`)
-      .should('have.class', 'error')
-  }
+  // for (let i = 1; i <= 3; i++) {
+  //   cy.get(`.popup-form-footer .form-group:nth-child(${i})`)
+  //     .should('have.class', 'error')
+  cy.get(`.popup-form-footer .form-group:nth-child(1)`)
+    .should('have.class', 'error')
+  cy.get(`.popup-form-footer .form-group:nth-child(2)`)
+    .should('have.class', 'error')
+  cy.get(`.popup-form-footer .form-group:nth-child(4)`)
+    .should('have.class', 'error')
 });

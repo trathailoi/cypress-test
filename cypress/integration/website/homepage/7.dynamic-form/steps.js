@@ -118,6 +118,11 @@ Given('Fake admin ajax api false', () => {
   })
 })
 
+Then('I must redirect to Scheduler page with param Thank You', () => {
+  cy.url()
+    .should('equal', `${Cypress.env('BASE_URL')}/scheduler/?thank_you=1`)
+})
+
 // Given('Wait for fetch data false', () => {
 //   cy.wait(`@AdminAjaxApi`)
 // })

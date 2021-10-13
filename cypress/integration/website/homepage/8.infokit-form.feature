@@ -11,7 +11,7 @@ Feature: Page Get Info Kit
     When I click Get My Free Info Kit button​
     Then I see loading icon and button is disabled
     Given Wait for Admin Ajax "1" times #Common
-    Then I must redirect to Scheduler page with param "?kitform_thank_you=1"
+    Then I must redirect to Scheduler page with param Thank You
 
   Scenario Outline: TC_GetInfoKit_02: Visit Get Info Kit page, không input/invalid input form: Submit form "Get a free information kit" không thành công    
     When I input info to Get Info Kit form with name is "<firstName>" "<lastName>" "<email>" "<phone>" "<street>" "<zipcode>" "<gender>"
