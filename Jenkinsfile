@@ -5,9 +5,6 @@ pipeline {
     CYPRESS_PATH = '/srv/sites/bosley-wp-08-2021'
     CURRENT_WORKSPACE = "${env.WORKSPACE}"
   }
-  options {
-    disableConcurrentBuilds()
-  }
   // environment {
   //   MSTEAMS_WEBHOOK = "https://9thwonder.webhook.office.com/webhookb2/daf5f66c-b00f-44ed-a3fd-87484b31aad9@3bd5f15a-bde3-4bdc-88ec-f43c1486de74/JenkinsCI/498df47cd87b411b9c55f53fe5dfa687/36d17080-d6aa-437a-b0bd-7b14254b84fb"
   // }
