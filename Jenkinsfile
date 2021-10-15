@@ -16,6 +16,7 @@ pipeline {
     booleanParam(name: 'video', description: 'with recording video ? Note: It would take way so longer.', defaultValue: false)
     string(name: 'cliOpt', description: 'Additional CLI options of cypress run. E.g. --spec "**/1.default-scheduler.feature"')
     booleanParam(name: 'confirmation', description: 'my lord, please do it!', defaultValue: false)
+    booleanParam(name: 'installPackages', description: 'Install NPM packages first ?', defaultValue: false)
   }
 	stages {
     stage('Setup') {
@@ -33,7 +34,10 @@ pipeline {
     }
 		stage('Install Dependencies') {
       when {
-        expression { params.confirmation == true }
+        allOf {
+          expression { params.installPackages == true }
+          expression { params.confirmation == true }
+        }
       }
       steps{
         sshagent(credentials: ['AWS_CYPRESS_DEMO']) {
