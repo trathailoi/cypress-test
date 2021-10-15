@@ -9,6 +9,7 @@ Feature: Scheduler: Check URL có params chứa key/value match với key/value 
 		Then I must see Banner and Disclaimer match with banner value in params
 		And I must see Zipcode popup
 
+	@last
 	Scenario Outline: TC7_01_2: Pass TC7_01 -> Submit form change zipcode không hợp lệ
 		Given Fake Admin Ajax Api with "fullDropdown" data
 		Given I open Scheduler page with param has valid SFID, match key but invalid Zipcode
@@ -25,6 +26,7 @@ Feature: Scheduler: Check URL có params chứa key/value match với key/value 
       | 123    |
       | 1234   |
 
+	@last
 	Scenario Outline: TC7_02: Pass TC7_01 -> Submit form change zipcode hợp lệ > có kết quả trả về cho In person
 		Given Fake Admin Ajax Api with "fullDropdown" data
 		Given I open Scheduler page with param has valid SFID, match key but invalid Zipcode
@@ -59,6 +61,7 @@ Feature: Scheduler: Check URL có params chứa key/value match với key/value 
       | zip   |
       | 91356 |
 
+	@last
 	Scenario Outline: TC7_04: Pass TC7_02 -> Ở tab Location không có location nào tương ứng với Zipcode #NEGATIVE
 		Given Fake Admin Ajax Api with "emptyDropdown" data
 		Given I open Scheduler page with param has valid SFID, match key but invalid Zipcode
@@ -97,6 +100,7 @@ Feature: Scheduler: Check URL có params chứa key/value match với key/value 
       | zip   |
       | 91356 |
 
+	@last
 	Scenario Outline: TC7_06: Pass TC7_02 -> Ở tab Location Không hiện box Instant Video:(không có data) #NEGATIVE
 		Given Fake Admin Ajax Api with "emptyDropdown" data
 		Given I open Scheduler page with param has valid SFID, match key but invalid Zipcode
@@ -115,6 +119,7 @@ Feature: Scheduler: Check URL có params chứa key/value match với key/value 
       | zip   |
       | 91356 |
 
+	@last
 	Scenario Outline: TC7_07: Pass TC7_02 -> Ở tab Location Không hiện box Instant Video:(có data)(Time>30mins)
 		Given Fake Admin Ajax Api with "withoutInstantVideo" data
 		Given I open Scheduler page with param has valid SFID, match key but invalid Zipcode
@@ -134,6 +139,7 @@ Feature: Scheduler: Check URL có params chứa key/value match với key/value 
       | zip   |
       | 91356 |
 
+	@last
 	Scenario Outline: TC7_08: Pass TC7_02 -> Ở tab Location Không hiện box Instant Video:(có data)(slot<=1)(5mins<=Time<=30mins)
 		Given Fake Admin Ajax Api with "withoutInstantVideo" data
 		Given I open Scheduler page with param has valid SFID, match key but invalid Zipcode
@@ -153,6 +159,7 @@ Feature: Scheduler: Check URL có params chứa key/value match với key/value 
       | zip   |
       | 91356 |
 
+	@last
 	Scenario Outline: TC7_09: Pass TC7_02 -> Ở tab Location Không hiện box Instant Video:(có data)(slot<=1)(5mins<=Time)
 		Given Fake Admin Ajax Api with "withoutInstantVideo" data
 		Given I open Scheduler page with param has valid SFID, match key but invalid Zipcode
@@ -279,6 +286,7 @@ Feature: Scheduler: Check URL có params chứa key/value match với key/value 
       | 91356 | CT      |
       | 91356 | ET      |
 
+	@last
 	Scenario Outline: TC7_14: Pass TC7_03 -> chọn location không có slot trong vòng 15 ngày: show error
 		Given Fake Admin Ajax Api with "fullDropdownUnAvailableDateTime" data
 		Given I open Scheduler page with param has valid SFID, match key but invalid Zipcode
@@ -304,6 +312,7 @@ Feature: Scheduler: Check URL có params chứa key/value match với key/value 
       | zip   |
       | 91356 |
 
+	@last
 	Scenario Outline: TC7_15: Pass TC7_03 -> chọn video consult không có slot trong vòng 15 ngày: show error
 		Given Fake Admin Ajax Api with "fullDropdownUnAvailableDateTime" data
 		Given I open Scheduler page with param has valid SFID, match key but invalid Zipcode
@@ -328,6 +337,7 @@ Feature: Scheduler: Check URL có params chứa key/value match với key/value 
       | zip   |
       | 91356 |
 
+	@last
 	Scenario Outline: TC7_16_01: Pass TC7_11 -> chọn location có slot trong vòng 15 ngày tiếp theo: hiển thị ngày giờ available, click load more => show available date
 		Given Fake Admin Ajax Api with "fullDropdownHaveLoadMore" data
 		Given I open Scheduler page with param has valid SFID, match key but invalid Zipcode
@@ -361,6 +371,7 @@ Feature: Scheduler: Check URL có params chứa key/value match với key/value 
       | zip   |
       | 91356 |
 
+	@last
 	Scenario Outline: TC7_16_02: Pass TC7_12 -> Chọn một Video Consult -> Tìm thấy các slot trong vòng 15 ngày
 		Given Fake Admin Ajax Api with "fullDropdownHaveLoadMore" data
 		Given I open Scheduler page with param has valid SFID, match key but invalid Zipcode
@@ -394,6 +405,7 @@ Feature: Scheduler: Check URL có params chứa key/value match với key/value 
       | zip   |
       | 91356 |
 
+	@last
 	Scenario Outline: TC7_17_01: Pass TC7_11 -> chọn location không có slot trong vòng 15 ngày tiếp theo
 		Given Fake Admin Ajax Api with "fullDropdownNotHaveLoadMore" data
 		Given I open Scheduler page with param has valid SFID, match key but invalid Zipcode
@@ -432,6 +444,7 @@ Feature: Scheduler: Check URL có params chứa key/value match với key/value 
       | zip   |
       | 91356 |
 
+	@last
 	Scenario Outline: TC7_17_02: Pass TC7_12 -> chọn Video Consult không có slot trong vòng 15 ngày tiếp theo
 		Given Fake Admin Ajax Api with "fullDropdownNotHaveLoadMore" data
 		Given I open Scheduler page with param has valid SFID, match key but invalid Zipcode
@@ -499,6 +512,7 @@ Feature: Scheduler: Check URL có params chứa key/value match với key/value 
       | zip   |
       | 91356 |
 
+	@last
 	Scenario Outline: TC7_19: Pass TC7_18 -> book thành công
 		Given Fake Admin Ajax Api with "fullDropdown" data
 		Given I open Scheduler page with param has valid SFID, match key but invalid Zipcode
@@ -567,6 +581,7 @@ Feature: Scheduler: Check URL có params chứa key/value match với key/value 
       | 91356 | CT      |
       | 91356 | ET      |
 
+	@last
 	Scenario Outline: TC7_21: Pass TC7_20 -> chọn option trong Consult language & Observation​ consent > click button "Book Appointment" > book thành công
 		Given Fake Admin Ajax Api with "fullDropdownHaveSelectTimezone" data
 		Given I open Scheduler page with param has valid SFID, match key but invalid Zipcode
@@ -608,6 +623,7 @@ Feature: Scheduler: Check URL có params chứa key/value match với key/value 
       | 91356   | MT      | English         | no                 |
       | 91356   | MT      | Spanish         | no                 |
 
+	@last
 	Scenario Outline: TC7_22_01: Pass TC7_18 -> Chọn 1 location -> click button "Book Appointment" > book không thành công vì slot đã được book (403 resources unavailable)
 		Given Fake Admin Ajax Api with "fullDropdownBookFailed" data
 		Given I open Scheduler page with param has valid SFID, match key but invalid Zipcode
@@ -639,6 +655,7 @@ Feature: Scheduler: Check URL có params chứa key/value match với key/value 
       | zip   |
       | 91356 |
 
+	@last
 	Scenario Outline: TC7_22_02: Pass TC7_20 -> Chọn Video Consult -> user click button "Book Appointment" > book không thành công vì slot đã được book (403 resources unavailable)
 		Given Fake Admin Ajax Api with "fullDropdownHaveSelectTimezoneBookFailed" data
 		Given I open Scheduler page with param has valid SFID, match key but invalid Zipcode
@@ -676,6 +693,7 @@ Feature: Scheduler: Check URL có params chứa key/value match với key/value 
       | zip     | timezone |
       | 91356   | MT      |
 
+	@last
 	Scenario Outline: TC7_23_01: Pass TC7_18 -> Chọn 1 location ->  click button "Book Appointment" > book không thành công vì lý do gì đó khác status 403 resources unavailable
 		Given Fake Admin Ajax Api with "fullDropdown" data
 		Given I open Scheduler page with param has valid SFID, match key but invalid Zipcode
@@ -707,6 +725,7 @@ Feature: Scheduler: Check URL có params chứa key/value match với key/value 
       | zip   |
       | 91356 |
 
+	@last
 	Scenario Outline: TC7_23_02: Pass TC7_20 -> Chọn Video Consult -> user click button "Book Appointment" > book không thành công vì lý do gì đó khác status 403 resources unavailable
 		Given Fake Admin Ajax Api with "fullDropdownHaveSelectTimezone" data
 		Given I open Scheduler page with param has valid SFID, match key but invalid Zipcode
@@ -744,6 +763,7 @@ Feature: Scheduler: Check URL có params chứa key/value match với key/value 
       | zip | timezone |
       | 91356   | MT      |
 
+	@last
 	Scenario Outline: TC7_24_01: Pass TC7_05 -> Chọn Instant Video button > book thành công
 		Given Fake Admin Ajax Api with "fullDropdownHaveConfirm" data
 		Given I open Scheduler page with param has valid SFID, match key but invalid Zipcode
@@ -768,6 +788,7 @@ Feature: Scheduler: Check URL có params chứa key/value match với key/value 
       | zip   |
       | 91356 |
 
+	@last
 	Scenario Outline: TC7_24_02: Pass TC7_10 -> Chọn Instant Video button > book thành công
 		Given Fake Admin Ajax Api with "fullDropdownHaveConfirm" data
 		Given I open Scheduler page with param has valid SFID, match key but invalid Zipcode
@@ -792,6 +813,7 @@ Feature: Scheduler: Check URL có params chứa key/value match với key/value 
       | zip   |
       | 91356 |
 
+	@last
 	Scenario Outline: TC7_25_01: Pass TC7_10 -> Chọn Instant Video button > book không thành công
 		Given Fake Admin Ajax Api with "fullDropdownHaveConfirm" data
 		Given I open Scheduler page with param has valid SFID, match key but invalid Zipcode
@@ -816,6 +838,7 @@ Feature: Scheduler: Check URL có params chứa key/value match với key/value 
       | zip   |
       | 91356 |
 
+	@last
 	Scenario Outline: TC7_25_02: Pass TC7_05 -> Chọn Instant Video button > book không thành công
 		Given Fake Admin Ajax Api with "fullDropdownHaveConfirm" data
 		Given I open Scheduler page with param has valid SFID, match key but invalid Zipcode

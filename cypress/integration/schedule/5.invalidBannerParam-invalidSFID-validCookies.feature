@@ -24,6 +24,7 @@ Feature: Scheduler: Check URL có params chứa key/value KHÔNG MATCH với key
       | firstName | lastName | email                | phone        | street | zipcode | gender |
       | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  |
 
+	@last
 	Scenario Outline: TC5_03: Pass TC5_01 -> Submit form About You > zipcode/email không valid #NEGATIVE
 		Given Fake Admin Ajax Api with "fullDropdown" data
 		Given I open Scheduler page with param has invalid SFID and not match key
@@ -68,6 +69,7 @@ Feature: Scheduler: Check URL có params chứa key/value KHÔNG MATCH với key
       | firstName | lastName | email                | phone        | street | zipcode | gender |
       | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  |
 
+	@last
 	Scenario Outline: TC5_05: Pass TC5_02 -> Ở tab Location không có location nào tương ứng với Zipcode #NEGATIVE
 		Given Fake Admin Ajax Api with "emptyDropdown" data
 		Given I open Scheduler page with param has invalid SFID and not match key
@@ -106,6 +108,7 @@ Feature: Scheduler: Check URL có params chứa key/value KHÔNG MATCH với key
       | firstName | lastName | email                | phone        | street | zipcode | gender |
       | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  |
 
+	@last
 	Scenario Outline: TC5_07: Pass TC5_02 -> Ở vào tab Location Không hiện box Instant Video:(không có data) #NEGATIVE
 		Given Fake Admin Ajax Api with "emptyDropdown" data
 		Given I open Scheduler page with param has invalid SFID and not match key
@@ -124,6 +127,7 @@ Feature: Scheduler: Check URL có params chứa key/value KHÔNG MATCH với key
       | firstName | lastName | email                | phone        | street | zipcode | gender |
       | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  |
 
+	@last
 	Scenario Outline: TC5_08: Pass TC5_02 -> Ở tab Location Không hiện box Instant Video:(có data)(Time>30mins)
 		Given Fake Admin Ajax Api with "withoutInstantVideo" data
 		Given I open Scheduler page with param has invalid SFID and not match key
@@ -143,6 +147,7 @@ Feature: Scheduler: Check URL có params chứa key/value KHÔNG MATCH với key
       | firstName | lastName | email                | phone        | street | zipcode | gender |
       | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  |
 
+	@last
 	Scenario Outline: TC5_09: Pass TC5_02 -> Ở tab Location Không hiện box Instant Video:(có data)(slot<=1)(5mins<=Time<=30mins)
 		Given Fake Admin Ajax Api with "withoutInstantVideo" data
 		Given I open Scheduler page with param has invalid SFID and not match key
@@ -162,6 +167,7 @@ Feature: Scheduler: Check URL có params chứa key/value KHÔNG MATCH với key
       | firstName | lastName | email                | phone        | street | zipcode | gender |
       | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  |
 
+	@last
 	Scenario Outline: TC5_10: Pass TC5_02 -> Ở vào tab Location Không hiện box Instant Video:(có data)(slot<=1)(5mins<=Time)
 		Given Fake Admin Ajax Api with "withoutInstantVideo" data
 		Given I open Scheduler page with param has invalid SFID and not match key
@@ -288,6 +294,7 @@ Feature: Scheduler: Check URL có params chứa key/value KHÔNG MATCH với key
       | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  | CT      |
       | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  | ET      |
 
+	@last
 	Scenario Outline: TC5_15: Pass TC5_04 -> chọn location không có slot trong vòng 15 ngày: show error
 		Given Fake Admin Ajax Api with "fullDropdownUnAvailableDateTime" data
 		Given I open Scheduler page with param has invalid SFID and not match key
@@ -313,6 +320,7 @@ Feature: Scheduler: Check URL có params chứa key/value KHÔNG MATCH với key
       | firstName | lastName | email                | phone        | street | zipcode | gender |
       | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  |
 
+	@last
 	Scenario Outline: TC5_16: Pass TC5_04 -> chọn video consult không có slot trong vòng 15 ngày: show error
 		Given Fake Admin Ajax Api with "fullDropdownUnAvailableDateTime" data
 		Given I open Scheduler page with param has invalid SFID and not match key
@@ -337,6 +345,7 @@ Feature: Scheduler: Check URL có params chứa key/value KHÔNG MATCH với key
       | firstName | lastName | email                | phone        | street | zipcode | gender |
       | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  |
 
+	@last
 	Scenario Outline: TC5_17_01: Pass TC5_12 -> chọn location có slot trong vòng 15 ngày tiếp theo: hiển thị ngày giờ available, click load more => show available date
 		Given Fake Admin Ajax Api with "fullDropdownHaveLoadMore" data
 		Given I open Scheduler page with param has invalid SFID and not match key
@@ -370,6 +379,7 @@ Feature: Scheduler: Check URL có params chứa key/value KHÔNG MATCH với key
       | firstName | lastName | email                | phone        | street | zipcode | gender |
       | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  |
 
+	@last
 	Scenario Outline: TC5_17_02: Pass TC5_13 -> Chọn một Video Consult -> Tìm thấy các slot trong vòng 15 ngày
 		Given Fake Admin Ajax Api with "fullDropdownHaveLoadMore" data
 		Given I open Scheduler page with param has invalid SFID and not match key
@@ -403,6 +413,7 @@ Feature: Scheduler: Check URL có params chứa key/value KHÔNG MATCH với key
       | firstName | lastName | email                | phone        | street | zipcode | gender |
       | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  |
 
+	@last
 	Scenario Outline: TC5_18_01: Pass TC5_12 -> chọn location không có slot trong vòng 15 ngày tiếp theo
 		Given Fake Admin Ajax Api with "fullDropdownNotHaveLoadMore" data
 		Given I open Scheduler page with param has invalid SFID and not match key
@@ -441,6 +452,7 @@ Feature: Scheduler: Check URL có params chứa key/value KHÔNG MATCH với key
       | firstName | lastName | email                | phone        | street | zipcode | gender |
       | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  |
 
+	@last
 	Scenario Outline: TC5_18_02: Pass TC5_13 -> chọn Video Consult không có slot trong vòng 15 ngày tiếp theo
 		Given Fake Admin Ajax Api with "fullDropdownNotHaveLoadMore" data
 		Given I open Scheduler page with param has invalid SFID and not match key
@@ -508,6 +520,7 @@ Feature: Scheduler: Check URL có params chứa key/value KHÔNG MATCH với key
       | firstName | lastName | email                | phone        | street | zipcode | gender |
       | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  |
 
+	@last
 	Scenario Outline: TC5_20: Pass TC5_19 -> book thành công
 		Given Fake Admin Ajax Api with "fullDropdown" data
 		Given I open Scheduler page with param has invalid SFID and not match key
@@ -576,6 +589,7 @@ Feature: Scheduler: Check URL có params chứa key/value KHÔNG MATCH với key
       | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  | CT      |
       | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  | ET      |
 
+	@last
 	Scenario Outline: TC5_22: Pass TC5_21 -> chọn option trong Consult language & Observation​ consent > click button "Book Appointment" > book thành công
 		Given Fake Admin Ajax Api with "fullDropdownHaveSelectTimezone" data
 		Given I open Scheduler page with param has invalid SFID and not match key
@@ -617,6 +631,7 @@ Feature: Scheduler: Check URL có params chứa key/value KHÔNG MATCH với key
       | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  | MT      | English         | no                 |
       | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  | MT      | Spanish         | no                 |
 
+	@last
 	Scenario Outline: TC5_23_01: Pass TC5_19 -> Chọn 1 location -> click button "Book Appointment" > book không thành công vì slot đã được book (404 resources unavailable)
 		Given Fake Admin Ajax Api with "fullDropdownBookFailed" data
 		Given I open Scheduler page with param has invalid SFID and not match key
@@ -648,6 +663,7 @@ Feature: Scheduler: Check URL có params chứa key/value KHÔNG MATCH với key
       | firstName | lastName | email                | phone        | street | zipcode | gender |
       | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  |
 
+	@last
 	Scenario Outline: TC5_23_02: Pass TC5_21 -> Chọn Video Consult -> user click button "Book Appointment" > book không thành công vì slot đã được book (404 resources unavailable)
 		Given Fake Admin Ajax Api with "fullDropdownHaveSelectTimezoneBookFailed" data
 		Given I open Scheduler page with param has invalid SFID and not match key
@@ -685,6 +701,7 @@ Feature: Scheduler: Check URL có params chứa key/value KHÔNG MATCH với key
     | firstName | lastName | email                | phone        | street | zipcode | gender | timezone |
     | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  | MT      |
 
+	@last
 	Scenario Outline: TC5_24_01: Pass TC5_19 -> Chọn 1 location ->  click button "Book Appointment" > book không thành công vì lý do gì đó khác status 404 resources unavailable
 		Given Fake Admin Ajax Api with "fullDropdown" data
 		Given I open Scheduler page with param has invalid SFID and not match key
@@ -716,6 +733,7 @@ Feature: Scheduler: Check URL có params chứa key/value KHÔNG MATCH với key
       | firstName | lastName | email                | phone        | street | zipcode | gender |
       | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  |
 
+	@last
 	Scenario Outline: TC5_24_02: Pass TC5_21 -> Chọn Video Consult -> user click button "Book Appointment" > book không thành công vì lý do gì đó khác status 404 resources unavailable
 		Given Fake Admin Ajax Api with "fullDropdownHaveSelectTimezone" data
 		Given I open Scheduler page with param has invalid SFID and not match key
@@ -753,6 +771,7 @@ Feature: Scheduler: Check URL có params chứa key/value KHÔNG MATCH với key
       | firstName | lastName | email                | phone        | street | zipcode | gender | timezone |
       | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  | MT      |
 
+	@last
 	Scenario Outline: TC5_25_01: Pass TC5_06 -> Chọn Instant Video button > book thành công
 		Given Fake Admin Ajax Api with "fullDropdownHaveConfirm" data
 		Given I open Scheduler page with param has invalid SFID and not match key
@@ -777,6 +796,7 @@ Feature: Scheduler: Check URL có params chứa key/value KHÔNG MATCH với key
       | firstName | lastName | email                | phone        | street | zipcode | gender |
       | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  |
 
+	@last
 	Scenario Outline: TC5_25_02: Pass TC5_11 -> Chọn Instant Video button > book thành công
 		Given Fake Admin Ajax Api with "fullDropdownHaveConfirm" data
 		Given I open Scheduler page with param has invalid SFID and not match key
@@ -801,6 +821,7 @@ Feature: Scheduler: Check URL có params chứa key/value KHÔNG MATCH với key
       | firstName | lastName | email                | phone        | street | zipcode | gender |
       | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  |
 
+	@last
 	Scenario Outline: TC5_26_01: Pass TC5_06 -> Chọn Instant Video button > book không thành công
 		Given Fake Admin Ajax Api with "fullDropdownHaveConfirm" data
 		Given I open Scheduler page with param has invalid SFID and not match key
@@ -825,6 +846,7 @@ Feature: Scheduler: Check URL có params chứa key/value KHÔNG MATCH với key
       | firstName | lastName | email                | phone        | street | zipcode | gender |
       | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  |
 
+	@last
 	Scenario Outline: TC5_26_02: Pass TC5_11 -> Chọn Instant Video button > book không thành công
 		Given Fake Admin Ajax Api with "fullDropdownHaveConfirm" data
 		Given I open Scheduler page with param has invalid SFID and not match key

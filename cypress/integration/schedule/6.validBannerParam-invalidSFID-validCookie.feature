@@ -25,6 +25,7 @@ Feature: Scheduler: Check URL có params chứa key/value MATCH với key/value 
       | firstName | lastName | email                | phone        | street | zipcode | gender |
       | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  |
 
+	@last
 	Scenario Outline: TC6_03: Pass TC6_01 -> Submit form About You > zipcode/email không valid #NEGATIVE
 		Given I set cookie SFID valid
 		Given I open Scheduler page with valid banner param, invalid crmid
@@ -71,6 +72,7 @@ Feature: Scheduler: Check URL có params chứa key/value MATCH với key/value 
       | firstName | lastName | email                | phone        | street | zipcode | gender |
       | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  |
 
+	@last
 	Scenario Outline: TC6_05: Pass TC6_02 -> Ở tab Location không có location nào tương ứng với Zipcode #NEGATIVE
 		Given I set cookie SFID valid
 		Given I open Scheduler page with valid banner param, invalid crmid
@@ -111,6 +113,7 @@ Feature: Scheduler: Check URL có params chứa key/value MATCH với key/value 
       | firstName | lastName | email                | phone        | street | zipcode | gender |
       | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  |
 
+	@last
 	Scenario Outline: TC6_07: Pass TC6_02 -> Ở tab Location Không hiện box Instant Video:(không có data) #NEGATIVE
 		Given I set cookie SFID valid
 		Given I open Scheduler page with valid banner param, invalid crmid
@@ -130,6 +133,7 @@ Feature: Scheduler: Check URL có params chứa key/value MATCH với key/value 
       | firstName | lastName | email                | phone        | street | zipcode | gender |
       | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  |
 
+	@last
 	Scenario Outline: TC6_08: Pass TC6_02 -> Ở tab Location Không hiện box Instant Video:(có data)(Time>30mins)
 		Given I set cookie SFID valid
 		Given I open Scheduler page with valid banner param, invalid crmid
@@ -150,6 +154,7 @@ Feature: Scheduler: Check URL có params chứa key/value MATCH với key/value 
       | firstName | lastName | email                | phone        | street | zipcode | gender |
       | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  |
 
+	@last
 	Scenario Outline: TC6_09: Pass TC6_02 -> Ở tab Location Không hiện box Instant Video:(có data)(slot<=1)(5mins<=Time<=30mins)
 		Given I set cookie SFID valid
 		Given I open Scheduler page with valid banner param, invalid crmid
@@ -170,6 +175,7 @@ Feature: Scheduler: Check URL có params chứa key/value MATCH với key/value 
       | firstName | lastName | email                | phone        | street | zipcode | gender |
       | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  |
 
+	@last
 	Scenario Outline: TC6_10: Pass TC6_02 -> Ở vào tab Location Không hiện box Instant Video:(có data)(slot<=1)(5mins<=Time)
 		Given I set cookie SFID valid
 		Given I open Scheduler page with valid banner param, invalid crmid
@@ -301,6 +307,7 @@ Feature: Scheduler: Check URL có params chứa key/value MATCH với key/value 
       | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  | CT      |
       | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  | ET      |
 
+	@last
 	Scenario Outline: TC6_15: Pass TC6_04 -> chọn location không có slot trong vòng 15 ngày: show error
 		Given I set cookie SFID valid
 		Given I open Scheduler page with valid banner param, invalid crmid
@@ -327,6 +334,7 @@ Feature: Scheduler: Check URL có params chứa key/value MATCH với key/value 
       | firstName | lastName | email                | phone        | street | zipcode | gender |
       | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  |
 
+	@last
 	Scenario Outline: TC6_16: Pass TC6_04 -> chọn video consult không có slot trong vòng 15 ngày: show error
 		Given I set cookie SFID valid
 		Given I open Scheduler page with valid banner param, invalid crmid
@@ -352,6 +360,7 @@ Feature: Scheduler: Check URL có params chứa key/value MATCH với key/value 
       | firstName | lastName | email                | phone        | street | zipcode | gender |
       | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  |
 
+	@last
 	Scenario Outline: TC6_17_01: Pass TC6_12 -> chọn location có slot trong vòng 15 ngày tiếp theo: hiển thị ngày giờ available, click load more => show available date
 		Given I set cookie SFID valid
 		Given I open Scheduler page with valid banner param, invalid crmid
@@ -386,6 +395,7 @@ Feature: Scheduler: Check URL có params chứa key/value MATCH với key/value 
       | firstName | lastName | email                | phone        | street | zipcode | gender |
       | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  |
 
+	@last
 	Scenario Outline: TC6_17_02: Pass TC6_13 -> Chọn một Video Consult -> Tìm thấy các slot trong vòng 15 ngày
 		Given I set cookie SFID valid
 		Given I open Scheduler page with valid banner param, invalid crmid
@@ -420,6 +430,7 @@ Feature: Scheduler: Check URL có params chứa key/value MATCH với key/value 
       | firstName | lastName | email                | phone        | street | zipcode | gender |
       | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  |
 
+	@last
 	Scenario Outline: TC6_18_01: Pass TC6_12 -> chọn location không có slot trong vòng 15 ngày tiếp theo
 		Given I set cookie SFID valid
 		Given I open Scheduler page with valid banner param, invalid crmid
@@ -459,6 +470,7 @@ Feature: Scheduler: Check URL có params chứa key/value MATCH với key/value 
       | firstName | lastName | email                | phone        | street | zipcode | gender |
       | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  |
 
+	@last
 	Scenario Outline: TC6_18_02: Pass TC6_13 -> chọn Video Consult không có slot trong vòng 15 ngày tiếp theo
 		Given I set cookie SFID valid
 		Given I open Scheduler page with valid banner param, invalid crmid
@@ -528,6 +540,7 @@ Feature: Scheduler: Check URL có params chứa key/value MATCH với key/value 
       | firstName | lastName | email                | phone        | street | zipcode | gender |
       | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  |
 
+	@last
 	Scenario Outline: TC6_20: Pass TC6_19 -> book thành công
 		Given I set cookie SFID valid
 		Given I open Scheduler page with valid banner param, invalid crmid
@@ -598,6 +611,7 @@ Feature: Scheduler: Check URL có params chứa key/value MATCH với key/value 
       | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  | CT      |
       | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  | ET      |
 
+	@last
 	Scenario Outline: TC6_22: Pass TC6_21 -> chọn option trong Consult language & Observation​ consent > click button "Book Appointment" > book thành công
 		Given I set cookie SFID valid
 		Given I open Scheduler page with valid banner param, invalid crmid
@@ -640,6 +654,7 @@ Feature: Scheduler: Check URL có params chứa key/value MATCH với key/value 
       | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  | MT      | English         | no                 |
       | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  | MT      | Spanish         | no                 |
 
+	@last
 	Scenario Outline: TC6_23_01: Pass TC6_19 -> Chọn 1 location -> click button "Book Appointment" > book không thành công vì slot đã được book (404 resources unavailable)
 		Given I set cookie SFID valid
 		Given I open Scheduler page with valid banner param, invalid crmid
@@ -672,6 +687,7 @@ Feature: Scheduler: Check URL có params chứa key/value MATCH với key/value 
       | firstName | lastName | email                | phone        | street | zipcode | gender |
       | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  |
 
+	@last
 	Scenario Outline: TC6_23_02: Pass TC6_21 -> Chọn Video Consult -> user click button "Book Appointment" > book không thành công vì slot đã được book (404 resources unavailable)
 		Given I set cookie SFID valid
 		Given I open Scheduler page with valid banner param, invalid crmid
@@ -710,6 +726,7 @@ Feature: Scheduler: Check URL có params chứa key/value MATCH với key/value 
     | firstName | lastName | email                | phone        | street | zipcode | gender | timezone |
     | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  | MT      |
 
+	@last
 	Scenario Outline: TC6_24_01: Pass TC6_19 -> Chọn 1 location ->  click button "Book Appointment" > book không thành công vì lý do gì đó khác status 404 resources unavailable
 		Given I set cookie SFID valid
 		Given I open Scheduler page with valid banner param, invalid crmid
@@ -742,6 +759,7 @@ Feature: Scheduler: Check URL có params chứa key/value MATCH với key/value 
       | firstName | lastName | email                | phone        | street | zipcode | gender |
       | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  |
 
+	@last
 	Scenario Outline: TC6_24_02: Pass TC6_21 -> Chọn Video Consult -> user click button "Book Appointment" > book không thành công vì lý do gì đó khác status 404 resources unavailable
 		Given I set cookie SFID valid
 		Given I open Scheduler page with valid banner param, invalid crmid
@@ -780,6 +798,7 @@ Feature: Scheduler: Check URL có params chứa key/value MATCH với key/value 
       | firstName | lastName | email                | phone        | street | zipcode | gender | timezone |
       | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  | MT      |
 
+	@last
 	Scenario Outline: TC6_25_01: Pass TC6_06 -> Chọn Instant Video button > book thành công
 		Given I set cookie SFID valid
 		Given I open Scheduler page with valid banner param, invalid crmid
@@ -805,6 +824,7 @@ Feature: Scheduler: Check URL có params chứa key/value MATCH với key/value 
       | firstName | lastName | email                | phone        | street | zipcode | gender |
       | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  |
 
+	@last
 	Scenario Outline: TC6_25_02: Pass TC6_11 -> Chọn Instant Video button > book thành công
 		Given I set cookie SFID valid
 		Given I open Scheduler page with valid banner param, invalid crmid
@@ -830,6 +850,7 @@ Feature: Scheduler: Check URL có params chứa key/value MATCH với key/value 
       | firstName | lastName | email                | phone        | street | zipcode | gender |
       | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  |
 
+	@last
 	Scenario Outline: TC6_26_01: Pass TC6_06 -> Chọn Instant Video button > book không thành công
 		Given I set cookie SFID valid
 		Given I open Scheduler page with valid banner param, invalid crmid
@@ -855,6 +876,7 @@ Feature: Scheduler: Check URL có params chứa key/value MATCH với key/value 
       | firstName | lastName | email                | phone        | street | zipcode | gender |
       | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  |
 
+	@last
 	Scenario Outline: TC6_26_02: Pass TC6_11 -> Chọn Instant Video button > book không thành công
 		Given I set cookie SFID valid
 		Given I open Scheduler page with valid banner param, invalid crmid

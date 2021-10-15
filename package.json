@@ -8,7 +8,8 @@
     "cypress:open": "cypress open",
     "cypress:run": "cypress run --headless",
     "cypress:open:not-watch": "cypress open --config watchForFileChanges=false",
-    "cypress:open:focus": "cypress open --env TAGS=@focus"
+    "cypress:open:focus": "cypress open --env TAGS=@focus",
+    "cypress:open:last": "cypress open --env TAGS=@last"
   },
   "repository": {
     "type": "git",
