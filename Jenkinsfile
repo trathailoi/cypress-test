@@ -86,16 +86,30 @@ pipeline {
         }
       }
     }
-        // stage('Generate Reports') {
-        //     steps {
-        //         sh 'npm run combine-reports && npm run generate-report'
-        //     }
-        // }
-		// stage('Publish HTML Report') {
-        //     steps{
-        //         publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'cypress/reports/html', reportFiles: 'index.html', reportName: "E2E Report - ${siteURL}", reportTitles: "${siteURL}"])
-        //     }
-		// }
+
+    stage('Take the result report') {
+      when {
+        expression { params.confirmation == true }
+      }
+      steps {
+        sshagent(credentials: ['AWS_CYPRESS_DEMO']) {
+          sh 'rsync -avhze "ssh -o StrictHostKeyChecking=no" --exclude "cypress/videos" --exclude "cypress/screenshots" --exclude "cypress/reports" "${CURRENT_WORKSPACE}/cypress" ubuntu@$AWS_CYPRESS_DEMO_IP:$CYPRESS_PATH/cypress'
+          sh 'rsync -avhze "ssh -o StrictHostKeyChecking=no" ubuntu@$AWS_CYPRESS_DEMO_IP:$CYPRESS_PATH/cypress/videos "${CURRENT_WORKSPACE}/cypress"'
+          sh 'rsync -avhze "ssh -o StrictHostKeyChecking=no" ubuntu@$AWS_CYPRESS_DEMO_IP:$CYPRESS_PATH/cypress/screenshots "${CURRENT_WORKSPACE}/cypress"'
+          sh 'rsync -avhze "ssh -o StrictHostKeyChecking=no" ubuntu@$AWS_CYPRESS_DEMO_IP:$CYPRESS_PATH/cypress/reports "${CURRENT_WORKSPACE}/cypress"'
+        }
+      }
+    }
+
+    stage('Generate & Publish HTML Reports') {
+      when {
+        expression { params.confirmation == true }
+      }
+      steps {
+        sh 'node cucumber-report.js'
+        publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'cypress/reports/html', reportFiles: 'index.html', reportName: "E2E Report - ${siteURL}", reportTitles: "${siteURL}"])
+      }
+    }
 	}
   // post{
   //   always {
