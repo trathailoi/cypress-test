@@ -24,7 +24,7 @@ pipeline {
       }
       steps {
         sshagent(credentials: ['AWS_CYPRESS_DEMO']) {
-          sh 'rsync -avhze "ssh -o StrictHostKeyChecking=no" --exclude "$CURRENT_WORKSPACE/.git" --exclude "$CURRENT_WORKSPACE/node_modules" "$CURRENT_WORKSPACE" ubuntu@$AWS_CYPRESS_DEMO_IP:$CYPRESS_PATH'
+          sh 'rsync -avhze "ssh -o StrictHostKeyChecking=no" --exclude "$CURRENT_WORKSPACE/.git" --exclude "$CURRENT_WORKSPACE/node_modules" "$CURRENT_WORKSPACE/**" ubuntu@$AWS_CYPRESS_DEMO_IP:$CYPRESS_PATH'
           // sh 'rsync -avhze "ssh -o StrictHostKeyChecking=no" --exclude "$CURRENT_WORKSPACE/node_modules" "$CURRENT_WORKSPACE" ubuntu@$AWS_CYPRESS_DEMO_IP:$CYPRESS_PATH'
           // sh 'rsync -avhze "ssh -o StrictHostKeyChecking=no" --delete "$CURRENT_WORKSPACE/wp-content/plugins" ubuntu@$AWS_CYPRESS_DEMO_IP:$CYPRESS_PATH/wp-content'  
           // sh 'rsync -avhze "ssh -o StrictHostKeyChecking=no" "$CURRENT_WORKSPACE/wp-content/uploads" ubuntu@$AWS_CYPRESS_DEMO_IP:$CYPRESS_PATH/wp-content'
