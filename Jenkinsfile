@@ -15,12 +15,16 @@ pipeline {
     string(name: 'siteURL', defaultValue: 'https://bosley-develop.box.carbon8test.com', description: 'Please enter fully and exactly the site URL that you want to run e2e test.')
     booleanParam(name: 'video', description: 'with recording video ? Note: It would take way so longer.', defaultValue: false)
     string(name: 'cliOpt', description: 'Additional CLI options of cypress run. E.g. --spec "**/1.default-scheduler.feature"')
+    booleanParam(name: 'confirmation', description: 'my lord, please do it!', defaultValue: false)
   }
 	stages {
     stage('Setup') {
+      when {
+        expression { params.confirmation == true }
+      }
       steps {
         sshagent(credentials: ['AWS_CYPRESS_DEMO']) {
-          sh 'rsync -avhze "ssh -o StrictHostKeyChecking=no" "$CURRENT_WORKSPACE" ubuntu@$AWS_CYPRESS_DEMO_IP:$CYPRESS_PATH'
+          sh 'rsync -avhze "ssh -o StrictHostKeyChecking=no" --exclude "$CURRENT_WORKSPACE/node_modules" "$CURRENT_WORKSPACE" ubuntu@$AWS_CYPRESS_DEMO_IP:$CYPRESS_PATH'
           // sh 'rsync -avhze "ssh -o StrictHostKeyChecking=no" --exclude "$CURRENT_WORKSPACE/node_modules" "$CURRENT_WORKSPACE" ubuntu@$AWS_CYPRESS_DEMO_IP:$CYPRESS_PATH'
           // sh 'rsync -avhze "ssh -o StrictHostKeyChecking=no" --delete "$CURRENT_WORKSPACE/wp-content/plugins" ubuntu@$AWS_CYPRESS_DEMO_IP:$CYPRESS_PATH/wp-content'  
           // sh 'rsync -avhze "ssh -o StrictHostKeyChecking=no" "$CURRENT_WORKSPACE/wp-content/uploads" ubuntu@$AWS_CYPRESS_DEMO_IP:$CYPRESS_PATH/wp-content'
@@ -28,6 +32,9 @@ pipeline {
       }
     }
 		stage('Install Dependencies') {
+      when {
+        expression { params.confirmation == true }
+      }
       steps{
         sshagent(credentials: ['AWS_CYPRESS_DEMO']) {
           sh 'ssh -o StrictHostKeyChecking=no -l ubuntu $AWS_CYPRESS_DEMO_IP \"' + "cd $CYPRESS_PATH && npm install && npx cypress install" + '\"'
@@ -40,6 +47,9 @@ pipeline {
     //   }
 		// }
     stage('Chrome') {
+      when {
+        expression { params.confirmation == true }
+      }
       steps{
         script {
           cmdString="CYPRESS_baseUrl=${siteURL} npm run cypress:run"
