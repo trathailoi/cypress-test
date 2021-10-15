@@ -420,7 +420,7 @@ And('I can see consult language and observation consent', () => {
     .invoke('text')
     .should('equal', 'Spanish')
 
-  cy.contains('Observation Consent*')
+  cy.contains('Observation Consent')
   cy.get('label[for=consentForObservation1]')
     .invoke('text')
     .should('equal', 'Yes')
