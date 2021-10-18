@@ -87,41 +87,47 @@ pipeline {
       }
     }
 
-    stage('Take the result report') {
-      when {
-        expression { params.confirmation == true }
-      }
-      steps {
-        sshagent(credentials: ['AWS_CYPRESS_DEMO']) {
-          sh 'rsync -avhze "ssh -o StrictHostKeyChecking=no" --exclude "cypress/videos" --exclude "cypress/screenshots" --exclude "cypress/reports" "${CURRENT_WORKSPACE}/cypress" ubuntu@$AWS_CYPRESS_DEMO_IP:$CYPRESS_PATH/cypress'
-          sh 'rsync -avhze "ssh -o StrictHostKeyChecking=no" ubuntu@$AWS_CYPRESS_DEMO_IP:$CYPRESS_PATH/cypress/videos "${CURRENT_WORKSPACE}/cypress"'
-          sh 'rsync -avhze "ssh -o StrictHostKeyChecking=no" ubuntu@$AWS_CYPRESS_DEMO_IP:$CYPRESS_PATH/cypress/screenshots "${CURRENT_WORKSPACE}/cypress"'
-          sh 'rsync -avhze "ssh -o StrictHostKeyChecking=no" ubuntu@$AWS_CYPRESS_DEMO_IP:$CYPRESS_PATH/cypress/reports "${CURRENT_WORKSPACE}/cypress"'
-        }
-      }
-    }
+    // stage('Take the result report') {
+    //   when {
+    //     expression { params.confirmation == true }
+    //   }
+    //   steps {
+    //     sshagent(credentials: ['AWS_CYPRESS_DEMO']) {
+    //       sh 'rsync -avhze "ssh -o StrictHostKeyChecking=no" --exclude "cypress/videos" --exclude "cypress/screenshots" --exclude "cypress/reports" "${CURRENT_WORKSPACE}/cypress" ubuntu@$AWS_CYPRESS_DEMO_IP:$CYPRESS_PATH/cypress'
+    //       sh 'rsync -avhze "ssh -o StrictHostKeyChecking=no" ubuntu@$AWS_CYPRESS_DEMO_IP:$CYPRESS_PATH/cypress/videos "${CURRENT_WORKSPACE}/cypress"'
+    //       sh 'rsync -avhze "ssh -o StrictHostKeyChecking=no" ubuntu@$AWS_CYPRESS_DEMO_IP:$CYPRESS_PATH/cypress/screenshots "${CURRENT_WORKSPACE}/cypress"'
+    //       sh 'rsync -avhze "ssh -o StrictHostKeyChecking=no" ubuntu@$AWS_CYPRESS_DEMO_IP:$CYPRESS_PATH/cypress/reports "${CURRENT_WORKSPACE}/cypress"'
+    //     }
+    //   }
+    // }
 
-    stage('Generate & Publish HTML Reports') {
-      when {
-        expression { params.confirmation == true }
-      }
-      steps {
-        sh 'node cucumber-report.js'
-        publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'cypress/reports/html', reportFiles: 'index.html', reportName: "E2E Report - ${siteURL}", reportTitles: "${siteURL}"])
-      }
-    }
+    // stage('Generate & Publish HTML Reports') {
+    //   when {
+    //     expression { params.confirmation == true }
+    //   }
+    //   steps {
+    //     sh 'node cucumber-report.js'
+    //     publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'cypress/reports/html', reportFiles: 'index.html', reportName: "E2E Report - ${siteURL}", reportTitles: "${siteURL}"])
+    //   }
+    // }
 	}
-  // post{
-  //   always {
-  //     sh 'node cucumber-report.js'
-  //     publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'cypress/reports/html', reportFiles: 'index.html', reportName: "E2E Report - ${siteURL}", reportTitles: "${siteURL}"])
-  //   }
-  //   // success{
-  //   //   office365ConnectorSend(webhookUrl: "${MSTEAMS_WEBHOOK}", color:'#008000',  message: "Site URL: ${siteURL}  \nAll the end-to-end test suites passed.  \nTake a look on the report here: ", status: 'SUCCESS')
-  //   // }
-  //   // failure{
-  //   //   // publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'cypress/reports/html', reportFiles: 'index.html', reportName: "E2E Report - ${siteURL}", reportTitles: "${siteURL}"])
-  //   //   office365ConnectorSend(webhookUrl: "${MSTEAMS_WEBHOOK}", color:'#FF0000',  message: "Site URL: ${siteURL}  \nEnd-to-end tests have been failed.  \nTake a look on the report here: ", status: 'FAILED')
-  //   // }
-  // }
+  post{
+    always {
+      sshagent(credentials: ['AWS_CYPRESS_DEMO']) {
+        sh 'rsync -avhze "ssh -o StrictHostKeyChecking=no" --exclude "cypress/videos" --exclude "cypress/screenshots" --exclude "cypress/reports" "${CURRENT_WORKSPACE}/cypress" ubuntu@$AWS_CYPRESS_DEMO_IP:$CYPRESS_PATH/cypress'
+        sh 'rsync -avhze "ssh -o StrictHostKeyChecking=no" ubuntu@$AWS_CYPRESS_DEMO_IP:$CYPRESS_PATH/cypress/videos "${CURRENT_WORKSPACE}/cypress"'
+        sh 'rsync -avhze "ssh -o StrictHostKeyChecking=no" ubuntu@$AWS_CYPRESS_DEMO_IP:$CYPRESS_PATH/cypress/screenshots "${CURRENT_WORKSPACE}/cypress"'
+        sh 'rsync -avhze "ssh -o StrictHostKeyChecking=no" ubuntu@$AWS_CYPRESS_DEMO_IP:$CYPRESS_PATH/cypress/reports "${CURRENT_WORKSPACE}/cypress"'
+      }
+      sh 'node cucumber-report.js'
+      publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'cypress/reports/html', reportFiles: 'index.html', reportName: "E2E Report - ${siteURL}", reportTitles: "${siteURL}"])
+    }
+    // success{
+    //   office365ConnectorSend(webhookUrl: "${MSTEAMS_WEBHOOK}", color:'#008000',  message: "Site URL: ${siteURL}  \nAll the end-to-end test suites passed.  \nTake a look on the report here: ", status: 'SUCCESS')
+    // }
+    // failure{
+    //   // publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'cypress/reports/html', reportFiles: 'index.html', reportName: "E2E Report - ${siteURL}", reportTitles: "${siteURL}"])
+    //   office365ConnectorSend(webhookUrl: "${MSTEAMS_WEBHOOK}", color:'#FF0000',  message: "Site URL: ${siteURL}  \nEnd-to-end tests have been failed.  \nTake a look on the report here: ", status: 'FAILED')
+    // }
+  }
 }
