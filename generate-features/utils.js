@@ -27,7 +27,7 @@ const generateFeatureFile = (name, outputFilePath, options = {}, isGenerateSteps
   if (typeof generateScenariosFunction === 'function') {
     const allScenarioObject = generateScenariosFunction()
     const scenarios = Object.keys(allScenarioObject).reduce((resultArr, scenarioNameKey) => {
-      const { required, type, description, dynamic, steps, examples, focus } = allScenarioObject[scenarioNameKey]
+      const { required, type, description, dynamic, steps, examples, focus, last } = allScenarioObject[scenarioNameKey]
       const scenarioSteps = steps.map(stepString => {
         if (dynamic) {
           for (const dynamicKey in dynamic) {
@@ -38,9 +38,10 @@ const generateFeatureFile = (name, outputFilePath, options = {}, isGenerateSteps
         }
         return `\t\t${stepString}`
       })
+      const tags = [last ? '@last' : null, focus ? '@focus' : null].filter(Boolean).join(' ')
       resultArr = [
         ...resultArr,
-        ...(focus ? ['\t@focus'] : []),
+        ...(tags ? [`\t${tags}`] : []),
         `\t${type}: ${scenarioNameKey}:${required ? ` Pass ${required} ->` : ''} ${description}`,
         ...scenarioSteps,
         `${examples ? `\t\tExamples:${examples}\n` : '\n'}`
@@ -122,7 +123,8 @@ const generateScenario = (name, allScenarioObject, options) => {
     steps = [],
     reuseExamples,
     examples,
-    focus
+    focus,
+    last
   } = options
   const type = reuseExamples || examples ? 'Scenario Outline' : 'Scenario'
   if (required) {
@@ -142,7 +144,8 @@ const generateScenario = (name, allScenarioObject, options) => {
     dynamic,
     steps,
     examples,
-    focus
+    focus,
+    last
   }
 }
 
