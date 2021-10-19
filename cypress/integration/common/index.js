@@ -20,6 +20,10 @@ Given('I want to remove Cookie #Common', () => {
   cy.clearCookies()
 })
 
+Given('I want to remove Session #Common', () => {
+  cy.clearAllWindowSession()
+})
+
 Given('Visit home page #Common', () => {
   cy.visit('/')
 })
