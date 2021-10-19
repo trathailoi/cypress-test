@@ -34,6 +34,7 @@ const generateScenariosFunction = () => {
   })
   
   generateScenario('TC_03', allScenarioObject, {
+    last: true,
     required: 'TC_01',
     description: 'Submit form About You > zipcode/email không valid #NEGATIVE',
     dynamic: {
@@ -79,6 +80,7 @@ const generateScenariosFunction = () => {
   })
   
   generateScenario('TC_05', allScenarioObject, {
+    last: true,
     required: 'TC_02',
     description: 'Ở tab Location không có location nào tương ứng với Zipcode #NEGATIVE',
     dynamic: {
@@ -109,6 +111,7 @@ const generateScenariosFunction = () => {
   })
 
   generateScenario('TC_07', allScenarioObject, {
+    last: true,
     required: 'TC_02',
     description: 'Ở tab Location Không hiện box Instant Video:(không có data) #NEGATIVE',
     dynamic: {
@@ -123,6 +126,7 @@ const generateScenariosFunction = () => {
   })
 
   generateScenario('TC_08', allScenarioObject, {
+    last: true,
     required: 'TC_02',
     description: 'Ở tab Location Không hiện box Instant Video:(có data)(Time>30mins)',
     dynamic: {
@@ -138,6 +142,7 @@ const generateScenariosFunction = () => {
   })
 
   generateScenario('TC_09', allScenarioObject, {
+    last: true,
     required: 'TC_02',
     description: 'Ở tab Location Không hiện box Instant Video:(có data)(slot<=1)(5mins<=Time<=30mins)',
     dynamic: {
@@ -153,6 +158,7 @@ const generateScenariosFunction = () => {
   })
 
   generateScenario('TC_10', allScenarioObject, {
+    last: true,
     required: 'TC_02',
     description: 'Ở tab Location Không hiện box Instant Video:(có data)(slot<=1)(5mins<=Time)',
     dynamic: {
@@ -241,6 +247,7 @@ const generateScenariosFunction = () => {
   })
 
   generateScenario('TC_15', allScenarioObject, {
+    last: true,
     required: 'TC_04',
     description: 'chọn location không có slot trong vòng 15 ngày: show error',
     dynamic: {
@@ -258,6 +265,7 @@ const generateScenariosFunction = () => {
   })
 
   generateScenario('TC_16', allScenarioObject, {
+    last: true,
     required: 'TC_04',
     description: 'chọn video consult không có slot trong vòng 15 ngày: show error',
     dynamic: {
@@ -274,6 +282,7 @@ const generateScenariosFunction = () => {
   })
 
   generateScenario('TC_17_01', allScenarioObject, {
+    last: true,
     required: 'TC_12',
     description: 'chọn location có slot trong vòng 15 ngày tiếp theo: hiển thị ngày giờ available, click load more => show available date',
     dynamic: {
@@ -291,6 +300,7 @@ const generateScenariosFunction = () => {
   })
 
   generateScenario('TC_17_02', allScenarioObject, {
+    last: true,
     required: 'TC_13',
     description: 'Chọn một Video Consult -> Tìm thấy các slot trong vòng 15 ngày',
     dynamic: {
@@ -308,6 +318,7 @@ const generateScenariosFunction = () => {
   })
 
   generateScenario('TC_18_01', allScenarioObject, {
+    last: true,
     required: 'TC_12',
     description: 'chọn location không có slot trong vòng 15 ngày tiếp theo',
     dynamic: {
@@ -330,6 +341,7 @@ const generateScenariosFunction = () => {
   })
 
   generateScenario('TC_18_02', allScenarioObject, {
+    last: true,
     required: 'TC_13',
     description: 'chọn Video Consult không có slot trong vòng 15 ngày tiếp theo',
     dynamic: {
@@ -365,6 +377,7 @@ const generateScenariosFunction = () => {
   })
 
   generateScenario('TC_20', allScenarioObject, {
+    last: true,
     required: 'TC_19',
     description: 'book thành công',
     dynamic: {
@@ -392,6 +405,7 @@ const generateScenariosFunction = () => {
   })
 
   generateScenario('TC_22', allScenarioObject, {
+    last: true,
     required: 'TC_21',
     description: 'chọn option trong Consult language & Observation​ consent > click button "Book Appointment" > book thành công',
     dynamic: {
@@ -411,6 +425,7 @@ const generateScenariosFunction = () => {
   })
 
   generateScenario('TC_23_01', allScenarioObject, {
+    last: true,
     required: 'TC_19',
     description: 'Chọn 1 location -> click button "Book Appointment" > book không thành công vì slot đã được book (404 resources unavailable)',
     dynamic: {
@@ -424,6 +439,7 @@ const generateScenariosFunction = () => {
   })
 
   generateScenario('TC_23_02', allScenarioObject, {
+    last: true,
     required: 'TC_21',
     description: 'Chọn Video Consult -> user click button "Book Appointment" > book không thành công vì slot đã được book (404 resources unavailable)',
     dynamic: {
@@ -439,6 +455,7 @@ const generateScenariosFunction = () => {
   })
 
   generateScenario('TC_24_01', allScenarioObject, {
+    last: true,
     required: 'TC_19',
     description: 'Chọn 1 location ->  click button "Book Appointment" > book không thành công vì lý do gì đó khác status 404 resources unavailable',
     dynamic: {
@@ -452,6 +469,7 @@ const generateScenariosFunction = () => {
   })
 
   generateScenario('TC_24_02', allScenarioObject, {
+    last: true,
     required: 'TC_21',
     description: 'Chọn Video Consult -> user click button "Book Appointment" > book không thành công vì lý do gì đó khác status 404 resources unavailable',
     dynamic: {
@@ -467,6 +485,7 @@ const generateScenariosFunction = () => {
   })
 
   generateScenario('TC_25_01', allScenarioObject, {
+    last: true,
     required: 'TC_06',
     description: 'Chọn Instant Video button > book thành công',
     dynamic: {
@@ -483,6 +502,7 @@ const generateScenariosFunction = () => {
   })
 
   generateScenario('TC_25_02', allScenarioObject, {
+    last: true,
     required: 'TC_11',
     description: 'Chọn Instant Video button > book thành công',
     dynamic: {
@@ -499,6 +519,7 @@ const generateScenariosFunction = () => {
   })
 
   generateScenario('TC_26_01', allScenarioObject, {
+    last: true,
     required: 'TC_06',
     description: 'Chọn Instant Video button > book không thành công',
     dynamic: {
@@ -515,6 +536,7 @@ const generateScenariosFunction = () => {
   })
 
   generateScenario('TC_26_02', allScenarioObject, {
+    last: true,
     required: 'TC_11',
     description: 'Chọn Instant Video button > book không thành công',
     dynamic: {
