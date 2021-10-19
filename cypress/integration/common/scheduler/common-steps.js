@@ -402,7 +402,7 @@ Then('I can see book appoinment info and {string} info', (type) => {
       expect($els[2].innerText).to.includes('New Orleans')
       expect($els[2].innerText).to.includes('2450 Severn Ave., Suite 510')
       expect($els[2].innerText).to.includes('Metairie')
-      expect($els[2].innerText).to.includes('LA, 70001')
+      expect($els[2].innerText).to.includes('LA 70001')
     } else {
       expect($els[2].innerText).to.includes('Video')
       expect($els[2].innerText).to.includes('Use the platform you like best: Zoom, WhatsApp, Skype, etc.')
