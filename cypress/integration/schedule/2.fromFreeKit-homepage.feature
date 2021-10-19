@@ -30,6 +30,7 @@ Feature: Scheduler
         | firstName | lastName | email                | phone        | street | zipcode | gender |
         | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  |
 
+	@last
 	Scenario Outline: TC2_02: Pass TC2_01 -> Ở tab Location, click btn Previous > fill info của user theo cookies đã lưu
 		Given Fake Admin Ajax Api with "fullDropdown" data
 		Given I set cookie with full SF info valid
@@ -62,6 +63,7 @@ Feature: Scheduler
         | firstName | lastName | email                | phone        | street | zipcode | gender |
         | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  |
 
+	@last
 	Scenario Outline: TC2_04: Pass TC2_01 -> Ở tab Location không có location nào tương ứng với Zipcode #NEGATIVE
 		Given Fake Admin Ajax Api with "emptyDropdown" data
 		Given I set cookie with full SF info valid
@@ -96,6 +98,7 @@ Feature: Scheduler
         | firstName | lastName | email                | phone        | street | zipcode | gender |
         | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  |
 
+	@last
 	Scenario Outline: TC2_06: Pass TC2_01 -> Ở tab Location Không hiện box Instant Video:(không có data) #NEGATIVE
 		Given Fake Admin Ajax Api with "emptyDropdown" data
 		Given I set cookie with full SF info valid
@@ -112,6 +115,7 @@ Feature: Scheduler
         | firstName | lastName | email                | phone        | street | zipcode | gender |
         | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  |
 
+	@last
 	Scenario Outline: TC2_07: Pass TC2_01 -> Ở tab Location Không hiện box Instant Video:(có data)(Time>30mins)
 		Given Fake Admin Ajax Api with "withoutInstantVideo" data
 		Given I set cookie with full SF info valid
@@ -129,6 +133,7 @@ Feature: Scheduler
         | firstName | lastName | email                | phone        | street | zipcode | gender |
         | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  |
 
+	@last
 	Scenario Outline: TC2_08: Pass TC2_01 -> Ở tab Location Không hiện box Instant Video:(có data)(slot<=1)(5mins<=Time<=30mins)
 		Given Fake Admin Ajax Api with "withoutInstantVideo" data
 		Given I set cookie with full SF info valid
@@ -146,6 +151,7 @@ Feature: Scheduler
         | firstName | lastName | email                | phone        | street | zipcode | gender |
         | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  |
 
+	@last
 	Scenario Outline: TC2_09: Pass TC2_01 -> Ở tab Location Không hiện box Instant Video:(có data)(slot<=1)(5mins<=Time)
 		Given Fake Admin Ajax Api with "withoutInstantVideo" data
 		Given I set cookie with full SF info valid
@@ -259,6 +265,7 @@ Feature: Scheduler
       | CT      |
       | ET      |
 
+	@last
 	Scenario Outline: TC2_14: Pass TC2_03 -> chọn location không có slot trong vòng 15 ngày: show error
 		Given Fake Admin Ajax Api with "fullDropdownUnAvailableDateTime" data
 		Given I set cookie with full SF info valid
@@ -281,6 +288,7 @@ Feature: Scheduler
         | firstName | lastName | email                | phone        | street | zipcode | gender |
         | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  |
 
+	@last
 	Scenario Outline: TC2_15: Pass TC2_03 -> chọn video consult không có slot trong vòng 15 ngày: show error
 		Given Fake Admin Ajax Api with "fullDropdownUnAvailableDateTime" data
 		Given I set cookie with full SF info valid
@@ -302,6 +310,7 @@ Feature: Scheduler
         | firstName | lastName | email                | phone        | street | zipcode | gender |
         | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  |
 
+	@last
 	Scenario Outline: TC2_16_01: Pass TC2_11 -> chọn location có slot trong vòng 15 ngày tiếp theo: hiển thị ngày giờ available, click load more => show available date
 		Given Fake Admin Ajax Api with "fullDropdownHaveLoadMore" data
 		Given I set cookie with full SF info valid
@@ -332,6 +341,7 @@ Feature: Scheduler
         | firstName | lastName | email                | phone        | street | zipcode | gender |
         | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  |
 
+	@last
 	Scenario Outline: TC2_16_02: Pass TC2_12 -> Chọn một Video Consult -> Tìm thấy các slot trong vòng 15 ngày
 		Given Fake Admin Ajax Api with "fullDropdownHaveLoadMore" data
 		Given I set cookie with full SF info valid
@@ -362,6 +372,7 @@ Feature: Scheduler
         | firstName | lastName | email                | phone        | street | zipcode | gender |
         | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  |
 
+	@last
 	Scenario Outline: TC2_17_01: Pass TC2_11 -> chọn location không có slot trong vòng 15 ngày tiếp theo
 		Given Fake Admin Ajax Api with "fullDropdownNotHaveLoadMore" data
 		Given I set cookie with full SF info valid
@@ -397,6 +408,7 @@ Feature: Scheduler
         | firstName | lastName | email                | phone        | street | zipcode | gender |
         | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  |
 
+	@last
 	Scenario Outline: TC2_17_02: Pass TC2_12 -> chọn Video Consult không có slot trong vòng 15 ngày tiếp theo
 		Given Fake Admin Ajax Api with "fullDropdownNotHaveLoadMore" data
 		Given I set cookie with full SF info valid
@@ -458,6 +470,7 @@ Feature: Scheduler
         | firstName | lastName | email                | phone        | street | zipcode | gender |
         | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  |
 
+	@last
 	Scenario Outline: TC2_19: Pass TC2_18 -> book thành công
 		Given Fake Admin Ajax Api with "fullDropdown" data
 		Given I set cookie with full SF info valid
@@ -520,6 +533,7 @@ Feature: Scheduler
       | CT      |
       | ET      |
 
+	@last
 	Scenario Outline: TC2_21: Pass TC2_20 -> chọn option trong Consult language & Observation​ consent > click button "Book Appointment" > book thành công
 		Given Fake Admin Ajax Api with "fullDropdownHaveSelectTimezone" data
 		Given I set cookie with full SF info valid
@@ -558,6 +572,7 @@ Feature: Scheduler
     | 91356   | MT      | English         | no                 |
     | 91356   | MT      | Spanish         | no                 |
 
+	@last
 	Scenario Outline: TC2_22_01: Pass TC2_18 -> Chọn 1 location -> click button "Book Appointment" > book không thành công vì slot đã được book (403 resources unavailable)
 		Given Fake Admin Ajax Api with "fullDropdownBookFailed" data
 		Given I set cookie with full SF info valid
@@ -586,6 +601,7 @@ Feature: Scheduler
         | firstName | lastName | email                | phone        | street | zipcode | gender |
         | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  |
 
+	@last
 	Scenario Outline: TC2_22_02: Pass TC2_20 -> Chọn Video Consult -> user click button "Book Appointment" > book không thành công vì slot đã được book (403 resources unavailable)
 		Given Fake Admin Ajax Api with "fullDropdownHaveSelectTimezoneBookFailed" data
 		Given I set cookie with full SF info valid
@@ -620,6 +636,7 @@ Feature: Scheduler
       | zip     | timezone |
       | 91356   | MT      |
 
+	@last
 	Scenario Outline: TC2_23_01: Pass TC2_18 -> Chọn 1 location ->  click button "Book Appointment" > book không thành công vì lý do gì đó khác status 403 resources unavailable
 		Given Fake Admin Ajax Api with "fullDropdown" data
 		Given I set cookie with full SF info valid
@@ -648,6 +665,7 @@ Feature: Scheduler
         | firstName | lastName | email                | phone        | street | zipcode | gender |
         | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  |
 
+	@last
 	Scenario Outline: TC2_23_02: Pass TC2_20 -> Chọn Video Consult -> user click button "Book Appointment" > book không thành công vì lý do gì đó khác status 403 resources unavailable
 		Given Fake Admin Ajax Api with "fullDropdownHaveSelectTimezone" data
 		Given I set cookie with full SF info valid
@@ -682,6 +700,7 @@ Feature: Scheduler
       | zip | timezone |
       | 91356   | MT      |
 
+	@last
 	Scenario Outline: TC2_24_01: Pass TC2_05 -> Chọn Instant Video button > book thành công
 		Given Fake Admin Ajax Api with "fullDropdownHaveConfirm" data
 		Given I set cookie with full SF info valid
@@ -704,6 +723,7 @@ Feature: Scheduler
         | firstName | lastName | email                | phone        | street | zipcode | gender |
         | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  |
 
+	@last
 	Scenario Outline: TC2_24_02: Pass TC2_10 -> Chọn Instant Video button > book thành công
 		Given Fake Admin Ajax Api with "fullDropdownHaveConfirm" data
 		Given I set cookie with full SF info valid
@@ -726,6 +746,7 @@ Feature: Scheduler
         | firstName | lastName | email                | phone        | street | zipcode | gender |
         | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  |
 
+	@last
 	Scenario Outline: TC2_25_01: Pass TC2_10 -> Chọn Instant Video button > book không thành công
 		Given Fake Admin Ajax Api with "fullDropdownHaveConfirm" data
 		Given I set cookie with full SF info valid
@@ -748,6 +769,7 @@ Feature: Scheduler
         | firstName | lastName | email                | phone        | street | zipcode | gender |
         | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  |
 
+	@last
 	Scenario Outline: TC2_25_02: Pass TC2_05 -> Chọn Instant Video button > book không thành công
 		Given Fake Admin Ajax Api with "fullDropdownHaveConfirm" data
 		Given I set cookie with full SF info valid

@@ -3,6 +3,7 @@ Feature: Scheduler
 
 	Background: Scheduler Page
 		Given I want to remove Cookie #Common
+		Given I want to remove Session #Common
 
 	Scenario: TC_01: URL không có params, cookie chưa có SFID #POSITIVE
 		Given I open Scheduler page non-param
@@ -24,6 +25,7 @@ Feature: Scheduler
       | firstName | lastName | email                | phone        | street | zipcode | gender |
       | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  |
 
+	@last
 	Scenario Outline: TC_03: Pass TC_01 -> Submit form About You > zipcode/email không valid #NEGATIVE
 		Given I open Scheduler page non-param
 		Then I can see About you form #CommonPhase1
@@ -68,6 +70,7 @@ Feature: Scheduler
       | firstName | lastName | email                | phone        | street | zipcode | gender |
       | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  |
 
+	@last
 	Scenario Outline: TC_05: Pass TC_02 -> Ở tab Location không có location nào tương ứng với Zipcode #NEGATIVE
 		Given I open Scheduler page non-param
 		Then I can see About you form #CommonPhase1
@@ -106,6 +109,7 @@ Feature: Scheduler
       | firstName | lastName | email                | phone        | street | zipcode | gender |
       | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  |
 
+	@last
 	Scenario Outline: TC_07: Pass TC_02 -> Ở tab Location Không hiện box Instant Video:(không có data) #NEGATIVE
 		Given I open Scheduler page non-param
 		Then I can see About you form #CommonPhase1
@@ -124,6 +128,7 @@ Feature: Scheduler
       | firstName | lastName | email                | phone        | street | zipcode | gender |
       | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  |
 
+	@last
 	Scenario Outline: TC_08: Pass TC_02 -> Ở tab Location Không hiện box Instant Video:(có data)(Time>30mins)
 		Given I open Scheduler page non-param
 		Then I can see About you form #CommonPhase1
@@ -143,6 +148,7 @@ Feature: Scheduler
       | firstName | lastName | email                | phone        | street | zipcode | gender |
       | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  |
 
+	@last
 	Scenario Outline: TC_09: Pass TC_02 -> Ở tab Location Không hiện box Instant Video:(có data)(slot<=1)(5mins<=Time<=30mins)
 		Given I open Scheduler page non-param
 		Then I can see About you form #CommonPhase1
@@ -162,6 +168,7 @@ Feature: Scheduler
       | firstName | lastName | email                | phone        | street | zipcode | gender |
       | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  |
 
+	@last
 	Scenario Outline: TC_10: Pass TC_02 -> Ở tab Location Không hiện box Instant Video:(có data)(slot<=1)(5mins<=Time)
 		Given I open Scheduler page non-param
 		Then I can see About you form #CommonPhase1
@@ -285,6 +292,7 @@ Feature: Scheduler
       | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  | CT       |
       | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  | ET       |
 
+	@last
 	Scenario Outline: TC_15: Pass TC_04 -> chọn location không có slot trong vòng 15 ngày: show error
 		Given I open Scheduler page non-param
 		Then I can see About you form #CommonPhase1
@@ -309,6 +317,7 @@ Feature: Scheduler
       | firstName | lastName | email                | phone        | street | zipcode | gender |
       | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  |
 
+	@last
 	Scenario Outline: TC_16: Pass TC_04 -> chọn video consult không có slot trong vòng 15 ngày: show error
 		Given I open Scheduler page non-param
 		Then I can see About you form #CommonPhase1
@@ -332,6 +341,7 @@ Feature: Scheduler
       | firstName | lastName | email                | phone        | street | zipcode | gender |
       | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  |
 
+	@last
 	Scenario Outline: TC_17_01: Pass TC_12 -> chọn location có slot trong vòng 15 ngày tiếp theo: hiển thị ngày giờ available, click load more => show available date
 		Given I open Scheduler page non-param
 		Then I can see About you form #CommonPhase1
@@ -364,6 +374,7 @@ Feature: Scheduler
       | firstName | lastName | email                | phone        | street | zipcode | gender |
       | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  |
 
+	@last
 	Scenario Outline: TC_17_02: Pass TC_13 -> Chọn một Video Consult -> Tìm thấy các slot trong vòng 15 ngày
 		Given I open Scheduler page non-param
 		Then I can see About you form #CommonPhase1
@@ -396,6 +407,7 @@ Feature: Scheduler
       | firstName | lastName | email                | phone        | street | zipcode | gender |
       | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  |
 
+	@last
 	Scenario Outline: TC_18_01: Pass TC_12 -> chọn location không có slot trong vòng 15 ngày tiếp theo
 		Given I open Scheduler page non-param
 		Then I can see About you form #CommonPhase1
@@ -433,6 +445,7 @@ Feature: Scheduler
       | firstName | lastName | email                | phone        | street | zipcode | gender |
       | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  |
 
+	@last
 	Scenario Outline: TC_18_02: Pass TC_13 -> chọn Video Consult không có slot trong vòng 15 ngày tiếp theo
 		Given I open Scheduler page non-param
 		Then I can see About you form #CommonPhase1
@@ -498,6 +511,7 @@ Feature: Scheduler
       | firstName | lastName | email                | phone        | street | zipcode | gender |
       | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  |
 
+	@last
 	Scenario Outline: TC_20: Pass TC_19 -> book thành công
 		Given I open Scheduler page non-param
 		Then I can see About you form #CommonPhase1
@@ -564,6 +578,7 @@ Feature: Scheduler
       | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  | CT       |
       | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  | ET       |
 
+	@last
 	Scenario Outline: TC_22: Pass TC_21 -> chọn option trong Consult language & Observation​ consent > click button "Book Appointment" > book thành công
 		Given I open Scheduler page non-param
 		Then I can see About you form #CommonPhase1
@@ -604,6 +619,7 @@ Feature: Scheduler
       | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  | MT       | English         | no                 |
       | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  | MT       | Spanish         | no                 |
 
+	@last
 	Scenario Outline: TC_23_01: Pass TC_19 -> Chọn 1 location -> click button "Book Appointment" > book không thành công vì slot đã được book (404 resources unavailable)
 		Given I open Scheduler page non-param
 		Then I can see About you form #CommonPhase1
@@ -634,6 +650,7 @@ Feature: Scheduler
       | firstName | lastName | email                | phone        | street | zipcode | gender |
       | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  |
 
+	@last
 	Scenario Outline: TC_23_02: Pass TC_21 -> Chọn Video Consult -> user click button "Book Appointment" > book không thành công vì slot đã được book (404 resources unavailable)
 		Given I open Scheduler page non-param
 		Then I can see About you form #CommonPhase1
@@ -670,6 +687,7 @@ Feature: Scheduler
     | firstName | lastName | email                | phone        | street | zipcode | gender | timezone |
     | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  | MT       |
 
+	@last
 	Scenario Outline: TC_24_01: Pass TC_19 -> Chọn 1 location ->  click button "Book Appointment" > book không thành công vì lý do gì đó khác status 404 resources unavailable
 		Given I open Scheduler page non-param
 		Then I can see About you form #CommonPhase1
@@ -700,6 +718,7 @@ Feature: Scheduler
       | firstName | lastName | email                | phone        | street | zipcode | gender |
       | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  |
 
+	@last
 	Scenario Outline: TC_24_02: Pass TC_21 -> Chọn Video Consult -> user click button "Book Appointment" > book không thành công vì lý do gì đó khác status 404 resources unavailable
 		Given I open Scheduler page non-param
 		Then I can see About you form #CommonPhase1
@@ -736,6 +755,7 @@ Feature: Scheduler
       | firstName | lastName | email                | phone        | street | zipcode | gender | timezone |
       | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  | MT       |
 
+	@last
 	Scenario Outline: TC_25_01: Pass TC_06 -> Chọn Instant Video button > book thành công
 		Given I open Scheduler page non-param
 		Then I can see About you form #CommonPhase1
@@ -760,6 +780,7 @@ Feature: Scheduler
       | firstName | lastName | email                | phone        | street | zipcode | gender |
       | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  |
 
+	@last
 	Scenario Outline: TC_25_02: Pass TC_11 -> Chọn Instant Video button > book thành công
 		Given I open Scheduler page non-param
 		Then I can see About you form #CommonPhase1
@@ -784,6 +805,7 @@ Feature: Scheduler
       | firstName | lastName | email                | phone        | street | zipcode | gender |
       | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  |
 
+	@last
 	Scenario Outline: TC_26_01: Pass TC_06 -> Chọn Instant Video button > book không thành công
 		Given I open Scheduler page non-param
 		Then I can see About you form #CommonPhase1
@@ -808,6 +830,7 @@ Feature: Scheduler
       | firstName | lastName | email                | phone        | street | zipcode | gender |
       | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  |
 
+	@last
 	Scenario Outline: TC_26_02: Pass TC_11 -> Chọn Instant Video button > book không thành công
 		Given I open Scheduler page non-param
 		Then I can see About you form #CommonPhase1

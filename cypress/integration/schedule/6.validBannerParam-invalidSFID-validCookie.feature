@@ -1,7 +1,9 @@
-Feature: Scheduler: Check URL có params chứa key/value MATCH với key/value trong CMS, SFID không hợp lệ, Cookies đã có SFID
-	
+Feature: Scheduler with valid banner param, invalid crmid param, valid crmid cookie
+	Check TH URL có params chứa key/value MATCH với key/value trong CMS, SFID không hợp lệ, Cookies đã có SFID
+
 	Background: Scheduler Page
 		Given I want to remove Cookie #Common
+		Given I want to remove Session #Common
 
 	Scenario: TC6_01: Check TH URL có params chứa key/value MATCH với key/value trong CMS, SFID không hợp lệ, Cookies đã có SFID
 		Given I set cookie SFID valid
@@ -234,7 +236,6 @@ Feature: Scheduler: Check URL có params chứa key/value MATCH với key/value 
 		And I must see Next Button
 		Then I must see Location form
 		When I select first item in list Location
-		And I submit Next Step button at Location Tab
 		Given Wait for Admin Ajax "3" times #Common
 		Then I must see selected location info
 		Then On Date-Time Tab, I must see list date available
@@ -262,7 +263,6 @@ Feature: Scheduler: Check URL có params chứa key/value MATCH với key/value 
 		And I must see Next Button
 		Then I must see Location form
 		When I select first item in list Video Consult
-		And I submit Next Step button at Location Tab
 		Given Wait for Admin Ajax "3" times #Common
 		Then On Date-Time Tab, I must see list date available
 		When I select date
@@ -290,7 +290,6 @@ Feature: Scheduler: Check URL có params chứa key/value MATCH với key/value 
 		And I must see Next Button
 		Then I must see Location form
 		When I select first item in list Video Consult
-		And I submit Next Step button at Location Tab
 		Given Wait for Admin Ajax "3" times #Common
 		Then On Date-Time Tab, I must see list date available
 		When I select date
@@ -326,7 +325,6 @@ Feature: Scheduler: Check URL có params chứa key/value MATCH với key/value 
 		And I must see Next Button
 		Then I must see Location form
 		When I select first item in list Location
-		And I submit Next Step button at Location Tab
 		Given Wait for Admin Ajax "3" times #Common
 		Then I must see selected location info
 		And On Date-Time Tab, I see error message, button Call Now, links
@@ -353,7 +351,6 @@ Feature: Scheduler: Check URL có params chứa key/value MATCH với key/value 
 		And I must see Next Button
 		Then I must see Location form
 		When I select first item in list Video Consult
-		And I submit Next Step button at Location Tab
 		Given Wait for Admin Ajax "3" times #Common
 		Then On Date-Time Tab, I see error message, button Call Now, links
 		Examples:
@@ -379,7 +376,6 @@ Feature: Scheduler: Check URL có params chứa key/value MATCH với key/value 
 		And I must see Next Button
 		Then I must see Location form
 		When I select first item in list Location
-		And I submit Next Step button at Location Tab
 		Given Wait for Admin Ajax "3" times #Common
 		Then I must see selected location info
 		Then On Date-Time Tab, I must see list date available
@@ -414,7 +410,6 @@ Feature: Scheduler: Check URL có params chứa key/value MATCH với key/value 
 		And I must see Next Button
 		Then I must see Location form
 		When I select first item in list Video Consult
-		And I submit Next Step button at Location Tab
 		Given Wait for Admin Ajax "3" times #Common
 		Then On Date-Time Tab, I must see list date available
 		When I select date
@@ -449,7 +444,6 @@ Feature: Scheduler: Check URL có params chứa key/value MATCH với key/value 
 		And I must see Next Button
 		Then I must see Location form
 		When I select first item in list Location
-		And I submit Next Step button at Location Tab
 		Given Wait for Admin Ajax "3" times #Common
 		Then I must see selected location info
 		Then On Date-Time Tab, I must see list date available
@@ -489,7 +483,6 @@ Feature: Scheduler: Check URL có params chứa key/value MATCH với key/value 
 		And I must see Next Button
 		Then I must see Location form
 		When I select first item in list Video Consult
-		And I submit Next Step button at Location Tab
 		Given Wait for Admin Ajax "3" times #Common
 		Then On Date-Time Tab, I must see list date available
 		When I select date
@@ -528,7 +521,6 @@ Feature: Scheduler: Check URL có params chứa key/value MATCH với key/value 
 		And I must see Next Button
 		Then I must see Location form
 		When I select first item in list Location
-		And I submit Next Step button at Location Tab
 		Given Wait for Admin Ajax "3" times #Common
 		Then I must see selected location info
 		Then On Date-Time Tab, I must see list date available
@@ -559,7 +551,6 @@ Feature: Scheduler: Check URL có params chứa key/value MATCH với key/value 
 		And I must see Next Button
 		Then I must see Location form
 		When I select first item in list Location
-		And I submit Next Step button at Location Tab
 		Given Wait for Admin Ajax "3" times #Common
 		Then I must see selected location info
 		Then On Date-Time Tab, I must see list date available
@@ -591,7 +582,6 @@ Feature: Scheduler: Check URL có params chứa key/value MATCH với key/value 
 		And I must see Next Button
 		Then I must see Location form
 		When I select first item in list Video Consult
-		And I submit Next Step button at Location Tab
 		Given Wait for Admin Ajax "3" times #Common
 		Then On Date-Time Tab, I must see list date available
 		When I select date
@@ -630,7 +620,6 @@ Feature: Scheduler: Check URL có params chứa key/value MATCH với key/value 
 		And I must see Next Button
 		Then I must see Location form
 		When I select first item in list Video Consult
-		And I submit Next Step button at Location Tab
 		Given Wait for Admin Ajax "3" times #Common
 		Then On Date-Time Tab, I must see list date available
 		When I select date
@@ -673,7 +662,6 @@ Feature: Scheduler: Check URL có params chứa key/value MATCH với key/value 
 		And I must see Next Button
 		Then I must see Location form
 		When I select first item in list Location
-		And I submit Next Step button at Location Tab
 		Given Wait for Admin Ajax "3" times #Common
 		Then I must see selected location info
 		Then On Date-Time Tab, I must see list date available
@@ -706,7 +694,6 @@ Feature: Scheduler: Check URL có params chứa key/value MATCH với key/value 
 		And I must see Next Button
 		Then I must see Location form
 		When I select first item in list Video Consult
-		And I submit Next Step button at Location Tab
 		Given Wait for Admin Ajax "3" times #Common
 		Then On Date-Time Tab, I must see list date available
 		When I select date
@@ -745,7 +732,6 @@ Feature: Scheduler: Check URL có params chứa key/value MATCH với key/value 
 		And I must see Next Button
 		Then I must see Location form
 		When I select first item in list Location
-		And I submit Next Step button at Location Tab
 		Given Wait for Admin Ajax "3" times #Common
 		Then I must see selected location info
 		Then On Date-Time Tab, I must see list date available
@@ -778,7 +764,6 @@ Feature: Scheduler: Check URL có params chứa key/value MATCH với key/value 
 		And I must see Next Button
 		Then I must see Location form
 		When I select first item in list Video Consult
-		And I submit Next Step button at Location Tab
 		Given Wait for Admin Ajax "3" times #Common
 		Then On Date-Time Tab, I must see list date available
 		When I select date

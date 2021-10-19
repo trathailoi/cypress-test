@@ -1,5 +1,9 @@
-Feature: Scheduler: Check URL có params chứa key/value KHÔNG MATCH với key/value trong CMS, zipcode và SFID hợp lệ
-	
+Feature: Scheduler
+	Check TH URL có params chứa key/value KHÔNG MATCH với key/value trong CMS, zipcode và SFID hợp lệ
+
+	Background:
+		Given I want to remove Session #Common
+
 	Scenario: TC4_01: Check TH URL có params chứa key/value KHÔNG MATCH với key/value trong CMS, zipcode và SFID hợp lệ
 		Given Fake Admin Ajax Api with "fullDropdown" data
 		Given I open Scheduler page with param has invalid banner param but valid SFID and valid Zipcode
@@ -32,6 +36,7 @@ Feature: Scheduler: Check URL có params chứa key/value KHÔNG MATCH với key
 		And I do not see Previous Button
 		And I must see Next Button
 
+
 	@last
 	Scenario: TC4_04: Ở tab Location Không hiện box Instant Video:(không có data) #NEGATIVE
 		Given Fake Admin Ajax Api with "emptyDropdown" data
@@ -40,6 +45,7 @@ Feature: Scheduler: Check URL có params chứa key/value KHÔNG MATCH với key
 		Then On Location tab, I don't see Instant Video box
 		And I do not see Previous Button
 		And I must see Next Button
+
 
 	@last
 	Scenario: TC4_05: Ở tab Location Không hiện box Instant Video:(có data)(Time>30mins)
@@ -51,6 +57,7 @@ Feature: Scheduler: Check URL có params chứa key/value KHÔNG MATCH với key
 		And I do not see Previous Button
 		And I must see Next Button
 
+
 	@last
 	Scenario: TC4_06: Ở tab Location Không hiện box Instant Video:(có data)(slot<=1)(5mins<=Time<=30mins)
 		Given Fake Admin Ajax Api with "withoutInstantVideo" data
@@ -60,6 +67,7 @@ Feature: Scheduler: Check URL có params chứa key/value KHÔNG MATCH với key
 		And On Location tab, I don't see Instant Video box
 		And I do not see Previous Button
 		And I must see Next Button
+
 
 	@last
 	Scenario: TC4_07: Ở tab Location Không hiện box Instant Video:(có data)(slot<=1)(5mins<=Time)
@@ -96,7 +104,6 @@ Feature: Scheduler: Check URL có params chứa key/value KHÔNG MATCH với key
 		And I must see Next Button
 		Then I must see Location form
 		When I select first item in list Location
-		And I submit Next Step button at Location Tab
 		Given Wait for Admin Ajax "2" times #Common
 		Then I must see selected location info
 		Then On Date-Time Tab, I must see list date available
@@ -118,7 +125,6 @@ Feature: Scheduler: Check URL có params chứa key/value KHÔNG MATCH với key
 		And I must see Next Button
 		Then I must see Location form
 		When I select first item in list Video Consult
-		And I submit Next Step button at Location Tab
 		Given Wait for Admin Ajax "2" times #Common
 		Then On Date-Time Tab, I must see list date available
 		When I select date
@@ -140,7 +146,6 @@ Feature: Scheduler: Check URL có params chứa key/value KHÔNG MATCH với key
 		And I must see Next Button
 		Then I must see Location form
 		When I select first item in list Video Consult
-		And I submit Next Step button at Location Tab
 		Given Wait for Admin Ajax "2" times #Common
 		Then On Date-Time Tab, I must see list date available
 		When I select date
@@ -172,10 +177,10 @@ Feature: Scheduler: Check URL có params chứa key/value KHÔNG MATCH với key
 		And I must see Next Button
 		Then I must see Location form
 		When I select first item in list Location
-		And I submit Next Step button at Location Tab
 		Given Wait for Admin Ajax "2" times #Common
 		Then I must see selected location info
 		Then On Date-Time Tab, I see error message, button Call Now, links
+
 
 	@last
 	Scenario: TC4_13: Pass TC4_01 -> chọn video consult không có slot trong vòng 15 ngày: show error
@@ -192,9 +197,9 @@ Feature: Scheduler: Check URL có params chứa key/value KHÔNG MATCH với key
 		And I must see Next Button
 		Then I must see Location form
 		When I select first item in list Video Consult
-		And I submit Next Step button at Location Tab
 		Given Wait for Admin Ajax "2" times #Common
 		Then On Date-Time Tab, I see error message, button Call Now, links
+
 
 	@last
 	Scenario: TC4_14_01: Pass TC4_09 -> chọn location có slot trong vòng 15 ngày tiếp theo: hiển thị ngày giờ available, click load more => show available date
@@ -211,7 +216,6 @@ Feature: Scheduler: Check URL có params chứa key/value KHÔNG MATCH với key
 		And I must see Next Button
 		Then I must see Location form
 		When I select first item in list Location
-		And I submit Next Step button at Location Tab
 		Given Wait for Admin Ajax "2" times #Common
 		Then I must see selected location info
 		Then On Date-Time Tab, I must see list date available
@@ -223,6 +227,7 @@ Feature: Scheduler: Check URL có params chứa key/value KHÔNG MATCH với key
 		Given Wait for Admin Ajax "3" times #Common
 		Then On Date-Time Tab, I must see list date available have "32" item
 		And I see button load more dates
+
 
 	@last
 	Scenario: TC4_14_02: Pass TC4_10 -> Chọn một Video Consult -> Tìm thấy các slot trong vòng 15 ngày
@@ -239,7 +244,6 @@ Feature: Scheduler: Check URL có params chứa key/value KHÔNG MATCH với key
 		And I must see Next Button
 		Then I must see Location form
 		When I select first item in list Video Consult
-		And I submit Next Step button at Location Tab
 		Given Wait for Admin Ajax "2" times #Common
 		Then On Date-Time Tab, I must see list date available
 		When I select date
@@ -251,6 +255,7 @@ Feature: Scheduler: Check URL có params chứa key/value KHÔNG MATCH với key
 		Given Wait for Admin Ajax "3" times #Common
 		Then On Date-Time Tab, I must see list date available have "32" item
 		And I see button load more dates
+
 
 	@last
 	Scenario: TC4_15_01: Pass TC4_09 -> chọn location không có slot trong vòng 15 ngày tiếp theo
@@ -267,7 +272,6 @@ Feature: Scheduler: Check URL có params chứa key/value KHÔNG MATCH với key
 		And I must see Next Button
 		Then I must see Location form
 		When I select first item in list Location
-		And I submit Next Step button at Location Tab
 		Given Wait for Admin Ajax "2" times #Common
 		Then I must see selected location info
 		Then On Date-Time Tab, I must see list date available
@@ -285,6 +289,7 @@ Feature: Scheduler: Check URL có params chứa key/value KHÔNG MATCH với key
 		When I click button next slide in list date
 		Then I must see No more dates availables
 
+
 	@last
 	Scenario: TC4_15_02: Pass TC4_10 -> chọn Video Consult không có slot trong vòng 15 ngày tiếp theo
 		Given Fake Admin Ajax Api with "fullDropdownNotHaveLoadMore" data
@@ -300,7 +305,6 @@ Feature: Scheduler: Check URL có params chứa key/value KHÔNG MATCH với key
 		And I must see Next Button
 		Then I must see Location form
 		When I select first item in list Video Consult
-		And I submit Next Step button at Location Tab
 		Given Wait for Admin Ajax "2" times #Common
 		Then On Date-Time Tab, I must see list date available
 		When I select date
@@ -333,7 +337,6 @@ Feature: Scheduler: Check URL có params chứa key/value KHÔNG MATCH với key
 		And I must see Next Button
 		Then I must see Location form
 		When I select first item in list Location
-		And I submit Next Step button at Location Tab
 		Given Wait for Admin Ajax "2" times #Common
 		Then I must see selected location info
 		Then On Date-Time Tab, I must see list date available
@@ -341,6 +344,7 @@ Feature: Scheduler: Check URL có params chứa key/value KHÔNG MATCH với key
 		Then I must see list times
 		When I select first item in list time
 		Then I can see book appoinment info and "location" info
+
 
 	@last
 	Scenario: TC4_17: Pass TC4_16 -> book thành công
@@ -357,7 +361,6 @@ Feature: Scheduler: Check URL có params chứa key/value KHÔNG MATCH với key
 		And I must see Next Button
 		Then I must see Location form
 		When I select first item in list Location
-		And I submit Next Step button at Location Tab
 		Given Wait for Admin Ajax "2" times #Common
 		Then I must see selected location info
 		Then On Date-Time Tab, I must see list date available
@@ -383,7 +386,6 @@ Feature: Scheduler: Check URL có params chứa key/value KHÔNG MATCH với key
 		And I must see Next Button
 		Then I must see Location form
 		When I select first item in list Video Consult
-		And I submit Next Step button at Location Tab
 		Given Wait for Admin Ajax "2" times #Common
 		Then On Date-Time Tab, I must see list date available
 		When I select date
@@ -416,7 +418,6 @@ Feature: Scheduler: Check URL có params chứa key/value KHÔNG MATCH với key
 		And I must see Next Button
 		Then I must see Location form
 		When I select first item in list Video Consult
-		And I submit Next Step button at Location Tab
 		Given Wait for Admin Ajax "2" times #Common
 		Then On Date-Time Tab, I must see list date available
 		When I select date
@@ -455,7 +456,6 @@ Feature: Scheduler: Check URL có params chứa key/value KHÔNG MATCH với key
 		And I must see Next Button
 		Then I must see Location form
 		When I select first item in list Location
-		And I submit Next Step button at Location Tab
 		Given Wait for Admin Ajax "2" times #Common
 		Then I must see selected location info
 		Then On Date-Time Tab, I must see list date available
@@ -465,6 +465,7 @@ Feature: Scheduler: Check URL có params chứa key/value KHÔNG MATCH với key
 		Then I can see book appoinment info and "location" info
 		When I submit Book Appointment
 		Then After call Api "3" times, I book appointment failed
+
 
 	@last
 	Scenario Outline: TC4_20_02: Pass TC4_18 -> Chọn Video Consult -> user click button "Book Appointment" > book không thành công vì slot đã được book (404 resources unavailable)
@@ -481,7 +482,6 @@ Feature: Scheduler: Check URL có params chứa key/value KHÔNG MATCH với key
 		And I must see Next Button
 		Then I must see Location form
 		When I select first item in list Video Consult
-		And I submit Next Step button at Location Tab
 		Given Wait for Admin Ajax "2" times #Common
 		Then On Date-Time Tab, I must see list date available
 		When I select date
@@ -516,7 +516,6 @@ Feature: Scheduler: Check URL có params chứa key/value KHÔNG MATCH với key
 		And I must see Next Button
 		Then I must see Location form
 		When I select first item in list Location
-		And I submit Next Step button at Location Tab
 		Given Wait for Admin Ajax "2" times #Common
 		Then I must see selected location info
 		Then On Date-Time Tab, I must see list date available
@@ -526,6 +525,7 @@ Feature: Scheduler: Check URL có params chứa key/value KHÔNG MATCH với key
 		Then I can see book appoinment info and "location" info
 		When I submit Book Appointment
 		Then After call Api "3" times, I must see book appointment of "location" thank you page
+
 
 	@last
 	Scenario Outline: TC4_21_02: Pass TC4_18 -> Chọn Video Consult -> user click button "Book Appointment" > book không thành công vì lý do gì đó khác status 404 resources unavailable
@@ -542,7 +542,6 @@ Feature: Scheduler: Check URL có params chứa key/value KHÔNG MATCH với key
 		And I must see Next Button
 		Then I must see Location form
 		When I select first item in list Video Consult
-		And I submit Next Step button at Location Tab
 		Given Wait for Admin Ajax "2" times #Common
 		Then On Date-Time Tab, I must see list date available
 		When I select date
@@ -577,6 +576,7 @@ Feature: Scheduler: Check URL có params chứa key/value KHÔNG MATCH với key
 		Given Wait for Admin Ajax "2" times #Common
 		Then Now I have been redirected to bosley doxy page
 
+
 	@last
 	Scenario: TC4_22_02: Pass TC4_08 -> Chọn Instant Video button > book thành công
 		Given Fake Admin Ajax Api with "fullDropdownHaveConfirm" data
@@ -592,6 +592,7 @@ Feature: Scheduler: Check URL có params chứa key/value KHÔNG MATCH với key
 		Given Wait for Admin Ajax "2" times #Common
 		Then Now I have been redirected to bosley doxy page
 
+
 	@last
 	Scenario: TC4_23_01: Pass TC4_03 -> Chọn Instant Video button > book không thành công
 		Given Fake Admin Ajax Api with "fullDropdownHaveConfirm" data
@@ -606,6 +607,7 @@ Feature: Scheduler: Check URL có params chứa key/value KHÔNG MATCH với key
 		When I click Confirm in Popup Confirm Timezone
 		Given Wait for Admin Ajax "2" times #Common
 		Then Now I have been redirected to bosley doxy page
+
 
 	@last
 	Scenario: TC4_23_02: Pass TC4_08 -> Chọn Instant Video button > book không thành công
