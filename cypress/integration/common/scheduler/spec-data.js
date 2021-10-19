@@ -146,7 +146,7 @@ const resGetLocationNoItems = {
 }
 
 const resGetDateAvailables = {
-  "success": true,
+  "status": true,
   "data": [
     '2021-08-27',
     '2021-08-28',
@@ -169,11 +169,12 @@ const resGetDateAvailables = {
     "location": "New Orleans",
     "availableSlots": generateAvailableSlots(scheduledDate),
     "appointmentEligibility": "ICON"
-  }))
+  })),
+  "isLoadMore": true
 }
 
 const resLoadMoreDateAvailables = {
-  "success": true,
+  "status": true,
   "data": [
     '2021-09-14',
     '2021-09-15',
@@ -196,11 +197,12 @@ const resLoadMoreDateAvailables = {
     "location": "New Orleans",
     "availableSlots": generateAvailableSlots(scheduledDate),
     "appointmentEligibility": "ICON"
-  }))
+  })),
+  "isLoadMore": true
 }
 
 const resGetTimeAvailableNoItem = {
-  "success": true,
+  "status": true,
   "data": [
     '2021-08-27',
     '2021-08-28',
@@ -223,7 +225,8 @@ const resGetTimeAvailableNoItem = {
     "location": "Hartford",
     "availableSlots": [],
     "appointmentEligibility": "ICON"
-  }))
+  })),
+  "isLoadMore": false
 }
 
 const resBookSuccessfully = {
