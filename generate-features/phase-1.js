@@ -540,7 +540,8 @@ module.exports = {
     description: 'Test Scheduler URL không có param, cookies không có SFID',
     backgroundName: 'Scheduler Page',
     backgroundSteps: [
-      'Given I want to remove Cookie #Common'
+      'Given I want to remove Cookie #Common',
+      'Given I want to remove Session #Common'
     ],
     generateScenariosFunction
   }

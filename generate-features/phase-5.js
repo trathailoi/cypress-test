@@ -193,7 +193,7 @@ const generateScenariosFunction = () => {
     steps: [
       'Then I must see Location form',
       'When I select first item in list Location',
-      'And I submit Next Step button at Location Tab',
+      // 'And I submit Next Step button at Location Tab',
       'Given Wait for Admin Ajax "3" times #Common',
       'Then I must see selected location info',
       'Then On Date-Time Tab, I must see list date available',
@@ -212,7 +212,7 @@ const generateScenariosFunction = () => {
     steps: [
       'Then I must see Location form',
       'When I select first item in list Video Consult',
-      'And I submit Next Step button at Location Tab',
+      // 'And I submit Next Step button at Location Tab',
       'Given Wait for Admin Ajax "3" times #Common',
       'Then On Date-Time Tab, I must see list date available',
       'When I select date',
@@ -251,7 +251,7 @@ const generateScenariosFunction = () => {
     steps: [
       'Then I must see Location form',
       'When I select first item in list Location',
-      'And I submit Next Step button at Location Tab',
+      // 'And I submit Next Step button at Location Tab',
       'Given Wait for Admin Ajax "3" times #Common',
       'Then I must see selected location info',
       'Then On Date-Time Tab, I see error message, button Call Now, links'
@@ -268,7 +268,7 @@ const generateScenariosFunction = () => {
     steps: [
       'Then I must see Location form',
       'When I select first item in list Video Consult',
-      'And I submit Next Step button at Location Tab',
+      // 'And I submit Next Step button at Location Tab',
       'Given Wait for Admin Ajax "3" times #Common',
       'Then On Date-Time Tab, I see error message, button Call Now, links',
     ],
@@ -542,7 +542,8 @@ module.exports = {
     description: 'Check TH URL có params chứa key/value KHÔNG MATCH với key/value trong CMS, SFID không hợp lệ, Cookies đã có SFID.',
     backgroundName: 'Scheduler Page with params',
     backgroundSteps: [
-      'Given I want to remove Cookie #Common'
+      'Given I want to remove Cookie #Common',
+      'Given I want to remove Session #Common'
     ],
     generateScenariosFunction
   }
