@@ -1,5 +1,9 @@
 Feature: Scheduler
 	Check TH URL có params chứa key/value match với key/value trong CMS, zipcode và SFID hợp lệ
+
+	Background:
+		Given I want to remove Session #Common
+
 	Scenario: TC3_01: Check TH URL có params chứa key/value match với key/value trong CMS, zipcode và SFID hợp lệ, có data trả về từ SF cho Inperson, Instant Video
 		Given Fake Admin Ajax Api with "fullDropdown" data
 		Given I open Scheduler page with param has valid SFID, match key and valid Zipcode

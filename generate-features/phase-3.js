@@ -464,8 +464,9 @@ module.exports = {
   options: {
     description: 'Check TH URL có params chứa key/value match với key/value trong CMS, zipcode và SFID hợp lệ',
     // backgroundName: 'Scheduler Page with params valid key - valid SFID - valid Zipcode',
-    // backgroundSteps: [
-    // ],
+    backgroundSteps: [
+      'Given I want to remove Session #Common'
+    ],
     generateScenariosFunction
   }
 }
