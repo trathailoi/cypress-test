@@ -93,7 +93,6 @@ pipeline {
     //   }
     //   steps {
     //     sshagent(credentials: ['AWS_CYPRESS_DEMO']) {
-    //       sh 'rsync -avhze "ssh -o StrictHostKeyChecking=no" --exclude "cypress/videos" --exclude "cypress/screenshots" --exclude "cypress/reports" "${CURRENT_WORKSPACE}/cypress" ubuntu@$AWS_CYPRESS_DEMO_IP:$CYPRESS_PATH/cypress'
     //       sh 'rsync -avhze "ssh -o StrictHostKeyChecking=no" ubuntu@$AWS_CYPRESS_DEMO_IP:$CYPRESS_PATH/cypress/videos "${CURRENT_WORKSPACE}/cypress"'
     //       sh 'rsync -avhze "ssh -o StrictHostKeyChecking=no" ubuntu@$AWS_CYPRESS_DEMO_IP:$CYPRESS_PATH/cypress/screenshots "${CURRENT_WORKSPACE}/cypress"'
     //       sh 'rsync -avhze "ssh -o StrictHostKeyChecking=no" ubuntu@$AWS_CYPRESS_DEMO_IP:$CYPRESS_PATH/cypress/reports "${CURRENT_WORKSPACE}/cypress"'
@@ -114,12 +113,12 @@ pipeline {
   post{
     always {
       sshagent(credentials: ['AWS_CYPRESS_DEMO']) {
-        sh 'rsync -avhze "ssh -o StrictHostKeyChecking=no" --exclude "cypress/videos" --exclude "cypress/screenshots" --exclude "cypress/reports" "${CURRENT_WORKSPACE}/cypress" ubuntu@$AWS_CYPRESS_DEMO_IP:$CYPRESS_PATH/cypress'
+        sh 'rsync -avhze "ssh -o StrictHostKeyChecking=no" ubuntu@$AWS_CYPRESS_DEMO_IP:$CYPRESS_PATH/cypress/reports "${CURRENT_WORKSPACE}/cypress"'
         sh 'rsync -avhze "ssh -o StrictHostKeyChecking=no" ubuntu@$AWS_CYPRESS_DEMO_IP:$CYPRESS_PATH/cypress/videos "${CURRENT_WORKSPACE}/cypress"'
         sh 'rsync -avhze "ssh -o StrictHostKeyChecking=no" ubuntu@$AWS_CYPRESS_DEMO_IP:$CYPRESS_PATH/cypress/screenshots "${CURRENT_WORKSPACE}/cypress"'
-        sh 'rsync -avhze "ssh -o StrictHostKeyChecking=no" ubuntu@$AWS_CYPRESS_DEMO_IP:$CYPRESS_PATH/cypress/reports "${CURRENT_WORKSPACE}/cypress"'
       }
-      sh 'node cucumber-report.js'
+      // sh 'node cucumber-report.js'
+      sh 'node report-html.js'
       publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'cypress/reports/html', reportFiles: 'index.html', reportName: "E2E Report - ${siteURL}", reportTitles: "${siteURL}"])
     }
     // success{
