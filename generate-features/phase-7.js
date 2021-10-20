@@ -67,8 +67,8 @@ const generateScenariosFunction = () => {
     steps: [
       'Then On Location tab, I must see list valid locations have "1" item',
       'And On Location tab, I must see Video Consult box have "2" item',
-      'And I do not see Previous Button',
-      'And I must see Next Button'
+      // 'And I do not see Previous Button',
+      // 'And I must see Next Button'
     ],
     reuseExamples: true
   })
@@ -83,8 +83,8 @@ const generateScenariosFunction = () => {
     steps: [
       `Then On Location tab, I don't see Location list`,
       'And On Location tab, I must see Video Consult box have "1" item',
-      `And I do not see Previous Button`,
-      `And I must see Next Button`
+      // `And I do not see Previous Button`,
+      // `And I must see Next Button`
     ],
     reuseExamples: true
   })
@@ -98,8 +98,8 @@ const generateScenariosFunction = () => {
     steps: [
       'And The selected location has slot of today > 1 which time I access has condition with next slot 5 mins <= Time <= 30mins',
       'And I must see Instant Video',
-      'And I do not see Previous Button',
-      'And I must see Next Button'
+      // 'And I do not see Previous Button',
+      // 'And I must see Next Button'
     ],
     reuseExamples: true
   })
@@ -113,8 +113,8 @@ const generateScenariosFunction = () => {
     },
     steps: [
       `Then On Location tab, I don't see Instant Video box`,
-      'And I do not see Previous Button',
-      'And I must see Next Button',
+      // 'And I do not see Previous Button',
+      // 'And I must see Next Button',
     ],
     reuseExamples: true
   })
@@ -130,8 +130,8 @@ const generateScenariosFunction = () => {
     steps: [
       'And Time user > 30 mins before start next slot',
       `Then On Location tab, I don't see Instant Video box`,
-      'And I do not see Previous Button',
-      'And I must see Next Button',
+      // 'And I do not see Previous Button',
+      // 'And I must see Next Button',
     ],
     reuseExamples: true
   })
@@ -147,8 +147,8 @@ const generateScenariosFunction = () => {
     steps: [
       'And The selected location has slot of today <= 1 which time I access has condition with next slot 5 mins <= Time <= 30mins',
       `Then On Location tab, I don't see Instant Video box`,
-      'And I do not see Previous Button',
-      'And I must see Next Button',
+      // 'And I do not see Previous Button',
+      // 'And I must see Next Button',
     ],
     reuseExamples: true
   })
@@ -164,8 +164,8 @@ const generateScenariosFunction = () => {
     steps: [
       'And The selected location has slot of today <= 1 which time I access has condition with next slot has time < 5 mins',
       `Then On Location tab, I don't see Instant Video box`,
-      'And I do not see Previous Button',
-      'And I must see Next Button',
+      // 'And I do not see Previous Button',
+      // 'And I must see Next Button',
     ],
     reuseExamples: true
   })
@@ -179,8 +179,8 @@ const generateScenariosFunction = () => {
     steps: [
       'And The selected location has slot which time I access has condition with next slot has time < 5 mins',
       'And I must see Instant Video',
-      'And I do not see Previous Button',
-      'And I must see Next Button',
+      // 'And I do not see Previous Button',
+      // 'And I must see Next Button',
     ],
     reuseExamples: true
   })

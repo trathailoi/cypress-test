@@ -14,8 +14,6 @@ Feature: Scheduler
 		And On Location tab, I must see list valid locations have "1" item
 		And On Location tab, I must see Video Consult box have "2" item
 		And I must see Instant Video
-		And I do not see Previous Button
-		And I must see Next Button
 
 	Scenario: TC3_02: Check TH URL có params chứa key/value match với key/value trong CMS, zipcode và SFID hợp lệ, KHÔNG có data trả về từ SF cho Inperson, Instant Video
 		Given Fake Admin Ajax Api with "emptyDropdown" data
@@ -23,8 +21,6 @@ Feature: Scheduler
 		Given Wait for Admin Ajax "1" times #Common
 		Then On Location tab, I don't see Location list
 		And On Location tab, I must see Video Consult box have "1" item
-		And I do not see Previous Button
-		And I must see Next Button
 
 
 	Scenario: TC3_03: Ở tab Location hiện box Instant Video:(có data)(slot>1)(5mins<=Time<=30mins) #POSITIVE
@@ -33,8 +29,6 @@ Feature: Scheduler
 		Given Wait for Admin Ajax "1" times #Common
 		Then The selected location has slot of today > 1 which time I access has condition with next slot 5 mins <= Time <= 30mins
 		And I must see Instant Video
-		And I do not see Previous Button
-		And I must see Next Button
 
 
 	@last
@@ -43,8 +37,6 @@ Feature: Scheduler
 		Given I open Scheduler page with param has valid SFID, match key and valid Zipcode
 		Given Wait for Admin Ajax "1" times #Common
 		Then On Location tab, I don't see Instant Video box
-		And I do not see Previous Button
-		And I must see Next Button
 
 
 	@last
@@ -54,8 +46,6 @@ Feature: Scheduler
 		Given Wait for Admin Ajax "1" times #Common
 		Then Time user > 30 mins before start next slot
 		And On Location tab, I don't see Instant Video box
-		And I do not see Previous Button
-		And I must see Next Button
 
 
 	@last
@@ -65,8 +55,6 @@ Feature: Scheduler
 		Given Wait for Admin Ajax "1" times #Common
 		Then The selected location has slot of today <= 1 which time I access has condition with next slot 5 mins <= Time <= 30mins
 		And On Location tab, I don't see Instant Video box
-		And I do not see Previous Button
-		And I must see Next Button
 
 
 	@last
@@ -76,8 +64,6 @@ Feature: Scheduler
 		Given Wait for Admin Ajax "1" times #Common
 		Then The selected location has slot of today <= 1 which time I access has condition with next slot has time < 5 mins
 		And On Location tab, I don't see Instant Video box
-		And I do not see Previous Button
-		And I must see Next Button
 
 
 	Scenario: TC3_08: Ở tab Location hiện box Instant Video:(có data)(5mins<Time)
@@ -86,8 +72,6 @@ Feature: Scheduler
 		Given Wait for Admin Ajax "1" times #Common
 		Then The selected location has slot which time I access has condition with next slot has time < 5 mins
 		And I must see Instant Video
-		And I do not see Previous Button
-		And I must see Next Button
 
 
 	Scenario: TC3_09: Pass TC3_01 -> Chọn một location -> Tìm thấy các slot trong vòng 15 ngày
@@ -100,8 +84,6 @@ Feature: Scheduler
 		And On Location tab, I must see list valid locations have "1" item
 		And On Location tab, I must see Video Consult box have "2" item
 		And I must see Instant Video
-		And I do not see Previous Button
-		And I must see Next Button
 		Then I must see Location form
 		When I select first item in list Location
 		Given Wait for Admin Ajax "2" times #Common
@@ -121,8 +103,6 @@ Feature: Scheduler
 		And On Location tab, I must see list valid locations have "1" item
 		And On Location tab, I must see Video Consult box have "2" item
 		And I must see Instant Video
-		And I do not see Previous Button
-		And I must see Next Button
 		Then I must see Location form
 		When I select first item in list Video Consult
 		Given Wait for Admin Ajax "2" times #Common
@@ -142,8 +122,6 @@ Feature: Scheduler
 		And On Location tab, I must see list valid locations have "1" item
 		And On Location tab, I must see Video Consult box have "2" item
 		And I must see Instant Video
-		And I do not see Previous Button
-		And I must see Next Button
 		Then I must see Location form
 		When I select first item in list Video Consult
 		Given Wait for Admin Ajax "2" times #Common
@@ -173,8 +151,6 @@ Feature: Scheduler
 		And On Location tab, I must see list valid locations have "1" item
 		And On Location tab, I must see Video Consult box have "2" item
 		And I must see Instant Video
-		And I do not see Previous Button
-		And I must see Next Button
 		Then I must see Location form
 		When I select first item in list Location
 		Given Wait for Admin Ajax "2" times #Common
@@ -193,8 +169,6 @@ Feature: Scheduler
 		And On Location tab, I must see list valid locations have "1" item
 		And On Location tab, I must see Video Consult box have "2" item
 		And I must see Instant Video
-		And I do not see Previous Button
-		And I must see Next Button
 		Then I must see Location form
 		When I select first item in list Video Consult
 		Given Wait for Admin Ajax "2" times #Common
@@ -212,8 +186,6 @@ Feature: Scheduler
 		And On Location tab, I must see list valid locations have "1" item
 		And On Location tab, I must see Video Consult box have "2" item
 		And I must see Instant Video
-		And I do not see Previous Button
-		And I must see Next Button
 		Then I must see Location form
 		When I select first item in list Location
 		Given Wait for Admin Ajax "2" times #Common
@@ -240,8 +212,6 @@ Feature: Scheduler
 		And On Location tab, I must see list valid locations have "1" item
 		And On Location tab, I must see Video Consult box have "2" item
 		And I must see Instant Video
-		And I do not see Previous Button
-		And I must see Next Button
 		Then I must see Location form
 		When I select first item in list Video Consult
 		Given Wait for Admin Ajax "2" times #Common
@@ -268,8 +238,6 @@ Feature: Scheduler
 		And On Location tab, I must see list valid locations have "1" item
 		And On Location tab, I must see Video Consult box have "2" item
 		And I must see Instant Video
-		And I do not see Previous Button
-		And I must see Next Button
 		Then I must see Location form
 		When I select first item in list Location
 		Given Wait for Admin Ajax "2" times #Common
@@ -301,8 +269,6 @@ Feature: Scheduler
 		And On Location tab, I must see list valid locations have "1" item
 		And On Location tab, I must see Video Consult box have "2" item
 		And I must see Instant Video
-		And I do not see Previous Button
-		And I must see Next Button
 		Then I must see Location form
 		When I select first item in list Video Consult
 		Given Wait for Admin Ajax "2" times #Common
@@ -333,8 +299,6 @@ Feature: Scheduler
 		And On Location tab, I must see list valid locations have "1" item
 		And On Location tab, I must see Video Consult box have "2" item
 		And I must see Instant Video
-		And I do not see Previous Button
-		And I must see Next Button
 		Then I must see Location form
 		When I select first item in list Location
 		Given Wait for Admin Ajax "2" times #Common
@@ -357,8 +321,6 @@ Feature: Scheduler
 		And On Location tab, I must see list valid locations have "1" item
 		And On Location tab, I must see Video Consult box have "2" item
 		And I must see Instant Video
-		And I do not see Previous Button
-		And I must see Next Button
 		Then I must see Location form
 		When I select first item in list Location
 		Given Wait for Admin Ajax "2" times #Common
@@ -382,8 +344,6 @@ Feature: Scheduler
 		And On Location tab, I must see list valid locations have "1" item
 		And On Location tab, I must see Video Consult box have "2" item
 		And I must see Instant Video
-		And I do not see Previous Button
-		And I must see Next Button
 		Then I must see Location form
 		When I select first item in list Video Consult
 		Given Wait for Admin Ajax "2" times #Common
@@ -414,8 +374,6 @@ Feature: Scheduler
 		And On Location tab, I must see list valid locations have "1" item
 		And On Location tab, I must see Video Consult box have "2" item
 		And I must see Instant Video
-		And I do not see Previous Button
-		And I must see Next Button
 		Then I must see Location form
 		When I select first item in list Video Consult
 		Given Wait for Admin Ajax "2" times #Common
@@ -452,8 +410,6 @@ Feature: Scheduler
 		And On Location tab, I must see list valid locations have "1" item
 		And On Location tab, I must see Video Consult box have "2" item
 		And I must see Instant Video
-		And I do not see Previous Button
-		And I must see Next Button
 		Then I must see Location form
 		When I select first item in list Location
 		Given Wait for Admin Ajax "2" times #Common
@@ -478,8 +434,6 @@ Feature: Scheduler
 		And On Location tab, I must see list valid locations have "1" item
 		And On Location tab, I must see Video Consult box have "2" item
 		And I must see Instant Video
-		And I do not see Previous Button
-		And I must see Next Button
 		Then I must see Location form
 		When I select first item in list Video Consult
 		Given Wait for Admin Ajax "2" times #Common
@@ -512,8 +466,6 @@ Feature: Scheduler
 		And On Location tab, I must see list valid locations have "1" item
 		And On Location tab, I must see Video Consult box have "2" item
 		And I must see Instant Video
-		And I do not see Previous Button
-		And I must see Next Button
 		Then I must see Location form
 		When I select first item in list Location
 		Given Wait for Admin Ajax "2" times #Common
@@ -538,8 +490,6 @@ Feature: Scheduler
 		And On Location tab, I must see list valid locations have "1" item
 		And On Location tab, I must see Video Consult box have "2" item
 		And I must see Instant Video
-		And I do not see Previous Button
-		And I must see Next Button
 		Then I must see Location form
 		When I select first item in list Video Consult
 		Given Wait for Admin Ajax "2" times #Common
@@ -568,8 +518,6 @@ Feature: Scheduler
 		Given Wait for Admin Ajax "1" times #Common
 		Then The selected location has slot of today > 1 which time I access has condition with next slot 5 mins <= Time <= 30mins
 		And I must see Instant Video
-		And I do not see Previous Button
-		And I must see Next Button
 		When I select Instant Video box
 		Then I must see Popup Confirm Timezone
 		When I click Confirm in Popup Confirm Timezone
@@ -584,8 +532,6 @@ Feature: Scheduler
 		Given Wait for Admin Ajax "1" times #Common
 		Then The selected location has slot which time I access has condition with next slot has time < 5 mins
 		And I must see Instant Video
-		And I do not see Previous Button
-		And I must see Next Button
 		When I select Instant Video box
 		Then I must see Popup Confirm Timezone
 		When I click Confirm in Popup Confirm Timezone
@@ -600,8 +546,6 @@ Feature: Scheduler
 		Given Wait for Admin Ajax "1" times #Common
 		Then The selected location has slot of today > 1 which time I access has condition with next slot 5 mins <= Time <= 30mins
 		And I must see Instant Video
-		And I do not see Previous Button
-		And I must see Next Button
 		When I select Instant Video box
 		Then I must see Popup Confirm Timezone
 		When I click Confirm in Popup Confirm Timezone
@@ -616,8 +560,6 @@ Feature: Scheduler
 		Given Wait for Admin Ajax "1" times #Common
 		Then The selected location has slot which time I access has condition with next slot has time < 5 mins
 		And I must see Instant Video
-		And I do not see Previous Button
-		And I must see Next Button
 		When I select Instant Video box
 		Then I must see Popup Confirm Timezone
 		When I click Confirm in Popup Confirm Timezone

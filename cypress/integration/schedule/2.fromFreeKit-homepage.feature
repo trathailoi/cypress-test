@@ -24,7 +24,6 @@ Feature: Scheduler
 		Given Wait for Admin Ajax "1" times #Common
 		Then I can see Location tab is active
 		And I must see Default Banner and Disclaimer
-		And I must see Next Button
 		Examples:
         | firstName | lastName | email                | phone        | street | zipcode | gender |
         | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  |
@@ -37,7 +36,6 @@ Feature: Scheduler
 		Given Wait for Admin Ajax "1" times #Common
 		Then I can see Location tab is active
 		And I must see Default Banner and Disclaimer
-		And I must see Next Button
 		When I click Previous button #CommonPhase2
 		Then I can see user info is "<firstName>" "<lastName>" "<email>" "<phone>" "<street>" "<zipcode>" "<gender>" #CommonPhase2
 		Examples:
@@ -51,10 +49,8 @@ Feature: Scheduler
 		Given Wait for Admin Ajax "1" times #Common
 		Then I can see Location tab is active
 		And I must see Default Banner and Disclaimer
-		And I must see Next Button
 		Then On Location tab, I must see list valid locations have "1" item
 		And On Location tab, I must see Video Consult box have "2" item
-		And I must see Next Button
 		Examples:
         | firstName | lastName | email                | phone        | street | zipcode | gender |
         | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  |
@@ -67,10 +63,8 @@ Feature: Scheduler
 		Given Wait for Admin Ajax "1" times #Common
 		Then I can see Location tab is active
 		And I must see Default Banner and Disclaimer
-		And I must see Next Button
 		Then On Location tab, I don't see Location list
 		And On Location tab, I must see Video Consult box have "1" item
-		And I must see Next Button
 		Examples:
         | firstName | lastName | email                | phone        | street | zipcode | gender |
         | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  |
@@ -82,10 +76,8 @@ Feature: Scheduler
 		Given Wait for Admin Ajax "1" times #Common
 		Then I can see Location tab is active
 		And I must see Default Banner and Disclaimer
-		And I must see Next Button
 		And The selected location has slot of today > 1 which time I access has condition with next slot 5 mins <= Time <= 30mins
 		And I must see Instant Video
-		And I must see Next Button
 		Examples:
         | firstName | lastName | email                | phone        | street | zipcode | gender |
         | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  |
@@ -98,9 +90,7 @@ Feature: Scheduler
 		Given Wait for Admin Ajax "1" times #Common
 		Then I can see Location tab is active
 		And I must see Default Banner and Disclaimer
-		And I must see Next Button
 		Then On Location tab, I don't see Instant Video box
-		And I must see Next Button
 		Examples:
         | firstName | lastName | email                | phone        | street | zipcode | gender |
         | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  |
@@ -113,10 +103,8 @@ Feature: Scheduler
 		Given Wait for Admin Ajax "1" times #Common
 		Then I can see Location tab is active
 		And I must see Default Banner and Disclaimer
-		And I must see Next Button
 		And Time user > 30 mins before start next slot
 		Then On Location tab, I don't see Instant Video box
-		And I must see Next Button
 		Examples:
         | firstName | lastName | email                | phone        | street | zipcode | gender |
         | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  |
@@ -129,10 +117,8 @@ Feature: Scheduler
 		Given Wait for Admin Ajax "1" times #Common
 		Then I can see Location tab is active
 		And I must see Default Banner and Disclaimer
-		And I must see Next Button
 		And The selected location has slot of today <= 1 which time I access has condition with next slot 5 mins <= Time <= 30mins
 		Then On Location tab, I don't see Instant Video box
-		And I must see Next Button
 		Examples:
         | firstName | lastName | email                | phone        | street | zipcode | gender |
         | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  |
@@ -145,10 +131,8 @@ Feature: Scheduler
 		Given Wait for Admin Ajax "1" times #Common
 		Then I can see Location tab is active
 		And I must see Default Banner and Disclaimer
-		And I must see Next Button
 		And The selected location has slot of today <= 1 which time I access has condition with next slot has time < 5 mins
 		Then On Location tab, I don't see Instant Video box
-		And I must see Next Button
 		Examples:
         | firstName | lastName | email                | phone        | street | zipcode | gender |
         | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  |
@@ -160,10 +144,8 @@ Feature: Scheduler
 		Given Wait for Admin Ajax "1" times #Common
 		Then I can see Location tab is active
 		And I must see Default Banner and Disclaimer
-		And I must see Next Button
 		And The selected location has slot which time I access has condition with next slot has time < 5 mins
 		And I must see Instant Video
-		And I must see Next Button
 		Examples:
         | firstName | lastName | email                | phone        | street | zipcode | gender |
         | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  |
@@ -175,10 +157,8 @@ Feature: Scheduler
 		Given Wait for Admin Ajax "1" times #Common
 		Then I can see Location tab is active
 		And I must see Default Banner and Disclaimer
-		And I must see Next Button
 		Then On Location tab, I must see list valid locations have "1" item
 		And On Location tab, I must see Video Consult box have "2" item
-		And I must see Next Button
 		Then I must see Location form
 		When I select first item in list Location
 		Given Wait for Admin Ajax "2" times #Common
@@ -197,10 +177,8 @@ Feature: Scheduler
 		Given Wait for Admin Ajax "1" times #Common
 		Then I can see Location tab is active
 		And I must see Default Banner and Disclaimer
-		And I must see Next Button
 		Then On Location tab, I must see list valid locations have "1" item
 		And On Location tab, I must see Video Consult box have "2" item
-		And I must see Next Button
 		Then I must see Location form
 		When I select first item in list Video Consult
 		Given Wait for Admin Ajax "2" times #Common
@@ -219,10 +197,8 @@ Feature: Scheduler
 		Given Wait for Admin Ajax "1" times #Common
 		Then I can see Location tab is active
 		And I must see Default Banner and Disclaimer
-		And I must see Next Button
 		Then On Location tab, I must see list valid locations have "1" item
 		And On Location tab, I must see Video Consult box have "2" item
-		And I must see Next Button
 		Then I must see Location form
 		When I select first item in list Video Consult
 		Given Wait for Admin Ajax "2" times #Common
@@ -249,10 +225,8 @@ Feature: Scheduler
 		Given Wait for Admin Ajax "1" times #Common
 		Then I can see Location tab is active
 		And I must see Default Banner and Disclaimer
-		And I must see Next Button
 		Then On Location tab, I must see list valid locations have "1" item
 		And On Location tab, I must see Video Consult box have "2" item
-		And I must see Next Button
 		Then I must see Location form
 		When I select first item in list Location
 		Given Wait for Admin Ajax "2" times #Common
@@ -270,10 +244,8 @@ Feature: Scheduler
 		Given Wait for Admin Ajax "1" times #Common
 		Then I can see Location tab is active
 		And I must see Default Banner and Disclaimer
-		And I must see Next Button
 		Then On Location tab, I must see list valid locations have "1" item
 		And On Location tab, I must see Video Consult box have "2" item
-		And I must see Next Button
 		Then I must see Location form
 		When I select first item in list Video Consult
 		Given Wait for Admin Ajax "2" times #Common
@@ -290,10 +262,8 @@ Feature: Scheduler
 		Given Wait for Admin Ajax "1" times #Common
 		Then I can see Location tab is active
 		And I must see Default Banner and Disclaimer
-		And I must see Next Button
 		Then On Location tab, I must see list valid locations have "1" item
 		And On Location tab, I must see Video Consult box have "2" item
-		And I must see Next Button
 		Then I must see Location form
 		When I select first item in list Location
 		Given Wait for Admin Ajax "2" times #Common
@@ -319,10 +289,8 @@ Feature: Scheduler
 		Given Wait for Admin Ajax "1" times #Common
 		Then I can see Location tab is active
 		And I must see Default Banner and Disclaimer
-		And I must see Next Button
 		Then On Location tab, I must see list valid locations have "1" item
 		And On Location tab, I must see Video Consult box have "2" item
-		And I must see Next Button
 		Then I must see Location form
 		When I select first item in list Video Consult
 		Given Wait for Admin Ajax "2" times #Common
@@ -348,10 +316,8 @@ Feature: Scheduler
 		Given Wait for Admin Ajax "1" times #Common
 		Then I can see Location tab is active
 		And I must see Default Banner and Disclaimer
-		And I must see Next Button
 		Then On Location tab, I must see list valid locations have "1" item
 		And On Location tab, I must see Video Consult box have "2" item
-		And I must see Next Button
 		Then I must see Location form
 		When I select first item in list Location
 		Given Wait for Admin Ajax "2" times #Common
@@ -382,10 +348,8 @@ Feature: Scheduler
 		Given Wait for Admin Ajax "1" times #Common
 		Then I can see Location tab is active
 		And I must see Default Banner and Disclaimer
-		And I must see Next Button
 		Then On Location tab, I must see list valid locations have "1" item
 		And On Location tab, I must see Video Consult box have "2" item
-		And I must see Next Button
 		Then I must see Location form
 		When I select first item in list Video Consult
 		Given Wait for Admin Ajax "2" times #Common
@@ -415,10 +379,8 @@ Feature: Scheduler
 		Given Wait for Admin Ajax "1" times #Common
 		Then I can see Location tab is active
 		And I must see Default Banner and Disclaimer
-		And I must see Next Button
 		Then On Location tab, I must see list valid locations have "1" item
 		And On Location tab, I must see Video Consult box have "2" item
-		And I must see Next Button
 		Then I must see Location form
 		When I select first item in list Location
 		Given Wait for Admin Ajax "2" times #Common
@@ -440,10 +402,8 @@ Feature: Scheduler
 		Given Wait for Admin Ajax "1" times #Common
 		Then I can see Location tab is active
 		And I must see Default Banner and Disclaimer
-		And I must see Next Button
 		Then On Location tab, I must see list valid locations have "1" item
 		And On Location tab, I must see Video Consult box have "2" item
-		And I must see Next Button
 		Then I must see Location form
 		When I select first item in list Location
 		Given Wait for Admin Ajax "2" times #Common
@@ -466,10 +426,8 @@ Feature: Scheduler
 		Given Wait for Admin Ajax "1" times #Common
 		Then I can see Location tab is active
 		And I must see Default Banner and Disclaimer
-		And I must see Next Button
 		Then On Location tab, I must see list valid locations have "1" item
 		And On Location tab, I must see Video Consult box have "2" item
-		And I must see Next Button
 		Then I must see Location form
 		When I select first item in list Video Consult
 		Given Wait for Admin Ajax "2" times #Common
@@ -499,10 +457,8 @@ Feature: Scheduler
 		Given Wait for Admin Ajax "1" times #Common
 		Then I can see Location tab is active
 		And I must see Default Banner and Disclaimer
-		And I must see Next Button
 		Then On Location tab, I must see list valid locations have "1" item
 		And On Location tab, I must see Video Consult box have "2" item
-		And I must see Next Button
 		Then I must see Location form
 		When I select first item in list Video Consult
 		Given Wait for Admin Ajax "2" times #Common
@@ -536,10 +492,8 @@ Feature: Scheduler
 		Given Wait for Admin Ajax "1" times #Common
 		Then I can see Location tab is active
 		And I must see Default Banner and Disclaimer
-		And I must see Next Button
 		Then On Location tab, I must see list valid locations have "1" item
 		And On Location tab, I must see Video Consult box have "2" item
-		And I must see Next Button
 		Then I must see Location form
 		When I select first item in list Location
 		Given Wait for Admin Ajax "2" times #Common
@@ -563,10 +517,8 @@ Feature: Scheduler
 		Given Wait for Admin Ajax "1" times #Common
 		Then I can see Location tab is active
 		And I must see Default Banner and Disclaimer
-		And I must see Next Button
 		Then On Location tab, I must see list valid locations have "1" item
 		And On Location tab, I must see Video Consult box have "2" item
-		And I must see Next Button
 		Then I must see Location form
 		When I select first item in list Video Consult
 		Given Wait for Admin Ajax "2" times #Common
@@ -596,10 +548,8 @@ Feature: Scheduler
 		Given Wait for Admin Ajax "1" times #Common
 		Then I can see Location tab is active
 		And I must see Default Banner and Disclaimer
-		And I must see Next Button
 		Then On Location tab, I must see list valid locations have "1" item
 		And On Location tab, I must see Video Consult box have "2" item
-		And I must see Next Button
 		Then I must see Location form
 		When I select first item in list Location
 		Given Wait for Admin Ajax "2" times #Common
@@ -623,10 +573,8 @@ Feature: Scheduler
 		Given Wait for Admin Ajax "1" times #Common
 		Then I can see Location tab is active
 		And I must see Default Banner and Disclaimer
-		And I must see Next Button
 		Then On Location tab, I must see list valid locations have "1" item
 		And On Location tab, I must see Video Consult box have "2" item
-		And I must see Next Button
 		Then I must see Location form
 		When I select first item in list Video Consult
 		Given Wait for Admin Ajax "2" times #Common
@@ -656,10 +604,8 @@ Feature: Scheduler
 		Given Wait for Admin Ajax "1" times #Common
 		Then I can see Location tab is active
 		And I must see Default Banner and Disclaimer
-		And I must see Next Button
 		And The selected location has slot of today > 1 which time I access has condition with next slot 5 mins <= Time <= 30mins
 		And I must see Instant Video
-		And I must see Next Button
 		When I select Instant Video box
 		Then I must see Popup Confirm Timezone
 		When I click Confirm in Popup Confirm Timezone
@@ -677,10 +623,8 @@ Feature: Scheduler
 		Given Wait for Admin Ajax "1" times #Common
 		Then I can see Location tab is active
 		And I must see Default Banner and Disclaimer
-		And I must see Next Button
 		And The selected location has slot which time I access has condition with next slot has time < 5 mins
 		And I must see Instant Video
-		And I must see Next Button
 		When I select Instant Video box
 		Then I must see Popup Confirm Timezone
 		When I click Confirm in Popup Confirm Timezone
@@ -698,10 +642,8 @@ Feature: Scheduler
 		Given Wait for Admin Ajax "1" times #Common
 		Then I can see Location tab is active
 		And I must see Default Banner and Disclaimer
-		And I must see Next Button
 		And The selected location has slot which time I access has condition with next slot has time < 5 mins
 		And I must see Instant Video
-		And I must see Next Button
 		When I select Instant Video box
 		Then I must see Popup Confirm Timezone
 		When I click Confirm in Popup Confirm Timezone
@@ -719,10 +661,8 @@ Feature: Scheduler
 		Given Wait for Admin Ajax "1" times #Common
 		Then I can see Location tab is active
 		And I must see Default Banner and Disclaimer
-		And I must see Next Button
 		And The selected location has slot of today > 1 which time I access has condition with next slot 5 mins <= Time <= 30mins
 		And I must see Instant Video
-		And I must see Next Button
 		When I select Instant Video box
 		Then I must see Popup Confirm Timezone
 		When I click Confirm in Popup Confirm Timezone
