@@ -485,6 +485,7 @@ const generateScenariosFunction = () => {
   })
 
   generateScenario('TC_25_01', allScenarioObject, {
+    focus: true,
     last: true,
     required: 'TC_06',
     description: 'Chọn Instant Video button > book thành công',
@@ -502,6 +503,7 @@ const generateScenariosFunction = () => {
   })
 
   generateScenario('TC_25_02', allScenarioObject, {
+    focus: true,
     last: true,
     required: 'TC_11',
     description: 'Chọn Instant Video button > book thành công',
@@ -519,6 +521,7 @@ const generateScenariosFunction = () => {
   })
 
   generateScenario('TC_26_01', allScenarioObject, {
+    focus: true,
     last: true,
     required: 'TC_06',
     description: 'Chọn Instant Video button > book không thành công',
@@ -536,6 +539,7 @@ const generateScenariosFunction = () => {
   })
 
   generateScenario('TC_26_02', allScenarioObject, {
+    focus: true,
     last: true,
     required: 'TC_11',
     description: 'Chọn Instant Video button > book không thành công',

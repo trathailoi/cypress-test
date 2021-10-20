@@ -28,20 +28,6 @@ Feature: Scheduler
         | firstName | lastName | email                | phone        | street | zipcode | gender |
         | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  |
 
-	@last
-	Scenario Outline: TC2_02: Pass TC2_01 -> Ở tab Location, click btn Previous > fill info của user theo cookies đã lưu
-		Given Fake Admin Ajax Api with "fullDropdown" data
-		Given I set cookie with full SF info valid
-		Given I open Scheduler page non-param
-		Given Wait for Admin Ajax "1" times #Common
-		Then I can see Location tab is active
-		And I must see Default Banner and Disclaimer
-		When I click Previous button #CommonPhase2
-		Then I can see user info is "<firstName>" "<lastName>" "<email>" "<phone>" "<street>" "<zipcode>" "<gender>" #CommonPhase2
-		Examples:
-      | firstName | lastName | email                | phone          | street | zipcode | gender |
-      | Sen       | Vo       | sen.vo@9thwonder.com | (786) 416-5792 | Test   | 91356   | Woman  |
-
 	Scenario Outline: TC2_03: Pass TC2_01 -> Ở Tab Location, Có data từ SF trả về tương ứng với zipcode của user cho In Person và  Video Consult luôn luôn hiển thị #POSITIVE
 		Given Fake Admin Ajax Api with "fullDropdown" data
 		Given I set cookie with full SF info valid

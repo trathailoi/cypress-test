@@ -43,21 +43,22 @@ const generateScenariosFunction = () => {
     }
   }
   
-  generateScenario('TC2_02', allScenarioObject, {
-    last: true,
-    required: 'TC2_01',
-    description: 'Ở tab Location, click btn Previous > fill info của user theo cookies đã lưu',
-    dynamic: {
-      _fakeData: 'fullDropdown'
-    },
-    steps: [
-      'When I click Previous button #CommonPhase2',
-      'Then I can see user info is "<firstName>" "<lastName>" "<email>" "<phone>" "<street>" "<zipcode>" "<gender>" #CommonPhase2'
-    ],
-    examples: `
-      | firstName | lastName | email                | phone          | street | zipcode | gender |
-      | Sen       | Vo       | sen.vo@9thwonder.com | (786) 416-5792 | Test   | 91356   | Woman  |`
-  })
+  // không còn nút previous => bỏ
+  // generateScenario('TC2_02', allScenarioObject, {
+  //   last: true,
+  //   required: 'TC2_01',
+  //   description: 'Ở tab Location, click btn Previous > fill info của user theo cookies đã lưu',
+  //   dynamic: {
+  //     _fakeData: 'fullDropdown'
+  //   },
+  //   steps: [
+  //     'When I click Previous button #CommonPhase2',
+  //     'Then I can see user info is "<firstName>" "<lastName>" "<email>" "<phone>" "<street>" "<zipcode>" "<gender>" #CommonPhase2'
+  //   ],
+  //   examples: `
+  //     | firstName | lastName | email                | phone          | street | zipcode | gender |
+  //     | Sen       | Vo       | sen.vo@9thwonder.com | (786) 416-5792 | Test   | 91356   | Woman  |`
+  // })
 
   generateScenario('TC2_03', allScenarioObject, {
     required: 'TC2_01',

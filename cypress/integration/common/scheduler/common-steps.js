@@ -375,30 +375,42 @@ Then('I must see Popup Confirm Timezone', () => {
 })
 
 When('I click Confirm in Popup Confirm Timezone', () => {
-  // cy.window().then((win) => {
-  //   cy.stub(win, 'open').as('windowOpen'); 
-  // });  
+  cy.window().then((win) => {
+    cy.stub(win, 'open').as('windowOpen'); 
+  });
   cy.contains('Confirm')
     .click()
 })
 
 Then('Now I have been redirected to bosley doxy page have query {string} and {string}', (firstName, lastName) => {
+  
   const fullName = [firstName, lastName].filter(Boolean).join(' ')
-  cy.get('.scheduler-external-link')
-    .should('have.attr', 'href')
-    .should('equal', `https://bosley.doxy.me/videoconsult?username=${fullName}`)
   // đổi UI => không còn window.open mà gắn link cho 1 thẻ a rồi click => không check click được chỉ check được href
+  // cy.get('.scheduler-external-link')
+  //     .should('have.attr', 'href')
+  //     .should('include', `https://bosley.doxy.me/videoconsult?username=${fullName}&autocheckin=true`)
+  
   // cy.get('@windowOpen')
-  //   .should('be.calledWith', `https://bosley.doxy.me/videoconsult?username=${fullName}`, '_blank')
+  //   .should('be.calledWith', `https://bosley.doxy.me/videoconsult?username=${fullName}&autocheckin=true`, '_blank')
+  // vì thay đổi sfid nên chỉ cần đổi sang include
+  cy.get('@windowOpen')
+    .should('have.been.calledWithMatch', arg1 => arg1.includes(`https://bosley.doxy.me/videoconsult?username=${fullName}&autocheckin=true`), arg2 => arg2 === '_blank');
 })
 
 Then('Now I have been redirected to bosley doxy page', () => {
-  cy.get('.scheduler-external-link')
-    .should('have.attr', 'href')
-    .should('equal', 'https://bosley.doxy.me/videoconsult?username=')
   // đổi UI => không còn window.open mà gắn link cho 1 thẻ a rồi click => không check click được chỉ check được href
+  // cy.get('.scheduler-external-link')
+  //     .invoke('attr', 'href')
+  //     .then(href => {
+  //       console.log('href', href)
+  //     });
+  // cy.get('.scheduler-external-link')
+  //   .should('have.attr', 'href')
+  //   .should('include', 'https://bosley.doxy.me/videoconsult?username=&autocheckin=true')
   // cy.get('@windowOpen')
-  //   .should('be.calledWith', 'https://bosley.doxy.me/videoconsult?username=', '_blank')
+  //   .should('be.calledWith', 'https://bosley.doxy.me/videoconsult?username=&autocheckin=true', '_blank')
+  cy.get('@windowOpen')
+    .should('have.been.calledWithMatch', arg1 => arg1.includes('https://bosley.doxy.me/videoconsult?username=&autocheckin=true'), arg2 => arg2 === '_blank');
 })
 
 Then('I can see book appoinment info and {string} info', (type) => {

@@ -705,7 +705,7 @@ Feature: Scheduler
       | firstName | lastName | email                | phone        | street | zipcode | gender | timezone |
       | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  | MT       |
 
-	@last
+	@last @focus
 	Scenario Outline: TC_25_01: Pass TC_06 -> Chọn Instant Video button > book thành công
 		Given I open Scheduler page non-param
 		Then I can see About you form #CommonPhase1
@@ -728,7 +728,7 @@ Feature: Scheduler
       | firstName | lastName | email                | phone        | street | zipcode | gender |
       | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  |
 
-	@last
+	@last @focus
 	Scenario Outline: TC_25_02: Pass TC_11 -> Chọn Instant Video button > book thành công
 		Given I open Scheduler page non-param
 		Then I can see About you form #CommonPhase1
@@ -751,7 +751,7 @@ Feature: Scheduler
       | firstName | lastName | email                | phone        | street | zipcode | gender |
       | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  |
 
-	@last
+	@last @focus
 	Scenario Outline: TC_26_01: Pass TC_06 -> Chọn Instant Video button > book không thành công
 		Given I open Scheduler page non-param
 		Then I can see About you form #CommonPhase1
@@ -774,7 +774,7 @@ Feature: Scheduler
       | firstName | lastName | email                | phone        | street | zipcode | gender |
       | Sen       | Vo       | sen.vo@9thwonder.com | 786-416-5792 | Test   | 91356   | Woman  |
 
-	@last
+	@last @focus
 	Scenario Outline: TC_26_02: Pass TC_11 -> Chọn Instant Video button > book không thành công
 		Given I open Scheduler page non-param
 		Then I can see About you form #CommonPhase1
