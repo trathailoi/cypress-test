@@ -12,7 +12,7 @@ Given(`I open Scheduler page with param has valid SFID, match key but invalid Zi
 Then(`I must see Zipcode popup`, () => {
   cy.get('.popup-zip-code', { timeout: 10000 })
     .should('be.visible')
-    .contains('Change Location')
+    .contains('Find Other Locations')
 
   cy.get('.popup-zip-code')
     .contains('Update zip code to find different locations.')
