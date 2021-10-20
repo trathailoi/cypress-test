@@ -375,22 +375,30 @@ Then('I must see Popup Confirm Timezone', () => {
 })
 
 When('I click Confirm in Popup Confirm Timezone', () => {
-  cy.window().then((win) => {
-    cy.stub(win, 'open').as('windowOpen'); 
-  });  
+  // cy.window().then((win) => {
+  //   cy.stub(win, 'open').as('windowOpen'); 
+  // });  
   cy.contains('Confirm')
     .click()
 })
 
 Then('Now I have been redirected to bosley doxy page have query {string} and {string}', (firstName, lastName) => {
   const fullName = [firstName, lastName].filter(Boolean).join(' ')
-  cy.get('@windowOpen')
-    .should('be.calledWith', `https://bosley.doxy.me/videoconsult?username=${fullName}`, '_blank')
+  cy.get('.scheduler-external-link')
+    .should('have.attr', 'href')
+    .should('equal', `https://bosley.doxy.me/videoconsult?username=${fullName}`)
+  // đổi UI => không còn window.open mà gắn link cho 1 thẻ a rồi click => không check click được chỉ check được href
+  // cy.get('@windowOpen')
+  //   .should('be.calledWith', `https://bosley.doxy.me/videoconsult?username=${fullName}`, '_blank')
 })
 
 Then('Now I have been redirected to bosley doxy page', () => {
-  cy.get('@windowOpen')
-    .should('be.calledWith', 'https://bosley.doxy.me/videoconsult?username=', '_blank')
+  cy.get('.scheduler-external-link')
+    .should('have.attr', 'href')
+    .should('equal', 'https://bosley.doxy.me/videoconsult?username=')
+  // đổi UI => không còn window.open mà gắn link cho 1 thẻ a rồi click => không check click được chỉ check được href
+  // cy.get('@windowOpen')
+  //   .should('be.calledWith', 'https://bosley.doxy.me/videoconsult?username=', '_blank')
 })
 
 Then('I can see book appoinment info and {string} info', (type) => {
