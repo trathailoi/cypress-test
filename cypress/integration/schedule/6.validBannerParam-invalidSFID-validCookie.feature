@@ -68,7 +68,6 @@ Feature: Scheduler with valid banner param, invalid crmid param, valid crmid coo
 		And I must see Banner and Disclaimer match with banner value in params
 		Then On Location tab, I must see list valid locations have "1" item
 		And On Location tab, I must see Video Consult box have "2" item
-		And I must see Previous Button
 		And I must see Next Button
 		Examples:
       | firstName | lastName | email                | phone        | street | zipcode | gender |
@@ -232,7 +231,6 @@ Feature: Scheduler with valid banner param, invalid crmid param, valid crmid coo
 		And I must see Banner and Disclaimer match with banner value in params
 		Then On Location tab, I must see list valid locations have "1" item
 		And On Location tab, I must see Video Consult box have "2" item
-		And I must see Previous Button
 		And I must see Next Button
 		Then I must see Location form
 		When I select first item in list Location
@@ -259,7 +257,6 @@ Feature: Scheduler with valid banner param, invalid crmid param, valid crmid coo
 		And I must see Banner and Disclaimer match with banner value in params
 		Then On Location tab, I must see list valid locations have "1" item
 		And On Location tab, I must see Video Consult box have "2" item
-		And I must see Previous Button
 		And I must see Next Button
 		Then I must see Location form
 		When I select first item in list Video Consult
@@ -286,7 +283,6 @@ Feature: Scheduler with valid banner param, invalid crmid param, valid crmid coo
 		And I must see Banner and Disclaimer match with banner value in params
 		Then On Location tab, I must see list valid locations have "1" item
 		And On Location tab, I must see Video Consult box have "2" item
-		And I must see Previous Button
 		And I must see Next Button
 		Then I must see Location form
 		When I select first item in list Video Consult
@@ -321,7 +317,6 @@ Feature: Scheduler with valid banner param, invalid crmid param, valid crmid coo
 		And I must see Banner and Disclaimer match with banner value in params
 		Then On Location tab, I must see list valid locations have "1" item
 		And On Location tab, I must see Video Consult box have "2" item
-		And I must see Previous Button
 		And I must see Next Button
 		Then I must see Location form
 		When I select first item in list Location
@@ -347,7 +342,6 @@ Feature: Scheduler with valid banner param, invalid crmid param, valid crmid coo
 		And I must see Banner and Disclaimer match with banner value in params
 		Then On Location tab, I must see list valid locations have "1" item
 		And On Location tab, I must see Video Consult box have "2" item
-		And I must see Previous Button
 		And I must see Next Button
 		Then I must see Location form
 		When I select first item in list Video Consult
@@ -372,7 +366,6 @@ Feature: Scheduler with valid banner param, invalid crmid param, valid crmid coo
 		And I must see Banner and Disclaimer match with banner value in params
 		Then On Location tab, I must see list valid locations have "1" item
 		And On Location tab, I must see Video Consult box have "2" item
-		And I must see Previous Button
 		And I must see Next Button
 		Then I must see Location form
 		When I select first item in list Location
@@ -406,7 +399,6 @@ Feature: Scheduler with valid banner param, invalid crmid param, valid crmid coo
 		And I must see Banner and Disclaimer match with banner value in params
 		Then On Location tab, I must see list valid locations have "1" item
 		And On Location tab, I must see Video Consult box have "2" item
-		And I must see Previous Button
 		And I must see Next Button
 		Then I must see Location form
 		When I select first item in list Video Consult
@@ -440,7 +432,6 @@ Feature: Scheduler with valid banner param, invalid crmid param, valid crmid coo
 		And I must see Banner and Disclaimer match with banner value in params
 		Then On Location tab, I must see list valid locations have "1" item
 		And On Location tab, I must see Video Consult box have "2" item
-		And I must see Previous Button
 		And I must see Next Button
 		Then I must see Location form
 		When I select first item in list Location
@@ -479,7 +470,6 @@ Feature: Scheduler with valid banner param, invalid crmid param, valid crmid coo
 		And I must see Banner and Disclaimer match with banner value in params
 		Then On Location tab, I must see list valid locations have "1" item
 		And On Location tab, I must see Video Consult box have "2" item
-		And I must see Previous Button
 		And I must see Next Button
 		Then I must see Location form
 		When I select first item in list Video Consult
@@ -517,7 +507,6 @@ Feature: Scheduler with valid banner param, invalid crmid param, valid crmid coo
 		And I must see Banner and Disclaimer match with banner value in params
 		Then On Location tab, I must see list valid locations have "1" item
 		And On Location tab, I must see Video Consult box have "2" item
-		And I must see Previous Button
 		And I must see Next Button
 		Then I must see Location form
 		When I select first item in list Location
@@ -547,7 +536,6 @@ Feature: Scheduler with valid banner param, invalid crmid param, valid crmid coo
 		And I must see Banner and Disclaimer match with banner value in params
 		Then On Location tab, I must see list valid locations have "1" item
 		And On Location tab, I must see Video Consult box have "2" item
-		And I must see Previous Button
 		And I must see Next Button
 		Then I must see Location form
 		When I select first item in list Location
@@ -578,7 +566,6 @@ Feature: Scheduler with valid banner param, invalid crmid param, valid crmid coo
 		And I must see Banner and Disclaimer match with banner value in params
 		Then On Location tab, I must see list valid locations have "1" item
 		And On Location tab, I must see Video Consult box have "2" item
-		And I must see Previous Button
 		And I must see Next Button
 		Then I must see Location form
 		When I select first item in list Video Consult
@@ -616,7 +603,6 @@ Feature: Scheduler with valid banner param, invalid crmid param, valid crmid coo
 		And I must see Banner and Disclaimer match with banner value in params
 		Then On Location tab, I must see list valid locations have "1" item
 		And On Location tab, I must see Video Consult box have "2" item
-		And I must see Previous Button
 		And I must see Next Button
 		Then I must see Location form
 		When I select first item in list Video Consult
@@ -658,7 +644,6 @@ Feature: Scheduler with valid banner param, invalid crmid param, valid crmid coo
 		And I must see Banner and Disclaimer match with banner value in params
 		Then On Location tab, I must see list valid locations have "1" item
 		And On Location tab, I must see Video Consult box have "2" item
-		And I must see Previous Button
 		And I must see Next Button
 		Then I must see Location form
 		When I select first item in list Location
@@ -690,7 +675,6 @@ Feature: Scheduler with valid banner param, invalid crmid param, valid crmid coo
 		And I must see Banner and Disclaimer match with banner value in params
 		Then On Location tab, I must see list valid locations have "1" item
 		And On Location tab, I must see Video Consult box have "2" item
-		And I must see Previous Button
 		And I must see Next Button
 		Then I must see Location form
 		When I select first item in list Video Consult
@@ -728,7 +712,6 @@ Feature: Scheduler with valid banner param, invalid crmid param, valid crmid coo
 		And I must see Banner and Disclaimer match with banner value in params
 		Then On Location tab, I must see list valid locations have "1" item
 		And On Location tab, I must see Video Consult box have "2" item
-		And I must see Previous Button
 		And I must see Next Button
 		Then I must see Location form
 		When I select first item in list Location
@@ -760,7 +743,6 @@ Feature: Scheduler with valid banner param, invalid crmid param, valid crmid coo
 		And I must see Banner and Disclaimer match with banner value in params
 		Then On Location tab, I must see list valid locations have "1" item
 		And On Location tab, I must see Video Consult box have "2" item
-		And I must see Previous Button
 		And I must see Next Button
 		Then I must see Location form
 		When I select first item in list Video Consult

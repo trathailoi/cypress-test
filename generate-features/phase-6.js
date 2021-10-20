@@ -74,7 +74,7 @@ const generateScenariosFunction = () => {
     steps: [
       'Then On Location tab, I must see list valid locations have "1" item',
       'And On Location tab, I must see Video Consult box have "2" item',
-      'And I must see Previous Button',
+      // 'And I must see Previous Button',
       'And I must see Next Button'
     ],
     reuseExamples: true

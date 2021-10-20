@@ -64,7 +64,6 @@ Feature: Scheduler
 		And I must see Default Banner and Disclaimer
 		Then On Location tab, I must see list valid locations have "1" item
 		And On Location tab, I must see Video Consult box have "2" item
-		And I must see Previous Button
 		And I must see Next Button
 		Examples:
       | firstName | lastName | email                | phone        | street | zipcode | gender |
@@ -84,7 +83,6 @@ Feature: Scheduler
 		And I must see Default Banner and Disclaimer
 		Then On Location tab, I don't see Location list
 		And On Location tab, I must see Video Consult box have "1" item
-		And I must see Previous Button
 		And I must see Next Button
 		Examples:
       | firstName | lastName | email                | phone        | street | zipcode | gender |
@@ -103,7 +101,6 @@ Feature: Scheduler
 		And I must see Default Banner and Disclaimer
 		And The selected location has slot of today > 1 which time I access has condition with next slot 5 mins <= Time <= 30mins
 		Then I must see Instant Video
-		And I must see Previous Button
 		And I must see Next Button
 		Examples:
       | firstName | lastName | email                | phone        | street | zipcode | gender |
@@ -122,7 +119,6 @@ Feature: Scheduler
 		Then I must see Location form
 		And I must see Default Banner and Disclaimer
 		Then On Location tab, I don't see Instant Video box
-		And I must see Previous Button
 		And I must see Next Button
 		Examples:
       | firstName | lastName | email                | phone        | street | zipcode | gender |
@@ -142,7 +138,6 @@ Feature: Scheduler
 		And I must see Default Banner and Disclaimer
 		And Time user > 30 mins before start next slot
 		Then On Location tab, I don't see Instant Video box
-		And I must see Previous Button
 		And I must see Next Button
 		Examples:
       | firstName | lastName | email                | phone        | street | zipcode | gender |
@@ -162,7 +157,6 @@ Feature: Scheduler
 		And I must see Default Banner and Disclaimer
 		And The selected location has slot of today <= 1 which time I access has condition with next slot 5 mins <= Time <= 30mins
 		Then On Location tab, I don't see Instant Video box
-		And I must see Previous Button
 		And I must see Next Button
 		Examples:
       | firstName | lastName | email                | phone        | street | zipcode | gender |
@@ -182,7 +176,6 @@ Feature: Scheduler
 		And I must see Default Banner and Disclaimer
 		And The selected location has slot of today <= 1 which time I access has condition with next slot has time < 5 mins
 		Then On Location tab, I don't see Instant Video box
-		And I must see Previous Button
 		And I must see Next Button
 		Examples:
       | firstName | lastName | email                | phone        | street | zipcode | gender |
@@ -201,7 +194,6 @@ Feature: Scheduler
 		And I must see Default Banner and Disclaimer
 		And The selected location has slot which time I access has condition with next slot has time < 5 mins
 		And I must see Instant Video
-		And I must see Previous Button
 		And I must see Next Button
 		Examples:
       | firstName | lastName | email                | phone        | street | zipcode | gender |
@@ -220,7 +212,6 @@ Feature: Scheduler
 		And I must see Default Banner and Disclaimer
 		Then On Location tab, I must see list valid locations have "1" item
 		And On Location tab, I must see Video Consult box have "2" item
-		And I must see Previous Button
 		And I must see Next Button
 		Then I must see Location form
 		When I select first item in list Location
@@ -246,7 +237,6 @@ Feature: Scheduler
 		And I must see Default Banner and Disclaimer
 		Then On Location tab, I must see list valid locations have "1" item
 		And On Location tab, I must see Video Consult box have "2" item
-		And I must see Previous Button
 		And I must see Next Button
 		Then I must see Location form
 		When I select first item in list Video Consult
@@ -272,7 +262,6 @@ Feature: Scheduler
 		And I must see Default Banner and Disclaimer
 		Then On Location tab, I must see list valid locations have "1" item
 		And On Location tab, I must see Video Consult box have "2" item
-		And I must see Previous Button
 		And I must see Next Button
 		Then I must see Location form
 		When I select first item in list Video Consult
@@ -306,7 +295,6 @@ Feature: Scheduler
 		And I must see Default Banner and Disclaimer
 		Then On Location tab, I must see list valid locations have "1" item
 		And On Location tab, I must see Video Consult box have "2" item
-		And I must see Previous Button
 		And I must see Next Button
 		Then I must see Location form
 		When I select first item in list Location
@@ -331,7 +319,6 @@ Feature: Scheduler
 		And I must see Default Banner and Disclaimer
 		Then On Location tab, I must see list valid locations have "1" item
 		And On Location tab, I must see Video Consult box have "2" item
-		And I must see Previous Button
 		And I must see Next Button
 		Then I must see Location form
 		When I select first item in list Video Consult
@@ -355,7 +342,6 @@ Feature: Scheduler
 		And I must see Default Banner and Disclaimer
 		Then On Location tab, I must see list valid locations have "1" item
 		And On Location tab, I must see Video Consult box have "2" item
-		And I must see Previous Button
 		And I must see Next Button
 		Then I must see Location form
 		When I select first item in list Location
@@ -388,7 +374,6 @@ Feature: Scheduler
 		And I must see Default Banner and Disclaimer
 		Then On Location tab, I must see list valid locations have "1" item
 		And On Location tab, I must see Video Consult box have "2" item
-		And I must see Previous Button
 		And I must see Next Button
 		Then I must see Location form
 		When I select first item in list Video Consult
@@ -421,7 +406,6 @@ Feature: Scheduler
 		And I must see Default Banner and Disclaimer
 		Then On Location tab, I must see list valid locations have "1" item
 		And On Location tab, I must see Video Consult box have "2" item
-		And I must see Previous Button
 		And I must see Next Button
 		Then I must see Location form
 		When I select first item in list Location
@@ -459,7 +443,6 @@ Feature: Scheduler
 		And I must see Default Banner and Disclaimer
 		Then On Location tab, I must see list valid locations have "1" item
 		And On Location tab, I must see Video Consult box have "2" item
-		And I must see Previous Button
 		And I must see Next Button
 		Then I must see Location form
 		When I select first item in list Video Consult
@@ -496,7 +479,6 @@ Feature: Scheduler
 		And I must see Default Banner and Disclaimer
 		Then On Location tab, I must see list valid locations have "1" item
 		And On Location tab, I must see Video Consult box have "2" item
-		And I must see Previous Button
 		And I must see Next Button
 		Then I must see Location form
 		When I select first item in list Location
@@ -525,7 +507,6 @@ Feature: Scheduler
 		And I must see Default Banner and Disclaimer
 		Then On Location tab, I must see list valid locations have "1" item
 		And On Location tab, I must see Video Consult box have "2" item
-		And I must see Previous Button
 		And I must see Next Button
 		Then I must see Location form
 		When I select first item in list Location
@@ -555,7 +536,6 @@ Feature: Scheduler
 		And I must see Default Banner and Disclaimer
 		Then On Location tab, I must see list valid locations have "1" item
 		And On Location tab, I must see Video Consult box have "2" item
-		And I must see Previous Button
 		And I must see Next Button
 		Then I must see Location form
 		When I select first item in list Video Consult
@@ -592,7 +572,6 @@ Feature: Scheduler
 		And I must see Default Banner and Disclaimer
 		Then On Location tab, I must see list valid locations have "1" item
 		And On Location tab, I must see Video Consult box have "2" item
-		And I must see Previous Button
 		And I must see Next Button
 		Then I must see Location form
 		When I select first item in list Video Consult
@@ -633,7 +612,6 @@ Feature: Scheduler
 		And I must see Default Banner and Disclaimer
 		Then On Location tab, I must see list valid locations have "1" item
 		And On Location tab, I must see Video Consult box have "2" item
-		And I must see Previous Button
 		And I must see Next Button
 		Then I must see Location form
 		When I select first item in list Location
@@ -664,7 +642,6 @@ Feature: Scheduler
 		And I must see Default Banner and Disclaimer
 		Then On Location tab, I must see list valid locations have "1" item
 		And On Location tab, I must see Video Consult box have "2" item
-		And I must see Previous Button
 		And I must see Next Button
 		Then I must see Location form
 		When I select first item in list Video Consult
@@ -701,7 +678,6 @@ Feature: Scheduler
 		And I must see Default Banner and Disclaimer
 		Then On Location tab, I must see list valid locations have "1" item
 		And On Location tab, I must see Video Consult box have "2" item
-		And I must see Previous Button
 		And I must see Next Button
 		Then I must see Location form
 		When I select first item in list Location
@@ -732,7 +708,6 @@ Feature: Scheduler
 		And I must see Default Banner and Disclaimer
 		Then On Location tab, I must see list valid locations have "1" item
 		And On Location tab, I must see Video Consult box have "2" item
-		And I must see Previous Button
 		And I must see Next Button
 		Then I must see Location form
 		When I select first item in list Video Consult
@@ -769,7 +744,6 @@ Feature: Scheduler
 		And I must see Default Banner and Disclaimer
 		And The selected location has slot of today > 1 which time I access has condition with next slot 5 mins <= Time <= 30mins
 		Then I must see Instant Video
-		And I must see Previous Button
 		And I must see Next Button
 		When I select Instant Video box
 		Then I must see Popup Confirm Timezone
@@ -794,7 +768,6 @@ Feature: Scheduler
 		And I must see Default Banner and Disclaimer
 		And The selected location has slot which time I access has condition with next slot has time < 5 mins
 		And I must see Instant Video
-		And I must see Previous Button
 		And I must see Next Button
 		When I select Instant Video box
 		Then I must see Popup Confirm Timezone
@@ -819,7 +792,6 @@ Feature: Scheduler
 		And I must see Default Banner and Disclaimer
 		And The selected location has slot of today > 1 which time I access has condition with next slot 5 mins <= Time <= 30mins
 		Then I must see Instant Video
-		And I must see Previous Button
 		And I must see Next Button
 		When I select Instant Video box
 		Then I must see Popup Confirm Timezone
@@ -844,7 +816,6 @@ Feature: Scheduler
 		And I must see Default Banner and Disclaimer
 		And The selected location has slot which time I access has condition with next slot has time < 5 mins
 		And I must see Instant Video
-		And I must see Previous Button
 		And I must see Next Button
 		When I select Instant Video box
 		Then I must see Popup Confirm Timezone
